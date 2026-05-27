@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlexDays, Less Delays, More FlexDays</title>
+  <meta name="description" content="FlexDays is the modern HR super app, simple, fast, and built to replace your legacy HR system at a price that makes sense. Coming soon." />
+  <link rel="icon" href="icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #1E1E24;
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Brand tokens ── */
+    :root {
+      --blue:    #1679d7;
+      --blue-dk: #0e5fad;
+      --teal:    #09bccc;
+      --green:   #06bbae;
+      --success: #2EB872;
+      --warn:    #FFC107;
+      --danger:  #E8574F;
+      --dark:    #1E1E24;
+      --mid:     #6B6B76;
+      --border:  #D9DCE1;
+      --bg:      #F5F7FA;
+      --white:   #ffffff;
+      --radius:  12px;
+      --shadow-sm: 0 1px 4px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg: 0 16px 48px rgba(22,121,215,.18);
+    }
+
+    /* ── Utility ── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .text-center { text-align: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 30px; border-radius: 10px; font-weight: 700;
+      font-size: 15px; cursor: pointer; transition: all .18s ease;
+      text-decoration: none; border: none; white-space: nowrap; font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--blue); color: #fff;
+      box-shadow: 0 4px 18px rgba(22,121,215,.38);
+    }
+    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(22,121,215,.48); }
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal), var(--green));
+      color: #fff; box-shadow: 0 4px 18px rgba(9,188,204,.35);
+    }
+    .btn-teal:hover { opacity: .92; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+    .btn-outline:hover { background: #eef5fd; }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 20px; font-size: 12px;
+      font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+    }
+    .tag-blue { background: #e8f2fd; color: var(--blue); }
+    .tag-teal { background: #e0f7f9; color: #0899a8; }
+    .tag-coming { background: #fff3cd; color: #856404; }
+
+    .section-title {
+      font-size: clamp(28px, 4.5vw, 44px); font-weight: 800;
+      line-height: 1.15; color: var(--dark);
+    }
+    .section-sub {
+      font-size: 17px; color: var(--mid); max-width: 580px;
+      margin: 0 auto; line-height: 1.75;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Top Banner ── */
+    .top-banner {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      text-align: center; padding: 11px 24px;
+      font-size: 13px; font-weight: 600; color: #fff; letter-spacing: .2px;
+    }
+    .top-banner a { color: #fff; text-decoration: underline; opacity: .85; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0;
+    }
+    .nav-logo { display: block; line-height: 0; }
+    .nav-logo img { height: 52px; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .coming-pill {
+      background: linear-gradient(135deg, #fff3cd, #fde68a);
+      color: #92400e; font-size: 12px; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px; letter-spacing: .4px;
+      border: 1px solid #fcd34d;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 90px 0 80px;
+      background: linear-gradient(165deg, #f0f7ff 0%, #e8f9fb 55%, #f5fff9 100%);
+      position: relative; overflow: hidden;
+    }
+    .blob {
+      position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: .45;
+    }
+    .blob-1 { width: 500px; height: 500px; background: #c5e3fb; top: -120px; right: -80px; }
+    .blob-2 { width: 380px; height: 380px; background: #b3f0f3; bottom: -80px; left: -60px; }
+
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+    .hero h1 {
+      font-size: clamp(38px, 5.5vw, 62px); font-weight: 900;
+      line-height: 1.08; color: var(--dark); margin-bottom: 10px;
+    }
+    .hero-hook {
+      font-size: clamp(20px, 2.8vw, 26px); font-weight: 700;
+      color: var(--blue); margin-bottom: 22px; line-height: 1.3;
+    }
+    .hero p {
+      font-size: 17px; color: var(--mid); margin-bottom: 36px;
+      line-height: 1.75; max-width: 530px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-social-proof {
+      margin-top: 48px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .proof-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--mid); font-weight: 500; }
+    .proof-icon { font-size: 18px; }
+
+    /* ── Hook strip ── */
+    .hooks-strip {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+    .hooks-inner {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hook-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 28px; font-size: 14px; font-weight: 600; color: var(--dark);
+    }
+    .hook-item + .hook-item { border-left: 1px solid var(--border); }
+    .hook-dot {
+      width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+    .hook-dot.blue  { background: #e8f2fd; }
+    .hook-dot.teal  { background: #e0f7f9; }
+    .hook-dot.green { background: #d8f5f0; }
+
+    /* ── Replace Legacy ── */
+    .replace { padding: 96px 0; background: var(--white); }
+    .replace-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .replace-left .section-title { margin-bottom: 20px; }
+    .replace-left p { font-size: 16px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
+
+    .vs-table { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .vs-header {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      background: var(--bg); padding: 14px 20px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; color: var(--mid);
+    }
+    .vs-header .good { color: var(--blue); }
+    .vs-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      padding: 14px 20px; border-top: 1px solid var(--border);
+      align-items: center; font-size: 14px;
+    }
+    .vs-row:nth-child(even) { background: #fafbfc; }
+    .vs-label { font-weight: 600; color: var(--dark); }
+    .vs-bad  { color: var(--danger); display: flex; align-items: center; gap: 5px; font-weight: 500; }
+    .vs-good { color: var(--success); display: flex; align-items: center; gap: 5px; font-weight: 600; }
+
+    /* ── Features ── */
+    .features { padding: 96px 0; background: var(--bg); }
+    .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+    .feat-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px; transition: all .2s;
+    }
+    .feat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: #b3d4f5; }
+    .feat-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 18px;
+    }
+    .feat-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
+    .feat-card p  { font-size: 14px; color: var(--mid); line-height: 1.65; }
+    .feat-badge { display: inline-block; margin-top: 12px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+    .feat-badge.coming { background: #fff3cd; color: #92400e; }
+    .feat-badge.phase1 { background: #e8f2fd; color: var(--blue); }
+
+    /* ── Timesheet ── */
+    .timesheet { padding: 96px 0; background: var(--white); }
+    .ts-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .ts-points { display: grid; gap: 20px; margin-top: 32px; }
+    .ts-point { display: flex; gap: 16px; }
+    .ts-num {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff; font-weight: 800; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ts-point h4 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--dark); }
+    .ts-point p  { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+    .ts-visual {
+      background: linear-gradient(145deg, #eaf4ff, #e0f8fb);
+      border-radius: 20px; padding: 32px;
+    }
+    .ts-highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .ts-hl {
+      background: var(--white); border-radius: 14px; padding: 22px;
+      border: 1px solid var(--border); transition: all .2s;
+    }
+    .ts-hl:hover { border-color: #93c5fd; box-shadow: var(--shadow-sm); }
+    .ts-hl-icon  { font-size: 26px; margin-bottom: 12px; }
+    .ts-hl-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .ts-hl-desc  { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+    /* ── How it works ── */
+    .how { padding: 96px 0; background: var(--bg); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px; }
+    .step-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 22px; text-align: center;
+      position: relative; transition: all .2s;
+    }
+    .step-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .step-card::after {
+      content: '→'; position: absolute; right: -20px; top: 44px;
+      font-size: 20px; color: var(--border); font-weight: 700;
+    }
+    .step-card:last-child::after { display: none; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff; font-size: 20px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px; box-shadow: 0 4px 14px rgba(22,121,215,.35);
+    }
+    .step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
+    .step-card p  { font-size: 13px; color: var(--mid); line-height: 1.65; }
+    .step-time {
+      display: inline-block; margin-top: 12px; padding: 3px 10px;
+      background: #e8f2fd; color: var(--blue); border-radius: 20px;
+      font-size: 11px; font-weight: 700;
+    }
+
+    /* ── Pricing ── */
+    .pricing { padding: 96px 0; background: var(--white); }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 860px; margin: 56px auto 0; }
+    .plan-card {
+      border: 2px solid var(--border); border-radius: 18px;
+      padding: 36px 32px; position: relative; transition: all .2s;
+    }
+    .plan-card:hover { border-color: #93c5fd; box-shadow: var(--shadow-md); }
+    .plan-card.featured { border-color: var(--blue); box-shadow: var(--shadow-lg); }
+    .plan-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #fff; font-size: 11px; font-weight: 700;
+      padding: 4px 16px; border-radius: 20px; letter-spacing: .5px;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .plan-name  { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--mid); margin-bottom: 8px; }
+    .plan-price { font-size: 48px; font-weight: 900; color: var(--dark); line-height: 1; margin-bottom: 6px; }
+    .plan-price span { font-size: 22px; font-weight: 600; color: var(--mid); }
+    .plan-desc  { font-size: 14px; color: var(--mid); margin-bottom: 28px; line-height: 1.6; }
+    .plan-features { list-style: none; display: grid; gap: 12px; margin-bottom: 32px; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--dark); }
+    .plan-features li::before { content: '✓'; color: var(--success); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .plan-features li.no { color: var(--mid); }
+    .plan-features li.no::before { content: '—'; color: var(--border); }
+    .plan-features li.limited { color: var(--dark); }
+    .plan-features li.limited::before { content: '~'; color: var(--warn); font-weight: 800; }
+    .plan-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--mid); margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+    .stripe-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; font-size: 12px; color: var(--mid); }
+    .stripe-badge strong { color: #635bff; }
+
+    /* ── Roadmap ── */
+    .roadmap {
+      padding: 96px 0;
+      background: linear-gradient(160deg, #0f1724 0%, #0a2540 50%, #0d2d3f 100%);
+      position: relative; overflow: hidden;
+    }
+    .roadmap::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(9,188,204,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .roadmap-inner { position: relative; z-index: 1; }
+    .roadmap-inner .section-title { color: #fff; }
+    .roadmap-inner .section-sub   { color: rgba(255,255,255,.6); }
+    .phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 60px; }
+    .phase-card {
+      border: 1px solid rgba(255,255,255,.1); border-radius: 14px;
+      padding: 28px; background: rgba(255,255,255,.04);
+      backdrop-filter: blur(8px); transition: all .2s;
+    }
+    .phase-card:hover { border-color: rgba(9,188,204,.4); background: rgba(255,255,255,.07); }
+    .phase-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px; }
+    .phase-label.now    { color: var(--teal); }
+    .phase-label.next   { color: #fbbf24; }
+    .phase-label.future { color: #a78bfa; }
+    .phase-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+    .phase-items { list-style: none; display: grid; gap: 8px; }
+    .phase-items li { font-size: 13px; color: rgba(255,255,255,.65); display: flex; align-items: flex-start; gap: 8px; }
+    .phase-items li::before { content: '›'; color: var(--teal); font-weight: 800; }
+    .super-app-banner {
+      margin-top: 48px; padding: 28px 32px;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px; text-align: center;
+    }
+    .super-app-banner h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .super-app-banner p  { font-size: 15px; color: rgba(255,255,255,.6); max-width: 520px; margin: 0 auto; }
+
+    /* ── Notify ── */
+    .notify { padding: 96px 0; background: var(--bg); }
+    .notify-box {
+      max-width: 680px; margin: 0 auto; text-align: center;
+      background: var(--white); border-radius: 24px; padding: 64px 48px;
+      border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+    }
+    .notify-box .section-title { margin-bottom: 16px; }
+    .notify-box p { font-size: 16px; color: var(--mid); margin-bottom: 32px; line-height: 1.7; }
+    .notify-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .notify-form input {
+      flex: 1; min-width: 230px; padding: 14px 18px; border-radius: 10px;
+      border: 2px solid var(--border); font-size: 15px; font-family: inherit;
+      outline: none; transition: border-color .15s;
+    }
+    .notify-form input:focus { border-color: var(--blue); }
+    .notify-note { font-size: 12px; color: var(--mid); margin-top: 14px; }
+
+    /* ── Footer ── */
+    footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 48px 0 28px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 36px; }
+    .footer-tagline { font-size: 14px; font-style: italic; color: rgba(255,255,255,.4); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .replace-inner  { grid-template-columns: 1fr; }
+      .ts-inner       { grid-template-columns: 1fr; }
+      .features-grid  { grid-template-columns: 1fr 1fr; }
+      .steps-grid     { grid-template-columns: 1fr 1fr; }
+      .step-card::after { display: none; }
+      .pricing-grid   { grid-template-columns: 1fr; max-width: 420px; }
+      .phase-grid     { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .features-grid  { grid-template-columns: 1fr; }
+      .steps-grid     { grid-template-columns: 1fr; }
+      .hook-item + .hook-item { border-left: none; border-top: 1px solid var(--border); }
+      .hooks-inner    { flex-direction: column; align-items: stretch; }
+      .notify-box     { padding: 40px 24px; }
+      .footer-inner   { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Banner ── -->
+<div class="top-banner">
+  🚀 FlexDays is coming soon — we're building something that changes HR forever.
+</div>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+        <img src="icon.png" alt="FlexDays icon" style="height:38px;width:38px;object-fit:contain;" />
+        <span style="font-size:28px;font-weight:800;color:#1E1E24;letter-spacing:-.5px;">FlexDays</span>
+      </a>
+      <div class="nav-right">
+        <span class="coming-pill">⏳ Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">
+      <span class="tag tag-coming">⏳ Coming Soon</span>
+      <span class="tag tag-teal">The HR Super App</span>
+    </div>
+    <h1>Less Delays,<br /><span class="gradient-text">More FlexDays.</span></h1>
+    <p class="hero-hook">Replace your legacy HR system<br />at a price that actually makes sense.</p>
+    <p>
+      FlexDays is the all-in-one HR platform built for modern companies, starting with
+      leave management and timesheets, growing into the complete HR super app your team
+      deserves. No bloat. No overpriced contracts. Just what works.
+    </p>
+    <div class="hero-actions">
+      <a href="#features" class="btn btn-primary">See what's coming</a>
+    </div>
+    <div class="hero-social-proof">
+      <div class="proof-item"><span class="proof-icon">⚡</span> Set up in under 5 minutes</div>
+      <div class="proof-item"><span class="proof-icon">🆓</span> Free for teams up to 10</div>
+      <div class="proof-item"><span class="proof-icon">🌍</span> Multi-country support</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Hook Strip ── -->
+<div class="hooks-strip">
+  <div class="container">
+    <div class="hooks-inner">
+      <div class="hook-item"><div class="hook-dot blue">🗓️</div> Leave Management</div>
+      <div class="hook-item"><div class="hook-dot teal">⏱️</div> Timesheet Tracking</div>
+      <div class="hook-item"><div class="hook-dot green">📋</div> Working Schedules</div>
+      <div class="hook-item"><div class="hook-dot blue">👥</div> Team Approvals</div>
+      <div class="hook-item"><div class="hook-dot teal">📊</div> HR Analytics <span style="font-size:11px;color:var(--mid);margin-left:4px;">(soon)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Replace Legacy ── -->
+<section class="replace">
+  <div class="container">
+    <div class="replace-inner">
+      <div class="replace-left">
+        <span class="tag tag-blue" style="margin-bottom:18px;display:inline-flex;">Why FlexDays?</span>
+        <h2 class="section-title">Your legacy HR system is costing you more than you think.</h2>
+        <p style="margin-top:18px;">
+          Clunky software, expensive licenses, and endless spreadsheets are the norm, but they don't have to be.
+          FlexDays is built from the ground up to be fast to set up, easy to use, and priced fairly for businesses of every size.
+        </p>
+        <a href="#features" class="btn btn-primary" style="margin-top:8px;">See what's coming →</a>
+      </div>
+      <div>
+        <div class="vs-table">
+          <div class="vs-header">
+            <span>Feature</span>
+            <span>Legacy HR Tools</span>
+            <span class="good">FlexDays ✦</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">Setup time</span>
+            <span class="vs-bad">❌ Weeks</span>
+            <span class="vs-good">✓ &lt; 5 minutes</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">Pricing</span>
+            <span class="vs-bad">❌ Expensive &amp; opaque</span>
+            <span class="vs-good">✓ Free up to 10 employees</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">Leave + Timesheet</span>
+            <span class="vs-bad">❌ Separate tools</span>
+            <span class="vs-good">✓ Unified in one place</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">Multi-country holidays</span>
+            <span class="vs-bad">❌ Manual entry</span>
+            <span class="vs-good">✓ Auto by location</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">Team-based approvals</span>
+            <span class="vs-bad">❌ Rigid workflows</span>
+            <span class="vs-good">✓ Fully configurable</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">Mobile-first</span>
+            <span class="vs-bad">❌ Desktop only</span>
+            <span class="vs-good">✓ Built mobile-first</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag tag-blue">What's inside</span>
+      <h2 class="section-title" style="margin-top:14px;">Everything your HR team needs,<br />nothing it doesn't.</h2>
+      <p class="section-sub" style="margin-top:14px;">FlexDays ships with the core features your team will actually use, and grows with you as we build the full HR super app.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#e8f2fd;">🗓️</div>
+        <h3>Leave Management</h3>
+        <p>Employees request time off in seconds. Smart balance tracking for annual, sick, WFH, and custom leave types, all automatic.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#e0f7f9;">⏱️</div>
+        <h3>Timesheet Tracking</h3>
+        <p>Timesheets integrated directly with leaves and your configured working schedule. No double entry, no sync headaches.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#d8f5f0;">📋</div>
+        <h3>Working Schedule Config</h3>
+        <p>Admins define working days, weekends, and shifts per location. Timesheets and leave balance calculations follow automatically.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#fff3cd;">👥</div>
+        <h3>Team-Based Approvals</h3>
+        <p>Multi-level approval flows configured per team. Team Admins and HR can set up custom approval chains without IT.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#e8f2fd;">🌍</div>
+        <h3>Multi-Country Holidays</h3>
+        <p>Public holidays applied automatically by country and location. Teams across borders always get the right days off.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#fde8e8;">👤</div>
+        <h3>Bulk Employee Onboarding</h3>
+        <p>Import your entire workforce from an Excel file. No manual data entry, your team is ready to go in minutes.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#d8f5f0;">🔔</div>
+        <h3>Smart Notifications</h3>
+        <p>Real-time push notifications for approvals, balance reminders, and team updates. Everyone stays in the loop.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#ede9fe;">📊</div>
+        <h3>HR Analytics &amp; Reports</h3>
+        <p>Heatmaps, leave trends, team availability, and balance reports. See your workforce at a glance.</p>
+        <span class="feat-badge coming">⏳ Coming Soon</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#fce7f3;">💸</div>
+        <h3>Payroll Integration</h3>
+        <p>Connect leave balances and timesheets directly to payroll. Eliminate manual reconciliation forever.</p>
+        <span class="feat-badge coming">⏳ Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Timesheet Deep Dive ── -->
+<section class="timesheet">
+  <div class="container">
+    <div class="ts-inner">
+      <div>
+        <span class="tag tag-teal" style="margin-bottom:18px;display:inline-flex;">Timesheets × Leave × Schedule</span>
+        <h2 class="section-title">The trio that actually<br />works together.</h2>
+        <p style="color:var(--mid);font-size:16px;margin-top:14px;line-height:1.75;">
+          Most HR tools treat timesheets and leave as separate systems. FlexDays connects them from day one, so your data is always consistent and your team never has to reconcile manually.
+        </p>
+        <div class="ts-points">
+          <div class="ts-point">
+            <div class="ts-num">1</div>
+            <div>
+              <h4>Admin configures the schedule once</h4>
+              <p>Set working days, shift hours, and locations per team. Everything downstream uses this as the single source of truth.</p>
+            </div>
+          </div>
+          <div class="ts-point">
+            <div class="ts-num">2</div>
+            <div>
+              <h4>Leave is deducted from the schedule automatically</h4>
+              <p>Approved leave days are reflected immediately in timesheets. No manual adjustments, no reconciliation ever.</p>
+            </div>
+          </div>
+          <div class="ts-point">
+            <div class="ts-num">3</div>
+            <div>
+              <h4>Balances stay accurate in real time</h4>
+              <p>Leave balances update the moment a request is approved, cancelled, or modified, always live, always correct.</p>
+            </div>
+          </div>
+          <div class="ts-point">
+            <div class="ts-num">4</div>
+            <div>
+              <h4>Managers see the full picture</h4>
+              <p>Team schedules, leave overlaps, and working hours in one unified view. No switching between apps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ts-visual">
+        <div class="ts-highlight-grid">
+          <div class="ts-hl">
+            <div class="ts-hl-icon">🗓️</div>
+            <div class="ts-hl-title">Leave deducted automatically</div>
+            <div class="ts-hl-desc">Approved leave days are removed from timesheets the moment they're confirmed, zero manual work.</div>
+          </div>
+          <div class="ts-hl">
+            <div class="ts-hl-icon">⚡</div>
+            <div class="ts-hl-title">Real-time balance updates</div>
+            <div class="ts-hl-desc">Balances update instantly on approval, cancellation, or modification. Always accurate.</div>
+          </div>
+          <div class="ts-hl">
+            <div class="ts-hl-icon">📋</div>
+            <div class="ts-hl-title">One schedule, everything synced</div>
+            <div class="ts-hl-desc">Admin sets the working schedule once. Timesheets, leave, and balances all follow automatically.</div>
+          </div>
+          <div class="ts-hl">
+            <div class="ts-hl-icon">👁️</div>
+            <div class="ts-hl-title">Full team visibility</div>
+            <div class="ts-hl-desc">Managers see overlaps, schedule gaps, and who's available, all in one unified view.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How it works ── -->
+<section class="how" id="setup">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag tag-blue">Setup so easy, it's embarrassing</span>
+      <h2 class="section-title" style="margin-top:14px;">From zero to HR-ready<br />in under 5 minutes.</h2>
+      <p class="section-sub" style="margin-top:14px;">No IT department needed. No implementation fees. No training required. Just sign up and go.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Register your company</h3>
+        <p>Create your account, set your headquarters, country, and working week. Takes two minutes.</p>
+        <span class="step-time">~2 min</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Configure schedule &amp; holidays</h3>
+        <p>Set working days per location. Public holidays are auto-populated by country, just confirm.</p>
+        <span class="step-time">~1 min</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Import your team</h3>
+        <p>Upload your employee list via Excel or invite individually. Leave balances are set instantly.</p>
+        <span class="step-time">~1 min</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>You're live</h3>
+        <p>Employees submit requests. Managers approve. HR has full visibility. That's it.</p>
+        <span class="step-time">Instant ✓</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ── -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag tag-blue">Pricing</span>
+      <h2 class="section-title" style="margin-top:14px;">Fair pricing.<br />No surprises.</h2>
+      <p class="section-sub" style="margin-top:14px;">Free for small teams. Competitively priced as you grow. Billing handled securely through Stripe.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">Free</div>
+        <div class="plan-desc">For small teams. Always free, no time limit.</div>
+        <ul class="plan-features">
+          <li><strong>Up to 10 employees</strong></li>
+          <li>Leave management &amp; balances</li>
+          <li>Timesheet tracking</li>
+          <li>Working schedule configuration</li>
+          <li>Multi-country holiday support</li>
+          <li>Team-based approvals</li>
+          <li>Bulk Excel employee import</li>
+          <li>Mobile app (iOS &amp; Android)</li>
+        </ul>
+        <a href="#pricing" class="btn btn-outline" style="width:100%;justify-content:center;">Coming soon</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">For larger teams</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price" style="font-size:32px;line-height:1.2;">Competitive<br/><span style="font-size:14px;">pricing per employee / month</span></div>
+        <div class="plan-desc">Everything in Starter — for teams with more than 10 employees.</div>
+        <ul class="plan-features">
+          <li>Everything in Starter</li>
+          <li><strong>Scales with your headcount</strong></li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary" style="width:100%;justify-content:center;">Coming soon</a>
+      </div>
+    </div>
+    <div class="stripe-badge">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#635bff"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>
+      Payments powered by <strong>Stripe</strong>, enterprise-grade security for every transaction.
+    </div>
+  </div>
+</section>
+
+<!-- ── Roadmap / Super App ── -->
+<section class="roadmap">
+  <div class="container roadmap-inner">
+    <div class="text-center">
+      <span class="tag" style="background:rgba(9,188,204,.15);color:var(--teal);margin-bottom:14px;display:inline-flex;">The Vision</span>
+      <h2 class="section-title">This is just the beginning.</h2>
+      <p class="section-sub" style="margin-top:14px;">FlexDays starts with leave and timesheets, and grows into the complete HR super app that replaces every tool in your HR stack.</p>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-label now">▶ Phase 1, Launching Soon</div>
+        <h3>Core HR Foundation</h3>
+        <ul class="phase-items">
+          <li>Leave management &amp; balances</li>
+          <li>Timesheet tracking</li>
+          <li>Working schedule configuration</li>
+          <li>Team-based multi-level approvals</li>
+          <li>Bulk employee onboarding</li>
+          <li>Multi-country public holidays</li>
+          <li>Mobile-first (iOS &amp; Android)</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label next">◆ Phase 2, Coming Next</div>
+        <h3>Analytics &amp; Integrations</h3>
+        <ul class="phase-items">
+          <li>HR analytics &amp; leave heatmaps</li>
+          <li>Payroll integration</li>
+          <li>Part-time employee schedules</li>
+          <li>Leave statement PDF export</li>
+          <li>Swap leave between employees</li>
+          <li>Extra workday requests</li>
+          <li>Balance carry-over rules</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label future">✦ The Super App, The Big Picture</div>
+        <h3>Full HR Super App</h3>
+        <ul class="phase-items">
+          <li>Recruitment &amp; ATS</li>
+          <li>Performance reviews</li>
+          <li>Org chart &amp; directories</li>
+          <li>Employee self-service portal</li>
+          <li>Benefits &amp; compensation</li>
+          <li>Onboarding workflows</li>
+          <li>One HR platform for everything</li>
+        </ul>
+      </div>
+    </div>
+    <div class="super-app-banner">
+      <h3>🚀 One platform. Your entire HR stack.</h3>
+      <p>We're building the HR super app the market has been waiting for, starting with the features teams use daily, and not stopping until everything is covered.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <img src="icon.png" alt="FlexDays icon" style="height:34px;width:34px;object-fit:contain;" />
+        <span style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-.5px;">FlexDays</span>
+      </div>
+      <span class="footer-tagline">"Less Delays, More FlexDays."</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FlexDays. All rights reserved.</span>
+      <span>Built with ❤️ for modern HR teams.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function handleNotify(e) {
+    e.preventDefault();
+    const msg = document.getElementById('notify-msg');
+    msg.textContent = '🎉 You\'re on the list! We\'ll notify you the moment FlexDays launches.';
+    msg.style.color = '#2EB872';
+    msg.style.fontWeight = '600';
+    document.getElementById('email-input').value = '';
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
