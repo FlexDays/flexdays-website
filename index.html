@@ -6,6 +6,33 @@
   <title>FlexDays</title>
   <meta name="description" content="FlexDays is the modern HR super app, simple, fast, and built to replace your legacy HR system at a price that makes sense. Free for teams up to 10." />
   <link rel="icon" href="icon.png" type="image/png" />
+  <meta name="theme-color" content="#1679d7" />
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlexDays" />
+  <meta property="og:title" content="FlexDays — Less Delays, More FlexDays." />
+  <meta property="og:description" content="FlexDays is the modern HR super app, simple, fast, and built to replace your legacy HR system at a price that makes sense. Free for teams up to 10." />
+  <meta property="og:url" content="https://flexdays.app/" />
+  <meta property="og:image" content="https://flexdays.app/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlexDays — Less Delays, More FlexDays." />
+  <meta name="twitter:description" content="FlexDays is the modern HR super app, simple, fast, and built to replace your legacy HR system at a price that makes sense. Free for teams up to 10." />
+  <meta name="twitter:image" content="https://flexdays.app/logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FlexDays",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "url": "https://flexdays.app/",
+    "description": "FlexDays is the modern HR super app, simple, fast, and built to replace your legacy HR system at a price that makes sense. Free for teams up to 10.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for teams up to 10 employees" }
+  }
+  </script>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -48,24 +75,39 @@
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 30px; border-radius: 10px; font-weight: 700;
-      font-size: 15px; cursor: pointer; transition: all .18s ease;
+      font-size: 15px; cursor: pointer;
+      transition: transform .18s ease-out, box-shadow .18s ease-out,
+                  background-color .18s ease-out, border-color .18s ease-out, opacity .18s ease-out;
       text-decoration: none; border: none; white-space: nowrap; font-family: inherit;
     }
+    .btn-block { width: 100%; justify-content: center; }
     .btn-primary {
       background: var(--blue); color: #fff;
       box-shadow: 0 4px 18px rgba(22,121,215,.38);
+      position: relative; overflow: hidden;
     }
-    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(22,121,215,.48); }
+    .btn-primary::after {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 40%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: translateX(-130%) skewX(-18deg);
+      transition: transform .5s ease; pointer-events: none;
+    }
+    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(22,121,215,.48); }
+    .btn-primary:hover::after { transform: translateX(320%) skewX(-18deg); }
     .btn-teal {
       background: linear-gradient(135deg, var(--teal), var(--green));
       color: #fff; box-shadow: 0 4px 18px rgba(9,188,204,.35);
     }
-    .btn-teal:hover { opacity: .92; transform: translateY(-1px); }
+    .btn-teal:hover { opacity: .92; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(9,188,204,.45); }
     .btn-outline {
       background: transparent; color: var(--blue);
       border: 2px solid var(--blue);
     }
-    .btn-outline:hover { background: #eef5fd; }
+    .btn-outline:hover { background: #eef5fd; transform: translateY(-1px); }
+
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid var(--blue); outline-offset: 3px;
+    }
 
     .tag {
       display: inline-flex; align-items: center; gap: 6px;
@@ -74,6 +116,8 @@
     }
     .tag-blue { background: #e8f2fd; color: var(--blue); }
     .tag-teal { background: #e0f7f9; color: #0899a8; }
+    .tag-vision { background: rgba(9,188,204,.15); color: var(--teal); }
+    .tag--lead { margin-bottom: 18px; }
 
     .section-title {
       font-size: clamp(28px, 4.5vw, 44px); font-weight: 800;
@@ -88,6 +132,13 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .mt-sm { margin-top: 14px; }
+    .mt-xs { margin-top: 8px; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    #features, #pricing, #setup, #waitlist { scroll-margin-top: 80px; }
 
     /* ── Nav ── */
     nav {
@@ -95,13 +146,21 @@
       background: rgba(255,255,255,.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
+      transition: background-color .25s ease, box-shadow .25s ease;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 4px 24px rgba(30,30,36,.08);
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
       padding: 12px 0;
+      transition: padding .25s ease;
     }
-    .nav-logo { display: block; line-height: 0; }
-    .nav-logo img { height: 52px; display: block; }
+    nav.scrolled .nav-inner { padding: 7px 0; }
+    .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .brand img { height: 38px; width: 38px; object-fit: contain; }
+    .brand-name { font-size: 28px; font-weight: 800; color: var(--dark); letter-spacing: -.5px; }
     .nav-right { display: flex; align-items: center; gap: 14px; }
     .btn-nav { padding: 10px 22px; font-size: 14px; }
     .nav-signin {
@@ -116,13 +175,32 @@
       background: linear-gradient(165deg, #f0f7ff 0%, #e8f9fb 55%, #f5fff9 100%);
       position: relative; overflow: hidden;
     }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(25deg, rgba(22,121,215,.08) 0%, rgba(9,188,204,.06) 45%, rgba(6,187,174,.09) 100%);
+      opacity: 0; animation: hero-glow 14s ease-in-out infinite alternate;
+    }
+    @keyframes hero-glow { to { opacity: 1; } }
     .blob {
       position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: .45;
+      will-change: transform;
     }
-    .blob-1 { width: 500px; height: 500px; background: #c5e3fb; top: -120px; right: -80px; }
-    .blob-2 { width: 380px; height: 380px; background: #b3f0f3; bottom: -80px; left: -60px; }
+    .blob-1 { width: 500px; height: 500px; background: #c5e3fb; top: -120px; right: -80px; animation: drift-1 16s ease-in-out infinite; }
+    .blob-2 { width: 380px; height: 380px; background: #b3f0f3; bottom: -80px; left: -60px; animation: drift-2 20s ease-in-out infinite; }
+    @keyframes drift-1 { 50% { transform: translate(-36px, 28px) scale(1.07); } }
+    @keyframes drift-2 { 50% { transform: translate(30px, -24px) scale(1.05); } }
 
     .hero-inner { position: relative; z-index: 1; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+    .hero-eyebrow, .hero h1, .hero-hook, .hero-lede, .hero-actions, .hero-social-proof {
+      animation: rise .6s cubic-bezier(.22,.61,.36,1) both;
+    }
+    .hero-eyebrow      { animation-delay: .05s; }
+    .hero h1           { animation-delay: .14s; }
+    .hero-hook         { animation-delay: .24s; }
+    .hero-lede         { animation-delay: .32s; }
+    .hero-actions      { animation-delay: .42s; }
+    .hero-social-proof { animation-delay: .52s; }
     .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
     .hero h1 {
       font-size: clamp(38px, 5.5vw, 62px); font-weight: 900;
@@ -155,7 +233,8 @@
     }
     .hook-item {
       display: flex; align-items: center; gap: 10px;
-      padding: 12px 28px; font-size: 14px; font-weight: 600; color: var(--dark);
+      padding: 12px 20px; font-size: 14px; font-weight: 600; color: var(--dark);
+      white-space: nowrap;
     }
     .hook-item + .hook-item { border-left: 1px solid var(--border); }
     .hook-dot {
@@ -165,12 +244,13 @@
     .hook-dot.blue  { background: #e8f2fd; }
     .hook-dot.teal  { background: #e0f7f9; }
     .hook-dot.green { background: #d8f5f0; }
+    .hook-soon { font-size: 11px; color: var(--mid); margin-left: 4px; }
 
     /* ── Replace Legacy ── */
     .replace { padding: 96px 0; background: var(--white); }
     .replace-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .replace-left .section-title { margin-bottom: 20px; }
-    .replace-left p { font-size: 16px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
+    .replace-left p { font-size: 16px; color: var(--mid); line-height: 1.75; margin-top: 18px; margin-bottom: 28px; }
 
     .vs-table { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
     .vs-header {
@@ -184,8 +264,10 @@
       display: grid; grid-template-columns: 1fr 1fr 1fr;
       padding: 14px 20px; border-top: 1px solid var(--border);
       align-items: center; font-size: 14px;
+      transition: background-color .15s ease-out;
     }
     .vs-row:nth-child(even) { background: #fafbfc; }
+    .vs-row:hover { background: #f0f7ff; }
     .vs-label { font-weight: 600; color: var(--dark); }
     .vs-bad  { color: var(--danger); display: flex; align-items: center; gap: 5px; font-weight: 500; }
     .vs-good { color: var(--success); display: flex; align-items: center; gap: 5px; font-weight: 600; }
@@ -195,23 +277,63 @@
     .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
     .feat-card {
       background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px; transition: all .2s;
+      border-radius: 14px; padding: 28px;
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
     }
-    .feat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: #b3d4f5; }
+    .feat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px) scale(1.01); border-color: #b3d4f5; }
     .feat-icon {
       width: 50px; height: 50px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       font-size: 24px; margin-bottom: 18px;
     }
+    .bg-blue   { background: #e8f2fd; }
+    .bg-teal   { background: #e0f7f9; }
+    .bg-green  { background: #d8f5f0; }
+    .bg-amber  { background: #fff3cd; }
+    .bg-red    { background: #fde8e8; }
+    .bg-purple { background: #ede9fe; }
+    .bg-pink   { background: #fce7f3; }
     .feat-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
     .feat-card p  { font-size: 14px; color: var(--mid); line-height: 1.65; }
     .feat-badge { display: inline-block; margin-top: 12px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
     .feat-badge.coming { background: #fff3cd; color: #92400e; }
     .feat-badge.phase1 { background: #e8f2fd; color: var(--blue); }
 
+    /* ── AI vision card ── */
+    .ai-card {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #0f1724 0%, #0a2540 60%, #0d3050 100%);
+      border: 1px solid rgba(9,188,204,.3);
+      position: relative; overflow: hidden;
+    }
+    .ai-card:hover { border-color: rgba(9,188,204,.55); }
+    .ai-glow {
+      position: absolute; top: -40px; right: -40px; width: 220px; height: 220px;
+      border-radius: 50%; pointer-events: none;
+      background: radial-gradient(circle, rgba(9,188,204,.12) 0%, transparent 70%);
+    }
+    .ai-row { display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .ai-emoji { font-size: 52px; flex-shrink: 0; line-height: 1; }
+    .ai-body { flex: 1; min-width: 260px; }
+    .ai-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .ai-head h3 { color: #fff; font-size: 20px; margin: 0; }
+    .ai-badge {
+      background: rgba(167,139,250,.2); color: #c4b5fd; border: 1px solid rgba(167,139,250,.3);
+      padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;
+      letter-spacing: .5px; text-transform: uppercase;
+    }
+    .ai-desc { color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.7; margin-bottom: 20px; max-width: 620px; }
+    .ai-quotes { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ai-quote {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: 10px 16px; font-size: 13px;
+      color: rgba(255,255,255,.8); font-style: italic;
+    }
+
     /* ── Timesheet ── */
     .timesheet { padding: 96px 0; background: var(--white); }
     .ts-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .ts-copy > p { color: var(--mid); font-size: 16px; margin-top: 14px; line-height: 1.75; }
     .ts-points { display: grid; gap: 20px; margin-top: 32px; }
     .ts-point { display: flex; gap: 16px; }
     .ts-num {
@@ -230,9 +352,10 @@
     .ts-highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .ts-hl {
       background: var(--white); border-radius: 14px; padding: 22px;
-      border: 1px solid var(--border); transition: all .2s;
+      border: 1px solid var(--border);
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
     }
-    .ts-hl:hover { border-color: #93c5fd; box-shadow: var(--shadow-sm); }
+    .ts-hl:hover { border-color: #93c5fd; box-shadow: var(--shadow-md); transform: translateY(-3px) scale(1.01); }
     .ts-hl-icon  { font-size: 26px; margin-bottom: 12px; }
     .ts-hl-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
     .ts-hl-desc  { font-size: 13px; color: var(--mid); line-height: 1.6; }
@@ -243,14 +366,20 @@
     .step-card {
       background: var(--white); border: 1px solid var(--border);
       border-radius: 14px; padding: 28px 22px; text-align: center;
-      position: relative; transition: all .2s;
+      position: relative;
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
     }
-    .step-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .step-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px) scale(1.01); border-color: #b3d4f5; }
     .step-card::after {
-      content: '→'; position: absolute; right: -20px; top: 44px;
+      content: '→';
+      content: '→' / '';
+      position: absolute; right: -20px; top: 44px;
       font-size: 20px; color: var(--border); font-weight: 700;
     }
     .step-card:last-child::after { display: none; }
+    .js .step-card::after { opacity: 0; }
+    .step-card.in::after { animation: arrow-in .4s ease-out both; animation-delay: calc(var(--d, 0s) + .25s); }
+    @keyframes arrow-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
     .step-num {
       width: 52px; height: 52px; border-radius: 50%;
       background: linear-gradient(135deg, var(--blue), var(--teal));
@@ -271,10 +400,15 @@
     .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 860px; margin: 56px auto 0; }
     .plan-card {
       border: 2px solid var(--border); border-radius: 18px;
-      padding: 36px 32px; position: relative; transition: all .2s;
+      padding: 36px 32px; position: relative; background: var(--white);
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
     }
-    .plan-card:hover { border-color: #93c5fd; box-shadow: var(--shadow-md); }
-    .plan-card.featured { border-color: var(--blue); box-shadow: var(--shadow-lg); }
+    .plan-card:hover { border-color: #93c5fd; box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .plan-card.featured {
+      border-color: var(--blue); box-shadow: var(--shadow-lg);
+      background: linear-gradient(180deg, #f4faff 0%, var(--white) 42%);
+    }
+    .plan-card.featured:hover { border-color: var(--blue); }
     .plan-badge {
       position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
       background: var(--blue); color: #fff; font-size: 11px; font-weight: 700;
@@ -284,6 +418,8 @@
     .plan-name  { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--mid); margin-bottom: 8px; }
     .plan-price { font-size: 48px; font-weight: 900; color: var(--dark); line-height: 1; margin-bottom: 6px; }
     .plan-price span { font-size: 22px; font-weight: 600; color: var(--mid); }
+    .plan-price-sm { font-size: 32px; line-height: 1.2; }
+    .plan-price-sm span { font-size: 14px; }
     .plan-desc  { font-size: 14px; color: var(--mid); margin-bottom: 28px; line-height: 1.6; }
     .plan-features { list-style: none; display: grid; gap: 12px; margin-bottom: 32px; }
     .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--dark); }
@@ -294,6 +430,7 @@
     .plan-features li.limited::before { content: '~'; color: var(--warn); font-weight: 800; }
     .plan-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--mid); margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
     .stripe-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; font-size: 12px; color: var(--mid); }
+    .stripe-badge svg { flex-shrink: 0; }
     .stripe-badge strong { color: #635bff; }
 
     /* ── Roadmap ── */
@@ -315,9 +452,10 @@
     .phase-card {
       border: 1px solid rgba(255,255,255,.1); border-radius: 14px;
       padding: 28px; background: rgba(255,255,255,.04);
-      backdrop-filter: blur(8px); transition: all .2s;
+      backdrop-filter: blur(8px);
+      transition: transform .2s ease-out, border-color .2s ease-out, background-color .2s ease-out;
     }
-    .phase-card:hover { border-color: rgba(9,188,204,.4); background: rgba(255,255,255,.07); }
+    .phase-card:hover { border-color: rgba(9,188,204,.4); background: rgba(255,255,255,.07); transform: translateY(-3px); }
     .phase-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px; }
     .phase-label.now    { color: var(--teal); }
     .phase-label.next   { color: #fbbf24; }
@@ -326,6 +464,7 @@
     .phase-items { list-style: none; display: grid; gap: 8px; }
     .phase-items li { font-size: 13px; color: rgba(255,255,255,.65); display: flex; align-items: flex-start; gap: 8px; }
     .phase-items li::before { content: '›'; color: var(--teal); font-weight: 800; }
+    .phase-quote { color: rgba(255,255,255,.6); font-size: 12px; }
     .super-app-banner {
       margin-top: 48px; padding: 28px 32px;
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
@@ -350,15 +489,44 @@
       outline: none; transition: border-color .15s;
     }
     .notify-form input:focus { border-color: var(--blue); }
+    .notify-msg { min-height: 24px; margin-top: 14px; font-size: 14px; font-weight: 600; }
+    .notify-msg.ok  { color: var(--success); }
+    .notify-msg.err { color: var(--danger); }
     .notify-note { font-size: 12px; color: var(--mid); margin-top: 14px; }
 
     /* ── Footer ── */
     footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 48px 0 28px; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 36px; }
-    .footer-tagline { font-size: 14px; font-style: italic; color: rgba(255,255,255,.4); }
+    .footer-tagline { font-size: 14px; font-style: italic; color: rgba(255,255,255,.65); }
+    footer .brand img { height: 34px; width: 34px; }
+    footer .brand-name { color: #fff; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
 
+    /* ── Scroll reveal & motion ── */
+    .js .reveal { opacity: 0; }
+    .js .reveal.in {
+      opacity: 1;
+      animation: rise .55s cubic-bezier(.22,.61,.36,1) backwards;
+      animation-delay: var(--d, 0s);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0s !important;
+      }
+      .js .reveal, .js .step-card::after { opacity: 1; }
+    }
+
     /* ── Responsive ── */
+    @media (max-width: 1080px) {
+      .hooks-inner { gap: 4px 10px; }
+      .hook-item + .hook-item { border-left: none; }
+    }
     @media (max-width: 900px) {
       .replace-inner  { grid-template-columns: 1fr; }
       .ts-inner       { grid-template-columns: 1fr; }
@@ -369,6 +537,10 @@
       .phase-grid     { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
+      .brand-name     { font-size: 22px; }
+      .brand img      { height: 32px; width: 32px; }
+      .nav-right      { gap: 10px; }
+      .btn-nav        { padding: 9px 14px; font-size: 13px; }
       .features-grid  { grid-template-columns: 1fr; }
       .steps-grid     { grid-template-columns: 1fr; }
       .hook-item + .hook-item { border-left: none; border-top: 1px solid var(--border); }
@@ -381,12 +553,12 @@
 <body>
 
 <!-- ── Nav ── -->
-<nav>
+<nav aria-label="Primary">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-        <img src="icon.png" alt="FlexDays icon" style="height:38px;width:38px;object-fit:contain;" />
-        <span style="font-size:28px;font-weight:800;color:#1E1E24;letter-spacing:-.5px;">FlexDays</span>
+      <a href="#" class="brand" aria-label="FlexDays home">
+        <img src="icon.png" alt="" />
+        <span class="brand-name">FlexDays</span>
       </a>
       <div class="nav-right">
         <a href="https://portal.flexdays.app" class="nav-signin">Sign in</a>
@@ -396,6 +568,7 @@
   </div>
 </nav>
 
+<main>
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="blob blob-1"></div>
@@ -406,7 +579,7 @@
     </div>
     <h1>Less Delays,<br /><span class="gradient-text">More FlexDays.</span></h1>
     <p class="hero-hook">Replace your legacy HR system<br />at a price that actually makes sense.</p>
-    <p>
+    <p class="hero-lede">
       FlexDays is the all-in-one HR platform built for modern companies, starting with
       leave management and timesheets, growing into the complete HR super app your team
       deserves. No bloat. No overpriced contracts. Just what works.
@@ -416,9 +589,9 @@
       <a href="#features" class="btn btn-outline">See features</a>
     </div>
     <div class="hero-social-proof">
-      <div class="proof-item"><span class="proof-icon">⚡</span> Set up in under 5 minutes</div>
-      <div class="proof-item"><span class="proof-icon">🆓</span> Free for teams up to 10</div>
-      <div class="proof-item"><span class="proof-icon">🌍</span> Multi-country support</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true">⚡</span> Set up in under 5 minutes</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true">🆓</span> Free for teams up to 10</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true">🌍</span> Multi-country support</div>
     </div>
   </div>
 </section>
@@ -426,12 +599,12 @@
 <!-- ── Hook Strip ── -->
 <div class="hooks-strip">
   <div class="container">
-    <div class="hooks-inner">
-      <div class="hook-item"><div class="hook-dot blue">🗓️</div> Leave Management</div>
-      <div class="hook-item"><div class="hook-dot teal">⏱️</div> Timesheet Tracking</div>
-      <div class="hook-item"><div class="hook-dot green">📋</div> Working Schedules</div>
-      <div class="hook-item"><div class="hook-dot blue">👥</div> Team Approvals</div>
-      <div class="hook-item"><div class="hook-dot teal">📊</div> HR Analytics <span style="font-size:11px;color:var(--mid);margin-left:4px;">(soon)</span></div>
+    <div class="hooks-inner" data-stagger>
+      <div class="hook-item"><div class="hook-dot blue" aria-hidden="true">🗓️</div> Leave Management</div>
+      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true">⏱️</div> Timesheet Tracking</div>
+      <div class="hook-item"><div class="hook-dot green" aria-hidden="true">📋</div> Working Schedules</div>
+      <div class="hook-item"><div class="hook-dot blue" aria-hidden="true">👥</div> Team Approvals</div>
+      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true">📊</div> HR Analytics <span class="hook-soon">(soon)</span></div>
     </div>
   </div>
 </div>
@@ -440,17 +613,17 @@
 <section class="replace">
   <div class="container">
     <div class="replace-inner">
-      <div class="replace-left">
-        <span class="tag tag-blue" style="margin-bottom:18px;display:inline-flex;">Why FlexDays?</span>
+      <div class="replace-left reveal">
+        <span class="tag tag-blue tag--lead">Why FlexDays?</span>
         <h2 class="section-title">Your legacy HR system is costing you more than you think.</h2>
-        <p style="margin-top:18px;">
+        <p>
           Clunky software, expensive licenses, and endless spreadsheets are the norm, but they don't have to be.
           FlexDays is built from the ground up to be fast to set up, easy to use, and priced fairly for businesses of every size.
         </p>
-        <a href="#features" class="btn btn-primary" style="margin-top:8px;">See what's inside →</a>
+        <a href="#features" class="btn btn-primary mt-xs">See what's inside →</a>
       </div>
       <div>
-        <div class="vs-table">
+        <div class="vs-table" data-stagger>
           <div class="vs-header">
             <span>Feature</span>
             <span>Legacy HR Tools</span>
@@ -495,83 +668,83 @@
 <!-- ── Features ── -->
 <section class="features" id="features">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal">
       <span class="tag tag-blue">What's inside</span>
-      <h2 class="section-title" style="margin-top:14px;">Everything your HR team needs,<br />nothing it doesn't.</h2>
-      <p class="section-sub" style="margin-top:14px;">FlexDays ships with the core features your team will actually use, and grows with you as we build the full HR super app.</p>
+      <h2 class="section-title mt-sm">Everything your HR team needs,<br />nothing it doesn't.</h2>
+      <p class="section-sub mt-sm">FlexDays ships with the core features your team will actually use, and grows with you as we build the full HR super app.</p>
     </div>
-    <div class="features-grid">
+    <div class="features-grid" data-stagger>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#e8f2fd;">🗓️</div>
+        <div class="feat-icon bg-blue" aria-hidden="true">🗓️</div>
         <h3>Leave Management</h3>
         <p>Employees request time off in seconds. Smart balance tracking for annual, sick, WFH, and custom leave types, all automatic.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#e0f7f9;">⏱️</div>
+        <div class="feat-icon bg-teal" aria-hidden="true">⏱️</div>
         <h3>Timesheet Tracking</h3>
         <p>Timesheets integrated directly with leaves and your configured working schedule. No double entry, no sync headaches.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#d8f5f0;">📋</div>
+        <div class="feat-icon bg-green" aria-hidden="true">📋</div>
         <h3>Working Schedule Config</h3>
         <p>Admins define working days, weekends, and shifts per location. Timesheets and leave balance calculations follow automatically.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#fff3cd;">👥</div>
+        <div class="feat-icon bg-amber" aria-hidden="true">👥</div>
         <h3>Team-Based Approvals</h3>
         <p>Multi-level approval flows configured per team. Team Admins and HR can set up custom approval chains without IT.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#e8f2fd;">🌍</div>
+        <div class="feat-icon bg-blue" aria-hidden="true">🌍</div>
         <h3>Multi-Country Holidays</h3>
         <p>Public holidays applied automatically by country and location. Teams across borders always get the right days off.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#fde8e8;">👤</div>
+        <div class="feat-icon bg-red" aria-hidden="true">👤</div>
         <h3>Bulk Employee Onboarding</h3>
         <p>Import your entire workforce from an Excel file. No manual data entry, your team is ready to go in minutes.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#d8f5f0;">🔔</div>
+        <div class="feat-icon bg-green" aria-hidden="true">🔔</div>
         <h3>Smart Notifications</h3>
         <p>Real-time push notifications for approvals, balance reminders, and team updates. Everyone stays in the loop.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#ede9fe;">📊</div>
+        <div class="feat-icon bg-purple" aria-hidden="true">📊</div>
         <h3>HR Analytics &amp; Reports</h3>
         <p>Heatmaps, leave trends, team availability, and balance reports. See your workforce at a glance.</p>
         <span class="feat-badge coming">⏳ Coming Soon</span>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#fce7f3;">💸</div>
+        <div class="feat-icon bg-pink" aria-hidden="true">💸</div>
         <h3>Payroll Integration</h3>
         <p>Connect leave balances and timesheets directly to payroll. Eliminate manual reconciliation forever.</p>
         <span class="feat-badge coming">⏳ Coming Soon</span>
       </div>
 
-      <div class="feat-card" style="grid-column: span 3; background: linear-gradient(135deg, #0f1724 0%, #0a2540 60%, #0d3050 100%); border: 1px solid rgba(9,188,204,.3); position: relative; overflow: hidden;">
-        <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle, rgba(9,188,204,.12) 0%, transparent 70%);pointer-events:none;"></div>
-        <div style="display:flex;align-items:flex-start;gap:32px;flex-wrap:wrap;position:relative;z-index:1;">
-          <div style="font-size:52px;flex-shrink:0;line-height:1;">🤖</div>
-          <div style="flex:1;min-width:260px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
-              <h3 style="color:#fff;font-size:20px;margin:0;">AI HR Assistant</h3>
-              <span style="background:rgba(167,139,250,.2);color:#c4b5fd;border:1px solid rgba(167,139,250,.3);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;">✦ Our Vision</span>
+      <div class="feat-card ai-card">
+        <div class="ai-glow" aria-hidden="true"></div>
+        <div class="ai-row">
+          <div class="ai-emoji" aria-hidden="true">🤖</div>
+          <div class="ai-body">
+            <div class="ai-head">
+              <h3>AI HR Assistant</h3>
+              <span class="ai-badge">✦ Our Vision</span>
             </div>
-            <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:20px;max-width:620px;">
+            <p class="ai-desc">
               This is where we're headed, and we want to be upfront about it. The goal is a day where you describe what you need in plain language and FlexDays handles it instantly. No clicks, no menus, no training required.
             </p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,.8);font-style:italic;">"Approve all pending requests from engineering"</div>
-              <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,.8);font-style:italic;">"Who's off next week?"</div>
-              <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,.8);font-style:italic;">"Give Alex 3 extra leave days"</div>
+            <div class="ai-quotes">
+              <div class="ai-quote">"Approve all pending requests from engineering"</div>
+              <div class="ai-quote">"Who's off next week?"</div>
+              <div class="ai-quote">"Give Alex 3 extra leave days"</div>
             </div>
           </div>
         </div>
@@ -584,13 +757,13 @@
 <section class="timesheet">
   <div class="container">
     <div class="ts-inner">
-      <div>
-        <span class="tag tag-teal" style="margin-bottom:18px;display:inline-flex;">Timesheets × Leave × Schedule</span>
+      <div class="ts-copy reveal">
+        <span class="tag tag-teal tag--lead">Timesheets × Leave × Schedule</span>
         <h2 class="section-title">The trio that actually<br />works together.</h2>
-        <p style="color:var(--mid);font-size:16px;margin-top:14px;line-height:1.75;">
+        <p>
           Most HR tools treat timesheets and leave as separate systems. FlexDays connects them from day one, so your data is always consistent and your team never has to reconcile manually.
         </p>
-        <div class="ts-points">
+        <div class="ts-points" data-stagger>
           <div class="ts-point">
             <div class="ts-num">1</div>
             <div>
@@ -621,25 +794,25 @@
           </div>
         </div>
       </div>
-      <div class="ts-visual">
-        <div class="ts-highlight-grid">
+      <div class="ts-visual reveal">
+        <div class="ts-highlight-grid" data-stagger>
           <div class="ts-hl">
-            <div class="ts-hl-icon">🗓️</div>
+            <div class="ts-hl-icon" aria-hidden="true">🗓️</div>
             <div class="ts-hl-title">Leave deducted automatically</div>
             <div class="ts-hl-desc">Approved leave days are removed from timesheets the moment they're confirmed, zero manual work.</div>
           </div>
           <div class="ts-hl">
-            <div class="ts-hl-icon">⚡</div>
+            <div class="ts-hl-icon" aria-hidden="true">⚡</div>
             <div class="ts-hl-title">Real-time balance updates</div>
             <div class="ts-hl-desc">Balances update instantly on approval, cancellation, or modification. Always accurate.</div>
           </div>
           <div class="ts-hl">
-            <div class="ts-hl-icon">📋</div>
+            <div class="ts-hl-icon" aria-hidden="true">📋</div>
             <div class="ts-hl-title">One schedule, everything synced</div>
             <div class="ts-hl-desc">Admin sets the working schedule once. Timesheets, leave, and balances all follow automatically.</div>
           </div>
           <div class="ts-hl">
-            <div class="ts-hl-icon">👁️</div>
+            <div class="ts-hl-icon" aria-hidden="true">👁️</div>
             <div class="ts-hl-title">Full team visibility</div>
             <div class="ts-hl-desc">Managers see overlaps, schedule gaps, and who's available, all in one unified view.</div>
           </div>
@@ -652,12 +825,12 @@
 <!-- ── How it works ── -->
 <section class="how" id="setup">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal">
       <span class="tag tag-blue">Setup so easy, it's embarrassing</span>
-      <h2 class="section-title" style="margin-top:14px;">From zero to HR-ready<br />in under 5 minutes.</h2>
-      <p class="section-sub" style="margin-top:14px;">No IT department needed. No implementation fees. No training required. Just sign up and go.</p>
+      <h2 class="section-title mt-sm">From zero to HR-ready<br />in under 5 minutes.</h2>
+      <p class="section-sub mt-sm">No IT department needed. No implementation fees. No training required. Just sign up and go.</p>
     </div>
-    <div class="steps-grid">
+    <div class="steps-grid" data-stagger>
       <div class="step-card">
         <div class="step-num">1</div>
         <h3>Register your company</h3>
@@ -689,12 +862,12 @@
 <!-- ── Pricing ── -->
 <section class="pricing" id="pricing">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal">
       <span class="tag tag-blue">Pricing</span>
-      <h2 class="section-title" style="margin-top:14px;">Fair pricing.<br />No surprises.</h2>
-      <p class="section-sub" style="margin-top:14px;">Free for small teams. Competitively priced as you grow. Billing handled securely through Stripe.</p>
+      <h2 class="section-title mt-sm">Fair pricing.<br />No surprises.</h2>
+      <p class="section-sub mt-sm">Free for small teams. Competitively priced as you grow. Billing handled securely through Stripe.</p>
     </div>
-    <div class="pricing-grid">
+    <div class="pricing-grid" data-stagger>
       <div class="plan-card">
         <div class="plan-name">Starter</div>
         <div class="plan-price">Free</div>
@@ -709,22 +882,22 @@
           <li>Bulk Excel employee import</li>
           <li>Mobile app (iOS &amp; Android)</li>
         </ul>
-        <a href="https://portal.flexdays.app" class="btn btn-outline" style="width:100%;justify-content:center;">Get started free</a>
+        <a href="https://portal.flexdays.app" class="btn btn-outline btn-block">Get started free</a>
       </div>
       <div class="plan-card featured">
         <div class="plan-badge">For larger teams</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price" style="font-size:32px;line-height:1.2;">Competitive<br/><span style="font-size:14px;">pricing per employee / month</span></div>
+        <div class="plan-price plan-price-sm">Competitive<br/><span>pricing per employee / month</span></div>
         <div class="plan-desc">Everything in Starter — for teams with more than 10 employees.</div>
         <ul class="plan-features">
           <li>Everything in Starter</li>
           <li><strong>Scales with your headcount</strong></li>
         </ul>
-        <a href="https://portal.flexdays.app" class="btn btn-primary" style="width:100%;justify-content:center;">Get started</a>
+        <a href="https://portal.flexdays.app" class="btn btn-primary btn-block">Get started</a>
       </div>
     </div>
-    <div class="stripe-badge">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#635bff"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>
+    <div class="stripe-badge reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#635bff"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>
       Payments powered by <strong>Stripe</strong>, enterprise-grade security for every transaction.
     </div>
   </div>
@@ -733,12 +906,12 @@
 <!-- ── Roadmap / Super App ── -->
 <section class="roadmap">
   <div class="container roadmap-inner">
-    <div class="text-center">
-      <span class="tag" style="background:rgba(9,188,204,.15);color:var(--teal);margin-bottom:14px;display:inline-flex;">The Vision</span>
+    <div class="text-center reveal">
+      <span class="tag tag-vision tag--lead">The Vision</span>
       <h2 class="section-title">This is just the beginning.</h2>
-      <p class="section-sub" style="margin-top:14px;">FlexDays starts with leave and timesheets, and grows into the complete HR super app that replaces every tool in your HR stack.</p>
+      <p class="section-sub mt-sm">FlexDays starts with leave and timesheets, and grows into the complete HR super app that replaces every tool in your HR stack.</p>
     </div>
-    <div class="phase-grid">
+    <div class="phase-grid" data-stagger>
       <div class="phase-card">
         <div class="phase-label now">▶ Phase 1, Available Now</div>
         <h3>Core HR Foundation</h3>
@@ -777,25 +950,43 @@
           <li>Benefits &amp; compensation</li>
           <li>Onboarding workflows</li>
           <li>One HR platform for everything</li>
-          <li>AI HR Assistant — describe what you need in plain language and FlexDays does it. <em style="color:rgba(255,255,255,.4);font-size:12px;">"Approve all pending requests from engineering"</em></li>
+          <li>AI HR Assistant — describe what you need in plain language and FlexDays does it. <em class="phase-quote">"Approve all pending requests from engineering"</em></li>
         </ul>
       </div>
     </div>
-    <div class="super-app-banner">
+    <div class="super-app-banner reveal">
       <h3>🚀 One platform. Your entire HR stack.</h3>
       <p>We're building the HR super app the market has been waiting for, starting with the features teams use daily, and not stopping until everything is covered.</p>
     </div>
   </div>
 </section>
 
+<!-- ── Waitlist ── -->
+<section class="notify" id="waitlist" aria-labelledby="notify-title">
+  <div class="container">
+    <div class="notify-box reveal">
+      <span class="tag tag-teal tag--lead">Stay in the loop</span>
+      <h2 class="section-title" id="notify-title">Be the first to know<br />what ships next.</h2>
+      <p>FlexDays is moving fast — analytics, payroll integration, and more are on the way. Leave your email and we'll keep you posted.</p>
+      <form class="notify-form" onsubmit="handleNotify(event)" novalidate>
+        <label class="sr-only" for="email-input">Email address</label>
+        <input id="email-input" type="email" name="email" placeholder="you@company.com" autocomplete="email" required />
+        <button type="submit" class="btn btn-teal">Notify me</button>
+      </form>
+      <p id="notify-msg" class="notify-msg" role="status" aria-live="polite"></p>
+      <p class="notify-note">No spam, ever. Product updates only — unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+</main>
 
 <!-- ── Footer ── -->
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <img src="icon.png" alt="FlexDays icon" style="height:34px;width:34px;object-fit:contain;" />
-        <span style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-.5px;">FlexDays</span>
+      <div class="brand">
+        <img src="icon.png" alt="" />
+        <span class="brand-name">FlexDays</span>
       </div>
       <span class="footer-tagline">"Less Delays, More FlexDays."</span>
     </div>
@@ -807,13 +998,21 @@
 </footer>
 
 <script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function handleNotify(e) {
     e.preventDefault();
+    const input = document.getElementById('email-input');
     const msg = document.getElementById('notify-msg');
+    if (!/^\S+@\S+\.\S+$/.test(input.value.trim())) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.className = 'notify-msg err';
+      input.focus();
+      return;
+    }
     msg.textContent = '🎉 You\'re on the list! We\'ll notify you the moment FlexDays launches.';
-    msg.style.color = '#2EB872';
-    msg.style.fontWeight = '600';
-    document.getElementById('email-input').value = '';
+    msg.className = 'notify-msg ok';
+    input.value = '';
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -823,10 +1022,43 @@
       const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+        window.scrollTo({ top: target.offsetTop - 72, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
       }
     });
   });
+
+  // Sticky nav: solid background + shadow + tighter padding once scrolled
+  const nav = document.querySelector('nav');
+  let navTick = false;
+  function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 12); navTick = false; }
+  window.addEventListener('scroll', () => {
+    if (!navTick) { navTick = true; requestAnimationFrame(updateNav); }
+  }, { passive: true });
+  updateNav();
+
+  // Stagger: children of [data-stagger] groups cascade in with incremental delays
+  document.querySelectorAll('[data-stagger]').forEach(group => {
+    [...group.children].forEach((child, i) => {
+      child.classList.add('reveal');
+      child.style.setProperty('--d', Math.min(i * 60, 480) + 'ms');
+    });
+  });
+
+  // Scroll reveal via IntersectionObserver (skipped for reduced-motion users)
+  const revealEls = document.querySelectorAll('.reveal');
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
 </script>
 </body>
 </html>
