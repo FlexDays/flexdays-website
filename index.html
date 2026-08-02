@@ -107,6 +107,21 @@
     }
     .btn-outline:hover { background: #eef5fd; transform: translateY(-1px); }
 
+    /* ── "Coming soon" badge (non-clickable, replaces portal CTAs) ── */
+    .btn-soon {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 28px; border-radius: 10px;
+      font-family: var(--font-display); font-weight: 700; font-size: 15px;
+      color: var(--mid); background: var(--bg);
+      border: 1px dashed var(--border);
+      cursor: default; white-space: nowrap; user-select: none;
+    }
+    .btn-soon .soon-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+      background: var(--warn); box-shadow: 0 0 0 4px rgba(255,193,7,.2);
+    }
+    .btn-soon-nav { padding: 9px 18px; font-size: 13px; }
+
     a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 3px solid var(--blue); outline-offset: 3px;
     }
@@ -371,6 +386,14 @@
     /* ── How it works ── */
     .how { padding: 96px 0; background: var(--bg); }
     .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px; }
+    .steps-grid-6 { grid-template-columns: repeat(3,1fr); }
+    .steps-grid-6 .step-card:nth-child(3n)::after { display: none; }
+    .how-done {
+      max-width: 640px; margin: 40px auto 0; text-align: center;
+      font-size: 15px; font-weight: 600; color: var(--dark);
+      background: var(--white); border: 1px solid rgba(13,37,63,.08);
+      border-radius: 12px; padding: 16px 24px; box-shadow: 0 1px 2px rgba(13,37,63,.04);
+    }
     .step-card {
       background: var(--white); border: 1px solid var(--border);
       border-radius: 14px; padding: 28px 22px; text-align: center;
@@ -436,6 +459,7 @@
     .plan-features li.no::before { content: '—'; color: var(--border); }
     .plan-features li.limited { color: var(--dark); }
     .plan-features li.limited::before { content: '~'; color: var(--warn); font-weight: 800; }
+    .plan-features:last-child { margin-bottom: 0; }
     .plan-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--mid); margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
     .stripe-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; font-size: 12px; color: var(--mid); }
     .stripe-badge svg { flex-shrink: 0; }
@@ -655,32 +679,19 @@
     .phone {
       position: relative;
       width: 300px; max-width: 100%;
-      padding: 11px;
-      background: linear-gradient(155deg, #232d3d 0%, #0b1220 100%);
-      border-radius: 46px;
-      border: 1px solid rgba(255,255,255,.1);
-      box-shadow: 0 36px 68px -24px rgba(22,121,215,.5), 0 16px 34px rgba(13,37,63,.2);
+      padding: 7px;
+      background: linear-gradient(155deg, #2b3648 0%, #141c28 100%);
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 20px 40px -20px rgba(13,37,63,.34), 0 6px 16px rgba(13,37,63,.12);
       animation: float-window 6s ease-in-out infinite;
       will-change: transform;
-    }
-    /* side buttons */
-    .phone::before {
-      content: ''; position: absolute; right: -3px; top: 116px;
-      width: 3px; height: 56px; border-radius: 2px;
-      background: linear-gradient(#2a3547, #151d2a);
-    }
-    .phone::after {
-      content: ''; position: absolute; left: -3px; top: 96px;
-      width: 3px; height: 34px; border-radius: 2px;
-      background: linear-gradient(#2a3547, #151d2a);
-      box-shadow: 0 46px 0 -6px #1d2636, 0 92px 0 -6px #1d2636;
     }
     .phone-screen {
       position: relative;
       display: block; overflow: hidden;
-      border-radius: 38px; background: #fff;
+      border-radius: 30px; background: #fff;  /* sits flush inside the thinner bezel */
       aspect-ratio: 9 / 19.5;                 /* always phone-shaped */
-      -webkit-mask-image: -webkit-radial-gradient(#fff, #000); /* clip iOS corners */
     }
     .phone-screen img {
       display: block; width: 100%; height: 100%;
@@ -720,6 +731,56 @@
       .app-body { padding: 16px; }
       .hero-toast { display: none; }
     }
+
+    /* ════════════════════════════════════════════
+       PRODUCT SCREENSHOTS — browser frame · showcase
+       ════════════════════════════════════════════ */
+    .shot-frame { display: flex; justify-content: center; }
+
+    /* browser window frame for web-portal screenshots */
+    .browser {
+      width: 100%; background: #fff; border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(13,37,63,.08);
+      box-shadow: 0 24px 50px -22px rgba(22,121,215,.4), 0 10px 24px rgba(13,37,63,.1);
+    }
+    .browser-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 11px 14px; background: #fbfcfe; border-bottom: 1px solid var(--border);
+    }
+    .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .browser-url {
+      display: none;                          /* hidden for now (portal URL) */
+      margin-left: 10px; flex: 1; min-width: 0;
+      background: #fff; border: 1px solid var(--border); border-radius: 7px;
+      padding: 5px 12px; font-size: 12px; color: var(--mid);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .browser-shot { display: block; width: 100%; height: auto; }
+    .browser-fallback { padding: 40px 26px; text-align: center; font-size: 13px; color: var(--mid); line-height: 1.7; }
+
+    /* onboarding: phone + step list side by side */
+    .onb-inner {
+      display: grid; grid-template-columns: .82fr 1.18fr;
+      gap: 64px; align-items: center; margin-top: 56px;
+    }
+    .onb-visual { display: flex; justify-content: center; }
+    .onb-steps { display: grid; gap: 22px; }
+
+    /* timesheet visual now holds a phone */
+    .ts-visual--shot { display: flex; justify-content: center; }
+
+    /* mobile + web showcase */
+    .showcase { padding: 96px 0; background: var(--bg); }
+    .showcase-inner {
+      display: grid; grid-template-columns: .82fr 1.18fr;
+      gap: 56px; align-items: center; margin-top: 56px;
+    }
+    .showcase-web { display: grid; gap: 22px; min-width: 0; }
+
+    @media (max-width: 900px) {
+      .onb-inner       { grid-template-columns: 1fr; gap: 44px; }
+      .showcase-inner  { grid-template-columns: 1fr; gap: 40px; }
+    }
   </style>
 </head>
 <body>
@@ -757,8 +818,7 @@
         <span class="brand-name">FlexDays</span>
       </a>
       <div class="nav-right">
-        <a href="https://portal.flexdays.app" class="nav-signin">Sign in</a>
-        <a href="https://portal.flexdays.app" class="btn btn-primary btn-nav">Get started free</a>
+        <span class="btn-soon btn-soon-nav"><span class="soon-dot" aria-hidden="true"></span>Coming soon</span>
       </div>
     </div>
   </div>
@@ -782,8 +842,8 @@
         deserves. No bloat. No overpriced contracts. Just what works.
       </p>
       <div class="hero-actions">
-        <a href="https://portal.flexdays.app" class="btn btn-primary">Get started free</a>
-        <a href="#features" class="btn btn-outline">See features</a>
+        <a href="#features" class="btn btn-primary">See features</a>
+        <a href="#pricing" class="btn btn-outline">View pricing</a>
       </div>
       <div class="hero-social-proof">
         <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span> Set up in under 5 minutes</div>
@@ -1001,27 +1061,11 @@
           </div>
         </div>
       </div>
-      <div class="ts-visual reveal">
-        <div class="ts-highlight-grid" data-stagger>
-          <div class="ts-hl">
-            <div class="ts-hl-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div>
-            <div class="ts-hl-title">Leave deducted automatically</div>
-            <div class="ts-hl-desc">Approved leave days are removed from timesheets the moment they're confirmed, zero manual work.</div>
-          </div>
-          <div class="ts-hl">
-            <div class="ts-hl-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></div>
-            <div class="ts-hl-title">Real-time balance updates</div>
-            <div class="ts-hl-desc">Balances update instantly on approval, cancellation, or modification. Always accurate.</div>
-          </div>
-          <div class="ts-hl">
-            <div class="ts-hl-icon" aria-hidden="true"><svg class="icon"><use href="#i-sync"/></svg></div>
-            <div class="ts-hl-title">One schedule, everything synced</div>
-            <div class="ts-hl-desc">Admin sets the working schedule once. Timesheets, leave, and balances all follow automatically.</div>
-          </div>
-          <div class="ts-hl">
-            <div class="ts-hl-icon" aria-hidden="true"><svg class="icon"><use href="#i-eye"/></svg></div>
-            <div class="ts-hl-title">Full team visibility</div>
-            <div class="ts-hl-desc">Managers see overlaps, schedule gaps, and who's available, all in one unified view.</div>
+      <div class="ts-visual ts-visual--shot reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="app-timesheet.png" alt="FlexDays mobile timesheet showing worked vs expected hours, day breakdown, and project entries" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="phone-fallback">Save the timesheet screenshot as <strong>app-timesheet.png</strong> in the website folder to show it here.</div>
           </div>
         </div>
       </div>
@@ -1034,33 +1078,105 @@
   <div class="container">
     <div class="text-center reveal">
       <span class="tag tag-blue">Setup so easy, it's embarrassing</span>
-      <h2 class="section-title mt-sm">From zero to HR-ready<br />in under 5 minutes.</h2>
-      <p class="section-sub mt-sm">No IT department needed. No implementation fees. No training required. Just sign up and go.</p>
+      <h2 class="section-title mt-sm">A guided checklist gets you<br />HR-ready in six quick steps.</h2>
+      <p class="section-sub mt-sm">A step-by-step onboarding checklist walks you through everything right inside the app. No IT department, no implementation fees, no training required.</p>
     </div>
-    <div class="steps-grid" data-stagger>
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h3>Register your company</h3>
-        <p>Create your account, set your headquarters, country, and working week. Takes two minutes.</p>
-        <span class="step-time">~2 min</span>
+    <div class="onb-inner">
+      <div class="onb-visual reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="app-onboarding.png" alt="FlexDays workspace setup checklist showing the six onboarding steps and overall progress" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="phone-fallback">Save the workspace-setup screenshot as <strong>app-onboarding.png</strong> in the website folder to show it here.</div>
+          </div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h3>Configure schedule &amp; holidays</h3>
-        <p>Set working days per location. Public holidays are auto-populated by country, just confirm.</p>
-        <span class="step-time">~1 min</span>
+      <div class="onb-steps" data-stagger>
+        <div class="ts-point">
+          <div class="ts-num">1</div>
+          <div>
+            <h4>🏢 Company setup</h4>
+            <p>Add your basic company information, headquarters, and country. This is the foundation everything builds on.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">2</div>
+          <div>
+            <h4>🗓️ Public holidays</h4>
+            <p>Public holidays are pre-loaded for your country, just review and confirm the days that apply to your team.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">3</div>
+          <div>
+            <h4>📅 Working days</h4>
+            <p>Set your work schedule, which days are working days, weekends, and shifts. Timesheets and balances follow this.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">4</div>
+          <div>
+            <h4>🌿 Leave types</h4>
+            <p>Define your leave categories, annual, sick, WFH, and any custom types your company needs, each with its own rules.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">5</div>
+          <div>
+            <h4>🏛️ Org structure</h4>
+            <p>Add your departments and teams so approvals route correctly and everyone lands in the right place.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">6</div>
+          <div>
+            <h4>👥 Import employees</h4>
+            <p>Add your team members via Excel bulk import or invite them individually. Leave balances are set instantly.</p>
+          </div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h3>Import your team</h3>
-        <p>Upload your employee list via Excel or invite individually. Leave balances are set instantly.</p>
-        <span class="step-time">~1 min</span>
+    </div>
+    <p class="how-done reveal">✓ That's it, onboarding complete. Employees submit requests, managers approve, and HR has full visibility.</p>
+  </div>
+</section>
+
+<!-- ── Mobile + Web Showcase ── -->
+<section class="showcase">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-teal">Mobile app + web portal</span>
+      <h2 class="section-title mt-sm">One platform,<br />on every screen.</h2>
+      <p class="section-sub mt-sm">Employees and admins alike get both the mobile app and the full web portal. Request leave, log hours, approve, and manage your team from whichever you prefer, always in sync.</p>
+    </div>
+    <div class="showcase-inner">
+      <div class="onb-visual reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="app-home.png" alt="FlexDays mobile home screen with next time off, pending approvals, balances, and this week's timesheet" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="phone-fallback">Save the home-screen screenshot as <strong>app-home.png</strong> in the website folder to show it here.</div>
+          </div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <h3>You're live</h3>
-        <p>Employees submit requests. Managers approve. HR has full visibility. That's it.</p>
-        <span class="step-time">Instant ✓</span>
+      <div class="showcase-web" data-stagger>
+        <div class="browser reveal">
+          <div class="browser-bar">
+            <span class="browser-dot" style="background:#ff5f57"></span>
+            <span class="browser-dot" style="background:#febc2e"></span>
+            <span class="browser-dot" style="background:#28c840"></span>
+            <span class="browser-url">portal.flexdays.app/calendar</span>
+          </div>
+          <img class="browser-shot" src="portal-calendar.png" alt="FlexDays web portal calendar showing team leave, pending approvals, and holidays for the month" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <div class="browser-fallback" style="display:none">Save the portal calendar screenshot as <strong>portal-calendar.png</strong> in the website folder to show it here.</div>
+        </div>
+        <div class="browser reveal">
+          <div class="browser-bar">
+            <span class="browser-dot" style="background:#ff5f57"></span>
+            <span class="browser-dot" style="background:#febc2e"></span>
+            <span class="browser-dot" style="background:#28c840"></span>
+            <span class="browser-url">portal.flexdays.app/sign-in</span>
+          </div>
+          <img class="browser-shot" src="portal-login.png" alt="FlexDays web portal sign-in screen with company branding" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <div class="browser-fallback" style="display:none">Save the portal sign-in screenshot as <strong>portal-login.png</strong> in the website folder to show it here.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1089,7 +1205,6 @@
           <li>Bulk Excel employee import</li>
           <li>Mobile app (iOS &amp; Android)</li>
         </ul>
-        <a href="https://portal.flexdays.app" class="btn btn-outline btn-block">Get started free</a>
       </div>
       <div class="plan-card featured">
         <div class="plan-badge">For larger teams</div>
@@ -1100,7 +1215,6 @@
           <li>Everything in Starter</li>
           <li><strong>Scales with your headcount</strong></li>
         </ul>
-        <a href="https://portal.flexdays.app" class="btn btn-primary btn-block">Get started</a>
       </div>
     </div>
     <div class="stripe-badge reveal">
