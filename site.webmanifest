@@ -1,0 +1,14 @@
+{
+  "name": "FlexDays",
+  "short_name": "FlexDays",
+  "description": "FlexDays is the modern HR super app, simple, fast, and built to replace your legacy HR system at a price that makes sense.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1679d7",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
