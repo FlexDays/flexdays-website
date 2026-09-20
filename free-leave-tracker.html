@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Employee Leave Tracker (Excel Template) | FlexDays</title>
+  <meta name="description" content="Download a free employee leave tracker for Excel & Google Sheets — auto-calculating balances, dropdowns, and a team summary. Made for small teams. Free, no strings." />
+  <link rel="canonical" href="https://www.flexdays.app/free-leave-tracker" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1679d7" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlexDays" />
+  <meta property="og:title" content="Free Employee Leave Tracker (Excel Template) | FlexDays" />
+  <meta property="og:description" content="A free leave tracker for small teams — auto-calculating balances, dropdowns, and a team summary. Free to download." />
+  <meta property="og:url" content="https://www.flexdays.app/free-leave-tracker" />
+  <meta property="og:image" content="https://www.flexdays.app/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Employee Leave Tracker (Excel Template) | FlexDays" />
+  <meta name="twitter:description" content="A free leave tracker for small teams — auto-calculating balances and a team summary." />
+  <meta name="twitter:image" content="https://www.flexdays.app/og-card.png" />
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is the leave tracker really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free to download and use. Enter your email and you'll get the Excel file plus early access to FlexDays when it launches."}},
+    {"@type":"Question","name":"Does it work in Excel and Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's an .xlsx file that opens in Microsoft Excel, Google Sheets, and LibreOffice. Balances calculate automatically when you open it."}},
+    {"@type":"Question","name":"What does the tracker include?","acceptedAnswer":{"@type":"Answer","text":"An Employees tab with automatic Days Taken and Remaining balances, a Leave Log with dropdowns for employee, leave type and status, a team Summary with live totals, and editable settings."}},
+    {"@type":"Question","name":"What if I outgrow the spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"That's what FlexDays is for. It automates leave, timesheets, approvals and onboarding in one app, free for teams up to 10 and scaling to any size."}}
+  ]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    :root { --font-body:'DM Sans',system-ui,sans-serif; --font-display:'Plus Jakarta Sans',system-ui,sans-serif; --blue:#1679d7; --blue-dk:#0e5fad; --teal:#09bccc; --dark:#1E1E24; --mid:#6B6B76; --border:#D9DCE1; --bg:#F5F7FA; }
+    body { font-family:var(--font-body); color:var(--dark); background:#fff; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+    a { color:var(--blue); }
+    h1,h2,h3 { font-family:var(--font-display); letter-spacing:-.02em; line-height:1.15; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:15px 30px; border-radius:10px; font-weight:700; font-size:15px; cursor:pointer; text-decoration:none; border:none; font-family:var(--font-display); transition:transform .18s,box-shadow .18s,background-color .18s; }
+    .btn-primary { background:var(--blue); color:#fff; box-shadow:0 4px 18px rgba(22,121,215,.38); }
+    .btn-primary:hover { background:var(--blue-dk); transform:translateY(-2px); }
+    .btn-primary:disabled { opacity:.65; cursor:default; transform:none; }
+    .btn-teal { background:linear-gradient(135deg,var(--teal),#06bbae); color:#fff; box-shadow:0 4px 18px rgba(9,188,204,.35); }
+    .btn-outline { background:transparent; color:var(--blue); border:2px solid var(--blue); }
+    .btn-outline:hover { background:#eef5fd; }
+    nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+    .brand { display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .brand img { height:34px; width:34px; }
+    .brand-name { font-family:var(--font-display); font-size:24px; font-weight:800; color:var(--dark); letter-spacing:-.5px; }
+    .btn-nav { padding:10px 20px; font-size:14px; }
+    .hero { padding:64px 0 56px; background:linear-gradient(165deg,#f0f7ff 0%,#e8f9fb 55%,#f5fff9 100%); }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:6px; padding:5px 14px; border-radius:20px; font-size:12px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; background:#e8f2fd; color:var(--blue); margin-bottom:18px; }
+    h1 { font-size:clamp(30px,4.4vw,44px); font-weight:800; color:var(--dark); margin-bottom:16px; }
+    h1 .grad { background:linear-gradient(135deg,var(--blue),var(--teal)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .lede { font-size:17px; color:var(--mid); margin-bottom:26px; }
+    .getcard { background:#fff; border:1px solid rgba(13,37,63,.08); border-radius:18px; padding:28px; box-shadow:0 24px 60px -24px rgba(22,121,215,.28); }
+    .getcard h3 { font-size:18px; margin-bottom:6px; }
+    .getcard p.sub { font-size:14px; color:var(--mid); margin-bottom:16px; }
+    .wl-form { position:relative; }
+    .wl-input { width:100%; padding:14px 16px; font-family:var(--font-body); font-size:15px; color:var(--dark); background:#fff; border:1.5px solid var(--border); border-radius:12px; margin-bottom:12px; }
+    .wl-input:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 4px rgba(22,121,215,.12); }
+    .wl-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+    .wl-note { font-size:12px; color:var(--mid); margin-top:12px; }
+    .wl-msg { margin-top:14px; padding:12px 14px; border-radius:10px; font-size:14px; font-weight:600; }
+    .wl-msg.ok { background:#e3f7ec; color:#1f7a45; }
+    .wl-msg.err { background:#ffeded; color:#a5342c; }
+    #dlwrap { margin-top:14px; }
+    .mock { background:#fff; border:1px solid rgba(13,37,63,.08); border-radius:16px; overflow:hidden; box-shadow:0 24px 50px -24px rgba(22,121,215,.4); }
+    .mock-bar { display:flex; gap:6px; padding:11px 14px; background:#fbfcfe; border-bottom:1px solid var(--border); }
+    .mock-dot { width:11px; height:11px; border-radius:50%; }
+    .mock-body { padding:0; }
+    table.sheet { width:100%; border-collapse:collapse; font-size:12.5px; }
+    table.sheet th { background:var(--blue); color:#fff; font-family:var(--font-display); font-weight:700; padding:9px 10px; text-align:left; }
+    table.sheet td { padding:8px 10px; border-bottom:1px solid #eef1f5; color:var(--dark); }
+    table.sheet tr:nth-child(even) td { background:#fafbfc; }
+    .rem { font-weight:700; color:#1f9d57; }
+    section.block { padding:64px 0; }
+    section.block.alt { background:var(--bg); }
+    .section-head { text-align:center; max-width:640px; margin:0 auto 40px; }
+    .section-head h2 { font-size:clamp(24px,3.6vw,34px); font-weight:800; margin-bottom:12px; }
+    .section-head p { font-size:16px; color:var(--mid); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { background:#fff; border:1px solid rgba(13,37,63,.08); border-radius:14px; padding:24px; box-shadow:0 1px 2px rgba(13,37,63,.04); }
+    .card .ic { font-size:24px; margin-bottom:10px; }
+    .card h3 { font-size:16px; font-weight:700; margin-bottom:6px; }
+    .card p { font-size:14px; color:var(--mid); }
+    .band { padding:56px 0; background:linear-gradient(135deg,#0f1724,#0a2540); color:#fff; text-align:center; }
+    .band h2 { font-size:clamp(24px,3.6vw,32px); font-weight:800; color:#fff; margin-bottom:12px; }
+    .band p { color:rgba(255,255,255,.75); max-width:560px; margin:0 auto 24px; font-size:16px; }
+    .faq { max-width:760px; margin:0 auto; }
+    details { border:1px solid var(--border); border-radius:12px; padding:4px 20px; margin-bottom:12px; background:#fff; }
+    details summary { cursor:pointer; font-family:var(--font-display); font-weight:700; font-size:16px; padding:16px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    details summary::-webkit-details-marker { display:none; }
+    details summary::after { content:'+'; font-size:22px; color:var(--blue); }
+    details[open] summary::after { content:'\2013'; }
+    details p { font-size:15px; color:var(--mid); padding:0 0 18px; }
+    footer { background:var(--dark); color:rgba(255,255,255,.55); padding:40px 0 26px; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+    .footer-inner .brand-name { color:#fff; }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-links a { color:rgba(255,255,255,.6); text-decoration:none; font-size:14px; }
+    .footer-links a:hover { color:#fff; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.08); margin-top:24px; padding-top:20px; font-size:13px; }
+    @media (max-width:820px){ .hero-grid{ grid-template-columns:1fr; gap:32px; } .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<nav><div class="container nav-inner">
+  <a href="/" class="brand" aria-label="FlexDays home"><img src="icon.png" alt="FlexDays logo" /><span class="brand-name">FlexDays</span></a>
+  <a href="/#waitlist" class="btn btn-primary btn-nav">Join the waitlist</a>
+</div></nav>
+
+<main>
+<header class="hero"><div class="container hero-grid">
+  <div>
+    <span class="eyebrow">Free Excel / Google Sheets template</span>
+    <h1>Free employee<br /><span class="grad">leave tracker.</span></h1>
+    <p class="lede">A clean spreadsheet to track staff leave for small teams — with balances that calculate themselves, dropdowns to avoid typos, and a live team summary. Free to download, no strings.</p>
+    <div class="getcard">
+      <h3>Get your free copy</h3>
+      <p class="sub">Enter your email to download the tracker instantly — you'll also get early access to FlexDays when we launch.</p>
+      <form class="wl-form" id="wl-form" novalidate>
+        <label class="wl-hp" for="wl-email">Work email</label>
+        <input class="wl-input" type="email" id="wl-email" name="EMAIL" placeholder="you@company.com" autocomplete="email" required />
+        <input class="wl-hp" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button class="btn btn-primary" style="width:100%" type="submit">Get the free tracker →</button>
+        <p class="wl-note">No spam. We'll only email you about FlexDays, unsubscribe anytime.</p>
+        <p class="wl-msg" id="wl-msg" role="status" aria-live="polite" hidden></p>
+        <div id="dlwrap" hidden>
+          <a id="dl" class="btn btn-teal" style="width:100%" href="/FlexDays-Leave-Tracker.xlsx" download>⬇ Download the tracker (.xlsx)</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div>
+    <div class="mock">
+      <div class="mock-bar"><span class="mock-dot" style="background:#ff5f57"></span><span class="mock-dot" style="background:#febc2e"></span><span class="mock-dot" style="background:#28c840"></span></div>
+      <div class="mock-body">
+        <table class="sheet">
+          <thead><tr><th>Employee</th><th>Allowance</th><th>Taken</th><th>Remaining</th></tr></thead>
+          <tbody>
+            <tr><td>Sara Ahmed</td><td>21</td><td>3</td><td class="rem">18</td></tr>
+            <tr><td>John Lee</td><td>21</td><td>1</td><td class="rem">20</td></tr>
+            <tr><td>Maria Santos</td><td>25</td><td>0</td><td class="rem">25</td></tr>
+            <tr><td>Ahmed Ali</td><td>21</td><td>5</td><td class="rem">16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12.5px;color:var(--mid);margin-top:10px">Balances update automatically as you log leave.</p>
+  </div>
+</div></header>
+
+<section class="block"><div class="container">
+  <div class="section-head"><h2>What's inside the tracker</h2><p>Simple enough to use today, useful enough to keep.</p></div>
+  <div class="grid">
+    <div class="card"><div class="ic">📊</div><h3>Auto-calculating balances</h3><p>Enter each person's allowance once. Days taken and remaining update themselves as you log leave.</p></div>
+    <div class="card"><div class="ic">✅</div><h3>Dropdowns, no typos</h3><p>Pick the employee, leave type, and status from clean dropdown lists on the Leave Log tab.</p></div>
+    <div class="card"><div class="ic">📅</div><h3>Team summary</h3><p>A live overview: headcount, total allowance, approved and pending days, and remaining balance.</p></div>
+    <div class="card"><div class="ic">🗂️</div><h3>Custom leave types</h3><p>Annual, sick, WFH, unpaid, parental — edit the list to match your company.</p></div>
+    <div class="card"><div class="ic">💻</div><h3>Works everywhere</h3><p>Opens in Excel, Google Sheets, and LibreOffice. No sign-up to use the file.</p></div>
+    <div class="card"><div class="ic">🎁</div><h3>Genuinely free</h3><p>Yours to keep and share. No watermark, no locked cells, no catch.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="container">
+  <h2>Or skip the spreadsheet entirely</h2>
+  <p>A tracker is a great start — but spreadsheets break as you grow. FlexDays does all of this automatically: leave requests, approvals, balances, timesheets, and onboarding in one simple app. Free for teams up to 10, and it scales with you.</p>
+  <a href="/#waitlist" class="btn btn-teal">Join the FlexDays waitlist →</a>
+</div></section>
+
+<section class="block alt"><div class="container">
+  <div class="section-head"><h2>Questions</h2></div>
+  <div class="faq">
+    <details open><summary>Is the leave tracker really free?</summary><p>Yes, completely free to download and use. Enter your email and you'll get the Excel file plus early access to FlexDays when it launches.</p></details>
+    <details><summary>Does it work in Excel and Google Sheets?</summary><p>Yes — it's an .xlsx file that opens in Microsoft Excel, Google Sheets, and LibreOffice. Balances calculate automatically when you open it.</p></details>
+    <details><summary>What does the tracker include?</summary><p>An Employees tab with automatic Days Taken and Remaining balances, a Leave Log with dropdowns for employee, leave type and status, a team Summary with live totals, and editable settings.</p></details>
+    <details><summary>What if I outgrow the spreadsheet?</summary><p>That's exactly what FlexDays is for — it automates leave, timesheets, approvals, and onboarding in one app, free for teams up to 10 and scaling to any size.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="container">
+  <div class="footer-inner">
+    <a href="/" class="brand"><img src="icon.png" alt="" /><span class="brand-name">FlexDays</span></a>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/leave-management-software">Leave management software</a>
+      <a href="/free-hr-software-for-small-teams">HR software for small teams</a>
+      <a href="/free-leave-tracker">Free leave tracker</a>
+      <a href="mailto:hello@flexdays.app">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 FlexDays. Built by <a href="https://www.beanvoid.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75)">beanvoid</a>. — "Less Delays, More FlexDays."</div>
+</div></footer>
+
+<script>
+  const wlForm=document.getElementById('wl-form');
+  if(wlForm){
+    const wlMsg=document.getElementById('wl-msg'),wlEmail=document.getElementById('wl-email'),wlBtn=wlForm.querySelector('button[type="submit"]'),dlwrap=document.getElementById('dlwrap'),dl=document.getElementById('dl');
+    const BREVO_ACTION='https://77eb9d71.sibforms.com/serve/MUIFAKFXS7vxW7nq4XoHgBAsytT-tzbEB4feQ4dswRFIdZpURsSEC5uV7hu36rHMgQyGGbhg2uGsfgDTJBwRFyuZFiiu6QLLd-zcAsgpfzWB4o3k_D4ODUurzJMKMApgnF9-uTixNKMwXpbycmBAq6vQz8hBW5B9GCOeVmd09ue7W2hs40reZfc1TsDxM31F26d5EUF0AY8esp7I_w==';
+    const showMsg=(t,ok)=>{wlMsg.textContent=t;wlMsg.className='wl-msg '+(ok?'ok':'err');wlMsg.hidden=false;};
+    wlForm.addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      if(wlForm.email_address_check.value)return;
+      const email=wlEmail.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showMsg('Please enter a valid email address.',false);wlEmail.focus();return;}
+      const label=wlBtn.textContent;wlBtn.disabled=true;wlBtn.textContent='Sending…';
+      try{
+        const body=new URLSearchParams();
+        body.append('EMAIL',email);body.append('email_address_check','');body.append('locale','en');body.append('html_type','simple');
+        await fetch(BREVO_ACTION,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()});
+        showMsg("🎉 Your download is starting! Please check your inbox to confirm your spot on the FlexDays waitlist.",true);
+        dlwrap.hidden=false;
+        try{ dl.click(); }catch(_){}
+        wlEmail.value='';
+      }catch(err){ showMsg('Something went wrong. Please try again in a moment.',false); }
+      finally{ wlBtn.disabled=false; wlBtn.textContent=label; }
+    });
+  }
+</script>
+</body>
+</html>
