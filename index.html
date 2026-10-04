@@ -480,7 +480,7 @@
     .plan-features li.no::before { content: '—'; color: var(--border); }
     .plan-features li.limited { color: var(--dark); }
     .plan-features li.limited::before { content: '~'; color: var(--warn); font-weight: 800; }
-    .plan-features:last-child { margin-bottom: 0; }
+    .plan-features:last-child, .plan-features:has(+ .plan-section-label) { margin-bottom: 0; }
     .plan-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--mid); margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
     .paddle-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; font-size: 12px; color: var(--mid); }
     .paddle-badge svg { flex-shrink: 0; }
@@ -871,6 +871,7 @@
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
     <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 5V5L7 10H4a1 1 0 0 0-1 1z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19.5 5.5a9 9 0 0 1 0 13"/></symbol>
     <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
     <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M8 2h8"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M2 14h2M20 14h2"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
@@ -1056,13 +1057,19 @@
         <p>Real-time push notifications for approvals, balance reminders, and team updates. Everyone stays in the loop.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
-      <div class="feat-card">
+      <div class="feat-card span2 flagship">
+        <div class="feat-icon bg-amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div>
+        <h3>Events &amp; Announcements</h3>
+        <p>Share company news and events with everyone, a location, a department, a team, or specific people. Published instantly with a push notification and shown on the team calendar.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card span2">
         <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
         <h3>HR Analytics &amp; Reports</h3>
         <p>Heatmaps, leave trends, team availability, and balance reports. See your workforce at a glance.</p>
         <span class="feat-badge coming">⏳ Coming Soon</span>
       </div>
-      <div class="feat-card">
+      <div class="feat-card span2">
         <div class="feat-icon bg-pink" aria-hidden="true"><svg class="icon"><use href="#i-card"/></svg></div>
         <h3>Payroll Integration</h3>
         <p>Connect leave balances and timesheets directly to payroll. Eliminate manual reconciliation forever.</p>
@@ -1270,12 +1277,18 @@
         <div class="plan-desc">For small teams. Always free, no time limit.</div>
         <ul class="plan-features">
           <li><strong>Up to 10 employees</strong></li>
+          <li>No credit card required</li>
+        </ul>
+        <div class="plan-section-label">Core features</div>
+        <ul class="plan-features">
           <li>Leave management &amp; balances</li>
           <li>Timesheet tracking</li>
           <li>Working schedule configuration</li>
-          <li>Multi-country holiday support</li>
           <li>Team-based approvals</li>
+          <li>Multi-country holiday support</li>
           <li>Bulk Excel employee import</li>
+          <li>Smart push notifications</li>
+          <li>Events &amp; announcements</li>
           <li>Mobile app (iOS &amp; Android)</li>
         </ul>
       </div>
@@ -1285,10 +1298,21 @@
         <div class="plan-price plan-price-sm">$2<span> / employee / month</span></div>
         <div class="plan-desc">Everything in Starter — for teams with more than 10 employees.</div>
         <ul class="plan-features">
-          <li>Everything in Starter</li>
           <li><strong>Scales with your headcount</strong></li>
-          <li>No setup fees, cancel anytime</li>
           <li>Only pay for employees over 10</li>
+          <li>No setup fees, cancel anytime</li>
+        </ul>
+        <div class="plan-section-label">Core features</div>
+        <ul class="plan-features">
+          <li>Leave management &amp; balances</li>
+          <li>Timesheet tracking</li>
+          <li>Working schedule configuration</li>
+          <li>Team-based approvals</li>
+          <li>Multi-country holiday support</li>
+          <li>Bulk Excel employee import</li>
+          <li>Smart push notifications</li>
+          <li>Events &amp; announcements</li>
+          <li>Mobile app (iOS &amp; Android)</li>
         </ul>
       </div>
     </div>
@@ -1401,7 +1425,7 @@
         <a href="/hr-software-mena">MENA</a>
         <a href="#waitlist">Join waitlist</a>
         <a href="/refund-policy">Refund policy</a>
-        <a href="mailto:hello@flexdays.app">Contact</a>
+        <a href="mailto:hello@beanvoid.com">Contact</a>
       </div>
       <div class="footer-social">
         <a href="https://www.linkedin.com/company/flexdays/" aria-label="FlexDays on LinkedIn" target="_blank" rel="noopener">
