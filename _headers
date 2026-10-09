@@ -1,0 +1,9 @@
+# Cache images and downloads for a week (Cloudflare Pages)
+/*.webp
+  Cache-Control: public, max-age=604800
+/*.png
+  Cache-Control: public, max-age=604800
+/*.ico
+  Cache-Control: public, max-age=604800
+/*.jpg
+  Cache-Control: public, max-age=604800
