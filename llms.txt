@@ -1,0 +1,61 @@
+# FlexDays
+
+> FlexDays is the HR super app: one simple, affordable app for leave management, timesheets, a one-tap time tracker, and company events and announcements, on iOS, Android and the web. It is free for teams of up to 10 employees, then $2 per employee per month, at any company size. FlexDays is launching soon and taking early-access signups on its waitlist.
+
+FlexDays is built for companies that want to replace spreadsheets, email chains, messaging apps and expensive legacy HR systems with one modern app. It sets up in under 5 minutes, needs no IT team, and works for companies of any size, from small teams to 500+ employees. It supports teams in any country, with public holidays and working weeks set automatically by country and location. FlexDays is built by beanvoid, a product studio.
+
+## Key facts
+
+- Product: FlexDays, the HR super app
+- Status: launching soon (pre-launch), with an early-access waitlist at https://www.flexdays.app/#waitlist
+- Pricing: free for up to 10 employees with no time limit and no credit card; $2 per employee per month above 10 employees (you only pay for employees over 10); no setup fees; cancel anytime; 14-day refunds
+- Billing: handled securely by Paddle
+- Platforms: native iOS and Android apps plus a full web portal, always in sync
+- Setup: under 5 minutes with a guided 6-step checklist (company, public holidays, working days, leave types, org structure, employee import)
+- Who it's for: HR teams, founders, owners and managers at companies of any size, worldwide, with a focus on Southeast Asia and the Middle East & North Africa (MENA)
+- Made by: beanvoid (https://www.beanvoid.com/)
+- Contact: hello@beanvoid.com
+
+## Features in the first release (Phase 1)
+
+- Leave management: employees request leave in seconds; balances for annual, sick, WFH and custom leave types update automatically; carry-over rules; part-time schedules
+- Timesheets: connected directly to leave and working schedules, so there is no double entry
+- One-tap time tracker: start a timer with one tap and every minute flows straight into the timesheet
+- Working schedules: working days, weekends and shifts set per location
+- Team-based approvals: multi-level approval chains configured per team, without IT
+- Multi-country public holidays: applied automatically by country and location
+- Bulk employee onboarding: import a whole team from an Excel file
+- Smart notifications: real-time push notifications for approvals, balance reminders and team updates
+- Events and announcements: share company news and events with everyone, a location, a department, a team or specific people, with a push notification and a spot on the team calendar
+
+## Roadmap
+
+- Coming next: HR analytics and leave heatmaps, payroll integration, single sign-on (SSO), leave statement PDF export, leave swaps between employees, extra workday requests
+- Longer term: recruitment and applicant tracking, performance reviews, org chart and directories, benefits and compensation, onboarding workflows, and an AI HR assistant that handles requests in plain language (for example "Who's off next week?")
+
+## Main pages
+
+- [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing, roadmap and waitlist
+- [Leave management software](https://www.flexdays.app/leave-management-software): how FlexDays handles leave requests, approvals and balances
+- [Free HR software for small teams](https://www.flexdays.app/free-hr-software-for-small-teams): the free plan for teams up to 10
+- [HR software for growing companies](https://www.flexdays.app/hr-software-growing-companies): how FlexDays scales from 10 to 500+ employees
+- [HR software for Southeast Asia](https://www.flexdays.app/hr-software-southeast-asia): FlexDays for teams in the Philippines, Indonesia, Vietnam, Malaysia, Singapore and Thailand
+- [HR software for the Middle East & North Africa](https://www.flexdays.app/hr-software-mena): FlexDays for MENA teams, with local work weeks and holidays
+- [Free employee leave tracker](https://www.flexdays.app/free-leave-tracker): a free Excel and Google Sheets leave tracker template
+- [Refund policy](https://www.flexdays.app/refund-policy): 14-day refunds, cancel anytime
+
+## Blog: public holidays 2027
+
+- [US federal holidays 2027](https://www.flexdays.app/blog/us-federal-holidays-2027): all US federal holidays with observed days off and HR rules
+- [Malaysia public holidays 2027](https://www.flexdays.app/blog/malaysia-public-holidays-2027): national and state holidays, replacement days and compulsory holidays
+- [Singapore public holidays 2027](https://www.flexdays.app/blog/singapore-public-holidays-2027): the official MOM list with pay rules
+- [Philippines holidays 2027](https://www.flexdays.app/blog/philippines-holidays-2027): regular holidays and special non-working days under Proclamation No. 1427
+- [China public holidays 2027](https://www.flexdays.app/blog/china-public-holidays-2027): the 13 statutory holiday days
+- [Saudi Arabia public holidays 2027](https://www.flexdays.app/blog/saudi-arabia-public-holidays-2027): private-sector holidays and expected Eid dates
+- [UAE public holidays 2027](https://www.flexdays.app/blog/uae-public-holidays-2027): official holidays and expected Islamic holiday dates
+
+## Optional
+
+- [Blog](https://www.flexdays.app/blog/): HR guides, templates and public holiday lists
+- [FlexDays on LinkedIn](https://www.linkedin.com/company/flexdays/)
+- [FlexDays on X](https://x.com/flexdays)
