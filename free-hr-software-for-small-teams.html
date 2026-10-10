@@ -875,6 +875,18 @@
     .lp-faq details[open] summary::after { content: '\2013'; }
     .lp-faq details p { font-size: 15.5px; color: var(--mid); line-height: 1.7; padding: 0 0 18px; }
   </style>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','3091025977769402');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3091025977769402&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -1427,7 +1439,7 @@
         </div>
         <!-- honeypot: real people leave this blank; bots fill it -->
         <input class="wl-hp" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <p class="wl-note">No spam, ever. We'll only email you about FlexDays, and you can unsubscribe anytime.</p>
+        <p class="wl-note">No spam, ever. We'll only email you about FlexDays, and you can unsubscribe anytime. <a href="/privacy-policy">Privacy policy</a></p>
         <p class="wl-msg" id="wl-msg" role="status" aria-live="polite" hidden></p>
       </form>
 
@@ -1457,6 +1469,9 @@
       <a href="/blog/">Blog</a>
         <a href="#waitlist">Join waitlist</a>
         <a href="/refund-policy">Refund policy</a>
+      <a href="/privacy-policy">Privacy policy</a>
+      <a href="/terms">Terms</a>
+      <a href="/security">Security</a>
         <a href="mailto:hello@beanvoid.com">Contact</a>
       </div>
       <div class="footer-social">
@@ -1562,6 +1577,7 @@
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: body.toString()
         });
+        try{ if(window.fbq) fbq('track','Lead',{content_name:'Waitlist'}); }catch(_){}
         showMsg("🎉 Almost there! Check your inbox and click the confirmation link to lock in your spot.", true);
         wlForm.reset();
       } catch (err) {

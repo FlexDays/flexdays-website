@@ -2,7 +2,7 @@
 
 > FlexDays is the HR super app: one simple, affordable app for leave management, timesheets, a one-tap time tracker, and company events and announcements, on iOS, Android and the web. It is free for teams of up to 10 employees, then $2 per employee per month, at any company size. FlexDays is launching soon and taking early-access signups on its waitlist.
 
-FlexDays is built for companies that want to replace spreadsheets, email chains, messaging apps and expensive legacy HR systems with one modern app. It sets up in under 5 minutes, needs no IT team, and works for companies of any size, from small teams to 500+ employees. It supports teams in any country, with public holidays and working weeks set automatically by country and location. FlexDays is built by beanvoid, a product studio.
+FlexDays is built for companies that want to replace spreadsheets, email chains, messaging apps and expensive legacy HR systems with one modern app. It sets up in under 5 minutes, needs no IT team, and works for companies of any size, from small teams to 500+ employees. It supports teams in any country, with public holidays and working weeks set automatically by country and location. FlexDays is built by beanvoid, a product studio based in Egypt.
 
 ## Key facts
 
@@ -14,7 +14,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - Setup: under 5 minutes with a guided 6-step checklist (company, public holidays, working days, leave types, org structure, employee import)
 - Who it's for: HR teams, founders, owners and managers at companies of any size, worldwide, with a focus on Southeast Asia and the Middle East & North Africa (MENA)
 - Made by: beanvoid (https://www.beanvoid.com/)
-- Contact: hello@beanvoid.com
+- Contact: hello@beanvoid.com (support and privacy: support@beanvoid.com)
 
 ## Features in the first release (Phase 1)
 
@@ -43,6 +43,9 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - [HR software for the Middle East & North Africa](https://www.flexdays.app/hr-software-mena): FlexDays for MENA teams, with local work weeks and holidays
 - [Free employee leave tracker](https://www.flexdays.app/free-leave-tracker): a free Excel and Google Sheets leave tracker template
 - [Refund policy](https://www.flexdays.app/refund-policy): 14-day refunds, cancel anytime
+- [Privacy policy](https://www.flexdays.app/privacy-policy): what FlexDays collects across the website, web portal and apps, who processes it, and your rights
+- [Terms of Service](https://www.flexdays.app/terms): plans, pricing, cancellation, data ownership and acceptable use
+- [Security](https://www.flexdays.app/security): how FlexDays protects company data
 
 ## Blog: public holidays 2027
 
