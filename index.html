@@ -57,6 +57,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/demo.css" />
   <style>
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -842,34 +843,10 @@
     /* timesheet visual now holds a phone */
     .ts-visual--shot { display: flex; justify-content: center; }
 
-    /* demo video: poster + play button; the file only loads once it's clicked */
-    .demo { padding: 88px 0; background: var(--bg); }
-    .demo-frame { max-width: 960px; margin: 44px auto 0; }
-    .demo-player { position: relative; aspect-ratio: 16 / 9; background: #0e1a2b; }
-    .demo-player video { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .demo-play {
-      position: absolute; inset: 0; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 14px;
-      border: 0; cursor: pointer; color: #fff;
-      font-family: var(--font-display); font-weight: 700; font-size: 15px;
-      background: linear-gradient(180deg, rgba(14,26,43,0) 35%, rgba(14,26,43,.4));
-    }
-    .demo-play-icon {
-      width: 78px; height: 78px; border-radius: 50%; display: grid; place-items: center;
-      background: var(--blue); box-shadow: 0 10px 30px rgba(22,121,215,.5);
-      transition: transform .18s ease-out, background-color .18s ease-out;
-    }
-    .demo-play:hover .demo-play-icon { transform: scale(1.08); background: var(--blue-dk); }
-    .demo-play-icon svg { width: 28px; height: 28px; margin-left: 4px; fill: #fff; }
-    .demo-play-label { padding: 6px 14px; border-radius: 20px; background: rgba(14,26,43,.6); }
-    .demo-player.playing .demo-play { display: none; }
-    .demo-cta { display: flex; justify-content: center; margin-top: 32px; }
-    @media (max-width: 600px) {
-      .demo { padding: 64px 0; }
-      .demo-frame { margin-top: 32px; }
-      .demo-play { gap: 10px; font-size: 13px; }
-      .demo-play-icon { width: 56px; height: 56px; }
-      .demo-play-icon svg { width: 20px; height: 20px; margin-left: 3px; }
+    /* hero phone plays a real app recording; the poster covers first paint */
+    .phone-screen video {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
     }
 
     /* mobile + web showcase */
@@ -972,8 +949,10 @@
     <div class="hero-visual">
       <div class="phone">
         <div class="phone-screen">
-          <img src="app-calendar.webp" alt="FlexDays mobile app showing the team calendar, personal leave, and colleagues who are out" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <div class="phone-fallback">Save your app screenshot as <strong>app-calendar.png</strong> in the website folder to show it here.</div>
+          <video class="hero-phone-video" muted loop playsinline preload="none" poster="hero-approve-poster.jpg"
+                 aria-label="FlexDays mobile app: a manager reviews a leave request and approves it in one tap">
+            <source src="hero-approve.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -994,36 +973,8 @@
   </div>
 </div>
 
-<!-- ── Demo video ── -->
-<section class="demo" id="demo">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="tag tag-blue">See it in action</span>
-      <h2 class="section-title mt-sm">FlexDays in <span class="gradient-text">under a minute.</span></h2>
-      <p class="section-sub mt-sm">Request time off in three taps, approve it from anywhere, and see who's out at a glance.</p>
-    </div>
-    <div class="browser demo-frame reveal">
-      <div class="browser-bar">
-        <span class="browser-dot" style="background:#ff5f57"></span>
-        <span class="browser-dot" style="background:#febc2e"></span>
-        <span class="browser-dot" style="background:#28c840"></span>
-      </div>
-      <div class="demo-player">
-        <video preload="none" playsinline muted width="1280" height="720" poster="flexdays-demo-poster.jpg"
-               aria-label="FlexDays product demo: requesting time off, approving it, and the team calendar">
-          <source src="flexdays-demo.mp4" type="video/mp4" />
-        </video>
-        <button class="demo-play" type="button" aria-label="Play the FlexDays demo video">
-          <span class="demo-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
-          <span class="demo-play-label">Watch the demo · 0:47</span>
-        </button>
-      </div>
-    </div>
-    <div class="demo-cta reveal">
-      <a href="#waitlist" class="btn btn-primary">Join the waitlist</a>
-    </div>
-  </div>
-</section>
+<!-- ── Demo video (built by /demo.js) ── -->
+<div data-flexdays-demo></div>
 
 <!-- ── Replace Legacy ── -->
 <section class="replace">
@@ -1536,15 +1487,18 @@
     });
   });
 
-  // Demo video: nothing downloads until the visitor presses play
-  const demoPlayer = document.querySelector('.demo-player');
-  if (demoPlayer) {
-    const demoVideo = demoPlayer.querySelector('video');
-    demoPlayer.querySelector('.demo-play').addEventListener('click', () => {
-      demoPlayer.classList.add('playing');
-      demoVideo.controls = true;
-      demoVideo.play();
-    });
+  // Hero phone: loop the real app recording unless the visitor prefers less motion
+  // (plays only while on screen, so it also pauses once scrolled away)
+  const heroVideo = document.querySelector('.hero-phone-video');
+  if (heroVideo && !prefersReducedMotion) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) heroVideo.play().catch(() => {});
+        else heroVideo.pause();
+      }, { threshold: 0.25 }).observe(heroVideo);
+    } else {
+      heroVideo.play().catch(() => {});
+    }
   }
 
   // Sticky nav: solid background + shadow + tighter padding once scrolled
@@ -1630,5 +1584,6 @@
     });
   }
 </script>
+<script src="/demo.js" defer></script>
 </body>
 </html>
