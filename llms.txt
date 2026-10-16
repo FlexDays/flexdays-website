@@ -25,6 +25,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - Team-based approvals: multi-level approval chains configured per team, without IT
 - Multi-country public holidays: applied automatically by country and location
 - Bulk employee onboarding: import a whole team from an Excel file
+- Leave balance import: bring existing balances over from a spreadsheet (one row per employee, one column per leave type), with a preview before anything changes
 - Smart notifications: real-time push notifications for approvals, balance reminders and team updates
 - Events and announcements: share company news and events with everyone, a location, a department, a team or specific people, with a push notification and a spot on the team calendar
 
