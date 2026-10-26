@@ -857,9 +857,43 @@
     }
     .showcase-web { display: grid; gap: 22px; min-width: 0; }
 
+    /* composed showcase — web app with the mobile app floating in front */
+    .showcase-compose { position: relative; max-width: 880px; margin: 64px auto 24px; padding-left: 46px; }
+    .sc-glow {
+      position: absolute; inset: -14% -8%; z-index: 0; pointer-events: none; filter: blur(58px);
+      background: radial-gradient(56% 58% at 58% 48%, rgba(22,121,215,.24), rgba(9,188,204,.13) 55%, transparent 80%);
+      animation: hero-glow 10s ease-in-out infinite alternate;
+    }
+    .sc-browser { position: relative; z-index: 1; }
+    .sc-phone {
+      position: absolute; left: -8px; bottom: -30px; z-index: 3; width: 168px; padding: 6px;
+      border-radius: 28px; animation: none;
+      box-shadow: 0 36px 72px -20px rgba(13,37,63,.5), 0 12px 28px rgba(13,37,63,.18);
+    }
+    .sc-phone .phone-screen { border-radius: 24px; }
+    .showcase-caption {
+      display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+      margin-top: 52px; font-size: 14px; font-weight: 600; color: var(--mid);
+    }
+    .showcase-caption span { display: inline-flex; align-items: center; gap: 8px; }
+    .showcase-caption .icon { width: 17px; height: 17px; color: var(--blue); }
+
+    /* secondary gallery — more real portal screens */
+    .showcase-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 980px; margin: 60px auto 0; }
+    .sg-item { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+    .sg-cap { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: var(--mid); line-height: 1.55; }
+    .sg-cap .icon { width: 18px; height: 18px; color: var(--blue); flex-shrink: 0; margin-top: 1px; }
+    .sg-cap b { color: var(--dark); font-weight: 700; }
+    @media (max-width: 760px) { .showcase-gallery { grid-template-columns: 1fr; gap: 26px; margin-top: 48px; } }
+
     @media (max-width: 900px) {
       .onb-inner       { grid-template-columns: 1fr; gap: 44px; }
       .showcase-inner  { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 760px) {
+      .showcase-compose { padding-left: 0; max-width: 560px; }
+      .sc-phone { position: static; width: 196px; margin: -34px auto 0; }
+      .sc-glow { display: none; }
     }
   </style>
   <!-- Meta Pixel -->
@@ -927,12 +961,13 @@
     <div class="hero-copy">
       <div class="hero-eyebrow">
         <span class="tag tag-teal">The HR Super App</span>
+        <span class="tag tag-blue">✦ Now with time tracking &amp; reports</span>
       </div>
       <h1>Less Delays,<br /><span class="gradient-text">More FlexDays.</span></h1>
       <p class="hero-hook">Replace your legacy HR system<br />at a price that actually makes sense.</p>
       <p class="hero-lede">
         FlexDays is the all-in-one HR platform built for modern companies, starting with
-        leave management, timesheets and time tracking, growing into the complete HR super app your team
+        leave management, timesheets, time tracking and reporting, growing into the complete HR super app your team
         deserves. No bloat. No overpriced contracts. Just what works.
       </p>
       <div class="hero-actions">
@@ -966,9 +1001,9 @@
       <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div> Leave Management</div>
       <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div> Timesheets</div>
       <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div> Time Tracker</div>
+      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div> Time Reports</div>
       <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div> Schedules</div>
       <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div> Approvals</div>
-      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div> HR Analytics <span class="hook-soon">(soon)</span></div>
     </div>
   </div>
 </div>
@@ -1056,7 +1091,13 @@
       <div class="feat-card flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
         <h3>One-Tap Time Tracker</h3>
-        <p>Start a timer with one tap and track time as you work. Every minute flows straight into your timesheet, with no manual entry.</p>
+        <p>Start a timer in one tap or clock in and out. Track time against projects and tasks, flag billable work, add it live or by hand, and every entry flows straight into the timesheet.</p>
+        <span class="feat-badge phase1">✦ Phase 1</span>
+      </div>
+      <div class="feat-card span2 flagship">
+        <div class="feat-icon bg-teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
+        <h3>Time Reports</h3>
+        <p>See exactly where time goes across dashboard, summary, detailed, weekly and attendance views. Filter by person, project or billable, compare worked vs. expected hours, then export to CSV or Excel and save reports to share with your team.</p>
         <span class="feat-badge phase1">✦ Phase 1</span>
       </div>
       <div class="feat-card">
@@ -1097,8 +1138,8 @@
       </div>
       <div class="feat-card span2">
         <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
-        <h3>HR Analytics &amp; Reports</h3>
-        <p>Heatmaps, leave trends, team availability, and balance reports. See your workforce at a glance.</p>
+        <h3>HR Analytics &amp; Heatmaps</h3>
+        <p>Leave heatmaps, absence trends, team availability, and balance reports. See your whole workforce at a glance, beyond tracked time.</p>
         <span class="feat-badge coming">⏳ Coming Soon</span>
       </div>
       <div class="feat-card span2">
@@ -1257,39 +1298,55 @@
     <div class="text-center reveal">
       <span class="tag tag-teal">Mobile app + web portal</span>
       <h2 class="section-title mt-sm">One platform,<br />on every screen.</h2>
-      <p class="section-sub mt-sm">Employees and admins alike get both the mobile app and the full web portal. Request leave, log hours, approve, and manage your team from whichever you prefer, always in sync.</p>
+      <p class="section-sub mt-sm">Employees and admins alike get both the mobile app and the full web portal. Request leave, track time, run reports, approve, and manage your team from whichever you prefer, always in sync.</p>
     </div>
-    <div class="showcase-inner">
-      <div class="onb-visual reveal">
-        <div class="phone">
-          <div class="phone-screen">
-            <img src="app-home.webp" loading="lazy" decoding="async" alt="FlexDays mobile home screen with next time off, pending approvals, balances, and this week's timesheet" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-            <div class="phone-fallback">Save the home-screen screenshot as <strong>app-home.png</strong> in the website folder to show it here.</div>
-          </div>
+    <div class="showcase-compose reveal">
+      <div class="sc-glow" aria-hidden="true"></div>
+      <div class="browser sc-browser">
+        <div class="browser-bar">
+          <span class="browser-dot" style="background:#ff5f57"></span>
+          <span class="browser-dot" style="background:#febc2e"></span>
+          <span class="browser-dot" style="background:#28c840"></span>
+          <span class="browser-url">portal.flexdays.app/time-reports</span>
+        </div>
+        <img class="browser-shot" src="portal-time-reports.webp" loading="lazy" decoding="async" alt="FlexDays web portal time reports dashboard: total and billable hours, a daily chart, and top projects and tasks" />
+      </div>
+      <div class="phone sc-phone">
+        <div class="phone-screen">
+          <img src="app-time-tracker.webp" loading="lazy" decoding="async" alt="FlexDays mobile time tracker: a running timer on the Mobile App project with billable time and today's tracked entries" />
         </div>
       </div>
-      <div class="showcase-web" data-stagger>
-        <div class="browser reveal">
+    </div>
+    <div class="showcase-caption reveal">
+      <span><svg class="icon"><use href="#i-sync"/></svg> Always in sync across devices</span>
+      <span><svg class="icon"><use href="#i-timer"/></svg> Track time on web &amp; mobile</span>
+      <span><svg class="icon"><use href="#i-chart"/></svg> Reports &amp; CSV/Excel export</span>
+    </div>
+    <div class="showcase-gallery" data-stagger>
+      <figure class="sg-item reveal">
+        <div class="browser">
           <div class="browser-bar">
             <span class="browser-dot" style="background:#ff5f57"></span>
             <span class="browser-dot" style="background:#febc2e"></span>
             <span class="browser-dot" style="background:#28c840"></span>
-            <span class="browser-url">portal.flexdays.app/calendar</span>
+            <span class="browser-url">portal.flexdays.app/time-tracker</span>
           </div>
-          <img class="browser-shot" src="portal-calendar.webp" loading="lazy" decoding="async" alt="FlexDays web portal calendar showing team leave, pending approvals, and holidays for the month" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <div class="browser-fallback" style="display:none">Save the portal calendar screenshot as <strong>portal-calendar.png</strong> in the website folder to show it here.</div>
+          <img class="browser-shot" src="portal-time-tracker.webp" loading="lazy" decoding="async" alt="FlexDays web portal time tracker: a running timer with projects, billable time and the week's entries grouped by day" />
         </div>
-        <div class="browser reveal">
+        <figcaption class="sg-cap"><svg class="icon"><use href="#i-timer"/></svg><span><b>Time tracker on the web</b> — start a timer or add time against projects &amp; tasks, flag billable work, and it flows to the timesheet.</span></figcaption>
+      </figure>
+      <figure class="sg-item reveal">
+        <div class="browser">
           <div class="browser-bar">
             <span class="browser-dot" style="background:#ff5f57"></span>
             <span class="browser-dot" style="background:#febc2e"></span>
             <span class="browser-dot" style="background:#28c840"></span>
-            <span class="browser-url">portal.flexdays.app/sign-in</span>
+            <span class="browser-url">portal.flexdays.app/settings/time-tracker</span>
           </div>
-          <img class="browser-shot" src="portal-login.webp" loading="lazy" decoding="async" alt="FlexDays web portal sign-in screen with company branding" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <div class="browser-fallback" style="display:none">Save the portal sign-in screenshot as <strong>portal-login.png</strong> in the website folder to show it here.</div>
+          <img class="browser-shot" src="portal-tt-settings.webp" loading="lazy" decoding="async" alt="FlexDays web portal time tracker settings: choose tracking style, required fields, report rounding and time locking" />
         </div>
-      </div>
+        <figcaption class="sg-cap"><svg class="icon"><use href="#i-eye"/></svg><span><b>Admin controls, redesigned</b> — choose how teams track time, set required fields, report rounding and time locks.</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1315,7 +1372,9 @@
         <ul class="plan-features">
           <li>Leave management &amp; balances</li>
           <li>Timesheet tracking</li>
-          <li>One-tap time tracker</li>
+          <li>One-tap time tracker &amp; clock in/out</li>
+          <li>Projects, tasks &amp; billable time</li>
+          <li>Time reports &amp; CSV/Excel export</li>
           <li>Working schedule configuration</li>
           <li>Team-based approvals</li>
           <li>Multi-country holiday support</li>
@@ -1360,7 +1419,9 @@
         <ul class="phase-items">
           <li>Leave management &amp; balances</li>
           <li>Timesheet tracking</li>
-          <li>One-tap time tracker</li>
+          <li>Time tracker (projects, tasks &amp; billable)</li>
+          <li>Clock in/out with breaks</li>
+          <li>Time reports &amp; CSV/Excel export</li>
           <li>Working schedule configuration</li>
           <li>Team-based multi-level approvals</li>
           <li>Bulk employee onboarding</li>
