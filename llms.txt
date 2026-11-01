@@ -45,6 +45,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - [Free employee leave tracker](https://www.flexdays.app/free-leave-tracker): a free Excel and Google Sheets leave tracker template
 - [Refund policy](https://www.flexdays.app/refund-policy): 14-day refunds, cancel anytime
 - [Privacy policy](https://www.flexdays.app/privacy-policy): what FlexDays collects across the website, web portal and apps, who processes it, and your rights
+- [Delete your account](https://www.flexdays.app/delete-account): how to delete a FlexDays account or company, what is deleted and what the employer keeps
 - [Terms of Service](https://www.flexdays.app/terms): plans, pricing, cancellation, data ownership and acceptable use
 - [Security](https://www.flexdays.app/security): how FlexDays protects company data
 

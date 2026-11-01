@@ -92,7 +92,7 @@
 <main>
 <header class="hero"><div class="container">
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated 10 October 2026 · Effective 10 October 2026</p>
+  <p class="updated">Last updated 1 November 2026 · Effective 1 November 2026</p>
   <p style="margin-top:14px;max-width:760px;color:#33333b">This policy explains what FlexDays collects, why, who else processes it, how long it is kept, and how to get it corrected or deleted. FlexDays is an HR app for leave, timesheets, time tracking and company announcements.</p>
   <div class="toc"><strong>Contents</strong><ol><li><a href="#who">Who we are</a></li><li><a href="#roles">Two roles: your employer&#x27;s data and ours</a></li><li><a href="#collect">What we collect</a></li><li><a href="#why">Why we use it, and our legal basis</a></li><li><a href="#visible">Who can see your data inside FlexDays</a></li><li><a href="#processors">Who else processes it</a></li><li><a href="#where">Where it is stored</a></li><li><a href="#retention">How long we keep it</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#rights">Your rights</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes and contact</a></li></ol></div>
 </div></header>
@@ -109,7 +109,7 @@
     <li><strong>Employee data your employer puts into FlexDays</strong> (your profile, leave, timesheets and so on): your <strong>employer is the controller</strong>. It decides what is recorded and why. We are its <strong>processor</strong>: we handle that data only to provide FlexDays, on its instructions. Your employer's own privacy notice also applies to you.</li>
     <li><strong>Everything else</strong>, such as company administrator accounts, billing contacts, website visitors and waitlist subscribers: <strong>we are the controller</strong>.</li>
   </ul>
-  <div class="callout">If you are an employee and want to see, correct or delete your data, the quickest route is usually your employer's HR team or FlexDays administrator. We will help them, and you can always contact us directly too.</div>
+  <div class="callout">If you are an employee, you can <a href="/delete-account">delete your own account</a> at any time from the FlexDays app or web portal. To see or correct your data, or to ask about the work records your employer keeps, the quickest route is usually your employer's HR team or FlexDays administrator. We will help them, and you can always contact us directly too.</div>
 
   <h2 id="collect">3. What we collect</h2>
   <table>
@@ -152,7 +152,7 @@
   <table>
     <tr><th>Provider</th><th>What for</th></tr>
     <tr><td>Railway</td><td>Hosting the FlexDays service and its database.</td></tr>
-    <tr><td>Cloudflare</td><td>DNS, TLS, and the security layer in front of our website, web portal and service.</td></tr>
+    <tr><td>Cloudflare</td><td>DNS, TLS, and the security layer in front of our website, web portal and service. Cloudflare also stores our database backups.</td></tr>
     <tr><td>Brevo</td><td>Sending emails: invitations, verification and password reset codes, notifications, and waitlist emails. It receives the recipient's name and email address and the email content.</td></tr>
     <tr><td>Google Firebase Cloud Messaging (with Apple Push Notification service on iOS)</td><td>Delivering push notifications to your devices. It receives your device token and the notification text, which can include a name and leave details.</td></tr>
     <tr><td>Paddle</td><td>Our reseller and Merchant of Record. Paddle sells the FlexDays subscription, takes payment, handles tax and invoices, and processes refunds. Paddle's own privacy policy covers the payment details you give it.</td></tr>
@@ -163,19 +163,20 @@
   <p>We may disclose personal data where the law requires it, for example in response to a valid court order, and only what is required. If FlexDays or beanvoid is ever sold or merged, data may pass to the new owner, who would have to keep to this policy, and we would tell customers before it happened.</p>
 
   <h2 id="where">7. Where it is stored</h2>
-  <p>We are based in Egypt. FlexDays and its database are hosted by Railway in the United States, and our other providers process data in their own locations, so your data is processed outside your own country. Where a transfer is subject to EU or UK data protection law, it relies on the safeguards our providers offer, such as the European Commission's standard contractual clauses.</p>
+  <p>We are based in Egypt. FlexDays and its database are hosted by Railway in the European Union (the Netherlands), and our other providers process data in their own locations, so your data is processed outside your own country. Where a transfer is subject to EU or UK data protection law, it relies on the safeguards our providers offer, such as the European Commission's standard contractual clauses.</p>
 
   <h2 id="retention">8. How long we keep it</h2>
   <ul>
     <li><strong>Company and employee data:</strong> for as long as the company's FlexDays account exists, so leave history and balances stay correct.</li>
-    <li><strong>Offboarded employees:</strong> when an employer offboards someone, the person loses access straight away, but their records stay in the company's history (so past leave and timesheets still add up) until the employer asks us to delete them or the company account is closed.</li>
-    <li><strong>Closed company accounts:</strong> when a customer closes its account and asks us to, we delete or anonymise its data within 90 days, unless the law requires us to keep part of it (for example billing records for tax).</li>
+    <li><strong>Offboarded employees:</strong> when an employer offboards someone, the person loses access straight away, but their records stay in the company's history (so past leave and timesheets still add up) until the employer asks us to delete them or the company is deleted.</li>
+    <li><strong>Deleted accounts:</strong> when someone <a href="/delete-account">deletes their own account</a>, their name, email address, phone number, date of birth, employee code and password are removed straight away, including from the audit trail. Their work records stay in the company's history under "Former employee".</li>
+    <li><strong>Deleted companies:</strong> when an Admin <a href="/delete-account#company">deletes a company</a>, everyone is signed out and the subscription is cancelled straight away. All of the company's data is permanently deleted after 30 days. Until then, the Admin can ask us to cancel the deletion.</li>
     <li><strong>Sign-in sessions:</strong> access tokens expire after 15 minutes, and sessions after at most 30 days. Signing out ends a session immediately.</li>
     <li><strong>Verification and password reset codes:</strong> minutes to an hour, then they stop working and are cleaned up.</li>
-    <li><strong>Audit trail:</strong> for as long as the company account exists, because it is part of the record of who changed what.</li>
-    <li><strong>Billing records:</strong> as long as tax and accounting law requires.</li>
+    <li><strong>Audit trail:</strong> for as long as the company account exists, because it is part of the record of who changed what, except for the personal details removed when someone deletes their own account.</li>
+    <li><strong>Billing records:</strong> we keep ours for as long as the company account exists and delete them with the company. Paddle, as Merchant of Record, keeps its own invoice and tax records for as long as the law requires.</li>
     <li><strong>Waitlist emails:</strong> until you unsubscribe or ask us to delete them.</li>
-    <li><strong>Backups:</strong> kept by our hosting provider for a limited rolling period and then deleted automatically. Deleted data can remain in a backup until that period passes.</li>
+    <li><strong>Backups:</strong> kept for up to 30 days and then deleted automatically. Deleted data can remain in a backup until then.</li>
   </ul>
 
   <h2 id="cookies">9. Cookies</h2>
@@ -184,7 +185,7 @@
 
   <h2 id="rights">10. Your rights</h2>
   <p>You can ask for a copy of your data, ask us to correct or delete it, restrict or object to how it is used, or receive it in a portable format. You can withdraw consent at any time where we rely on it.</p>
-  <p>For employee data, we act on your employer's instructions (section 2), so we may pass your request to your employer, and we will help them answer it. For data we control, email <a href="mailto:support@beanvoid.com">support@beanvoid.com</a>. We respond within 30 days, free of charge. We may need to confirm your identity first, so that nobody can access or delete someone else's data.</p>
+  <p>You can <a href="/delete-account">delete your own account</a> yourself at any time. For other requests about employee data, we act on your employer's instructions (section 2), so we may pass your request to your employer, and we will help them answer it. For data we control, email <a href="mailto:support@beanvoid.com">support@beanvoid.com</a>. We respond within 30 days, free of charge. We may need to confirm your identity first, so that nobody can access or delete someone else's data.</p>
   <p>These rights come from Egypt's Personal Data Protection Law (Law No. 151 of 2020) and, if you are in the EU or the UK, from the GDPR. You can also complain to your local data protection authority.</p>
 
   <h2 id="security">11. Security</h2>
@@ -213,6 +214,7 @@
       <a href="/blog/">Blog</a>
       <a href="/refund-policy">Refund policy</a>
       <a href="/privacy-policy">Privacy policy</a>
+      <a href="/delete-account">Delete account</a>
       <a href="/terms">Terms</a>
       <a href="/security">Security</a>
       <a href="mailto:hello@beanvoid.com">Contact</a>
