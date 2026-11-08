@@ -92,7 +92,7 @@
 <main>
 <header class="hero"><div class="container">
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated 1 November 2026 · Effective 1 November 2026</p>
+  <p class="updated">Last updated 8 November 2026 · Effective 8 November 2026</p>
   <p style="margin-top:14px;max-width:760px;color:#33333b">This policy explains what FlexDays collects, why, who else processes it, how long it is kept, and how to get it corrected or deleted. FlexDays is an HR app for leave, timesheets, time tracking and company announcements.</p>
   <div class="toc"><strong>Contents</strong><ol><li><a href="#who">Who we are</a></li><li><a href="#roles">Two roles: your employer&#x27;s data and ours</a></li><li><a href="#collect">What we collect</a></li><li><a href="#why">Why we use it, and our legal basis</a></li><li><a href="#visible">Who can see your data inside FlexDays</a></li><li><a href="#processors">Who else processes it</a></li><li><a href="#where">Where it is stored</a></li><li><a href="#retention">How long we keep it</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#rights">Your rights</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes and contact</a></li></ol></div>
 </div></header>
@@ -122,11 +122,12 @@
     <tr><td>Company news</td><td>Announcements and events (title, content, venue, dates) and who they were sent to.</td><td>Your employer's administrators</td></tr>
     <tr><td>Devices</td><td>A push notification token for each device you sign in on, the platform (iOS, Android or web) and when it was last used, so we can send you notifications.</td><td>Your device</td></tr>
     <tr><td>Security and audit</td><td>An audit trail of changes made in FlexDays: who changed what and when, with the IP address and browser or device details of the request. Sign-in sessions (stored as one-way hashes). Server logs (IP address, request time, endpoint, status, errors).</td><td>Created automatically</td></tr>
+    <tr><td>Error and crash reports</td><td>When something goes wrong: what failed and where in our code, the request or screen involved, the time, a random reference number for the request, your company and user IDs (internal numbers, not your name or email) and your role. From the apps also the device model, operating system and app version. Service performance figures such as response times and error rates, which contain no personal data. We do not include passwords, the content of your requests, cookies or your IP address in error reports.</td><td>Created automatically by the FlexDays service, web portal and apps</td></tr>
     <tr><td>Billing</td><td>Your plan, subscription status, billing periods, currency, transaction references and refund requests. Card and payment details are handled by Paddle, not us (section 6).</td><td>The administrator; Paddle</td></tr>
     <tr><td>Website and waitlist</td><td>Your email address if you join the waitlist or download the free leave tracker, and cookie data from the Meta Pixel on our website (section 9).</td><td>You; your browser</td></tr>
     <tr><td>Support</td><td>Whatever you send us when you email us.</td><td>You</td></tr>
   </table>
-  <p><strong>What we do not collect.</strong> We do not collect your location, your contacts or your photos (a photo or file only reaches us if you choose to attach it to a leave request). The FlexDays apps and web portal contain no advertising or analytics trackers. We never see or store card numbers.</p>
+  <p><strong>What we do not collect.</strong> We do not collect your location, your contacts or your photos (a photo or file only reaches us if you choose to attach it to a leave request). The FlexDays apps and web portal contain no advertising or analytics trackers. Error and crash reports are used only to find and fix problems. We never see or store card numbers.</p>
   <p><strong>Sensitive information.</strong> Some leave records can indirectly reveal sensitive information, for example that someone took sick leave or leave for a religious occasion. We treat all leave data as confidential, and we ask employers to record only what they need. The reason field on a leave request is optional, and colleagues never see it (section 5).</p>
 
   <h2 id="why">4. Why we use it, and our legal basis</h2>
@@ -159,6 +160,9 @@
     <tr><td>Google Calendar API and Nager.Date</td><td>Public holiday lists. We send them only a country, never personal data.</td></tr>
     <tr><td>Meta</td><td>The Meta Pixel on our website only (not in the apps or portal), to measure visits and ads (section 9).</td></tr>
     <tr><td>Google Fonts</td><td>Loading the fonts on our website. Your browser requests them from Google.</td></tr>
+    <tr><td>Grafana Labs (Grafana Cloud)</td><td>Monitoring the FlexDays service: our server logs and performance figures, so we notice and fix problems quickly. Logs contain the request details and internal company and user IDs described in section 3. Stored in the EU (Germany).</td></tr>
+    <tr><td>Sentry</td><td>Error reports from the FlexDays service and web portal (section 3), so we can find and fix bugs. Stored in the EU (Germany).</td></tr>
+    <tr><td>Google Firebase Crashlytics</td><td>Crash reports from the FlexDays apps (section 3), so we can find and fix crashes. Google processes them in its own locations.</td></tr>
   </table>
   <p>We may disclose personal data where the law requires it, for example in response to a valid court order, and only what is required. If FlexDays or beanvoid is ever sold or merged, data may pass to the new owner, who would have to keep to this policy, and we would tell customers before it happened.</p>
 
@@ -177,6 +181,9 @@
     <li><strong>Billing records:</strong> we keep ours for as long as the company account exists and delete them with the company. Paddle, as Merchant of Record, keeps its own invoice and tax records for as long as the law requires.</li>
     <li><strong>Waitlist emails:</strong> until you unsubscribe or ask us to delete them.</li>
     <li><strong>Backups:</strong> kept for up to 30 days and then deleted automatically. Deleted data can remain in a backup until then.</li>
+    <li><strong>Server logs and performance figures:</strong> 14 days in Grafana Cloud, then deleted automatically.</li>
+    <li><strong>Error reports:</strong> 30 days in Sentry, then deleted automatically.</li>
+    <li><strong>App crash reports:</strong> 90 days in Firebase Crashlytics, then deleted automatically.</li>
   </ul>
 
   <h2 id="cookies">9. Cookies</h2>
