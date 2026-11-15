@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | FlexDays</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+  <meta name="theme-color" content="#1679d7" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root { --font-body:'DM Sans',system-ui,sans-serif; --font-display:'Plus Jakarta Sans',system-ui,sans-serif; --blue:#1679d7; --blue-dk:#0e5fad; --dark:#1E1E24; --mid:#6B6B76; --border:#D9DCE1; }
+    body { font-family:var(--font-body); color:var(--dark); background:linear-gradient(165deg,#f0f7ff 0%,#e8f9fb 55%,#f5fff9 100%); min-height:100vh; line-height:1.7; -webkit-font-smoothing:antialiased; display:flex; flex-direction:column; }
+    a { color:var(--blue); }
+    .container { max-width:1000px; margin:0 auto; padding:0 24px; width:100%; }
+    nav { background:rgba(255,255,255,.95); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; padding:12px 0; }
+    .brand { display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .brand img { height:34px; width:34px; }
+    .brand-name { font-family:var(--font-display); font-size:24px; font-weight:800; color:var(--dark); letter-spacing:-.5px; }
+    main { flex:1; display:flex; align-items:center; justify-content:center; padding:48px 24px; }
+    .card { max-width:480px; width:100%; background:#fff; border:1px solid rgba(13,37,63,.08); border-radius:16px; padding:32px 28px; box-shadow:0 4px 16px rgba(0,0,0,.06); text-align:center; }
+    h1 { font-family:var(--font-display); font-size:24px; font-weight:800; letter-spacing:-.02em; line-height:1.25; margin-bottom:10px; }
+    .card p { color:#33333b; font-size:15px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; margin-top:22px; padding:12px 22px; border-radius:10px; font-weight:700; font-size:14px; text-decoration:none; font-family:var(--font-display); background:var(--blue); color:#fff; }
+    .btn:hover { background:var(--blue-dk); }
+    .note { margin-top:18px; font-size:13px; color:var(--mid); }
+    .spinner { width:36px; height:36px; margin:0 auto 18px; border:3px solid #e3eefb; border-top-color:var(--blue); border-radius:50%; animation:spin .8s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    [hidden] { display:none !important; }
+    footer { padding:20px 0 28px; font-size:13px; color:var(--mid); text-align:center; }
+    footer a { color:var(--mid); margin:0 8px; text-decoration:none; }
+    footer a:hover { color:var(--blue); text-decoration:underline; }
+  </style>
+</head>
+<body>
+<nav><div class="container nav-inner">
+  <a href="/" class="brand" aria-label="FlexDays home"><img src="/icon.png" alt="FlexDays logo" /><span class="brand-name">FlexDays</span></a>
+</div></nav>
+
+<main>
+  <div class="card">
+    <div id="state-loading">
+      <div class="spinner" aria-hidden="true"></div>
+      <h1>Opening secure checkout…</h1>
+      <p>Your FlexDays subscription payment is handled by Paddle, our payment partner.</p>
+    </div>
+    <div id="state-missing" hidden>
+      <h1>No payment to complete</h1>
+      <p>This page opens a payment started from the FlexDays portal. Start it again from Settings → Subscription.</p>
+    </div>
+    <div id="state-closed" hidden>
+      <h1>Payment not finished</h1>
+      <p>You closed the checkout before paying. You can start it again from the FlexDays portal at any time.</p>
+    </div>
+    <div id="state-error" hidden>
+      <h1>We couldn't open the checkout</h1>
+      <p>Please try again in a moment. If it keeps happening, email <a href="mailto:support@beanvoid.com">support@beanvoid.com</a>.</p>
+    </div>
+    <a id="back" class="btn" href="https://portal.flexdays.app/settings/subscription" hidden>Back to FlexDays</a>
+    <p class="note">Payments are processed by Paddle.com, who act as the merchant of record.</p>
+  </div>
+</main>
+
+<footer>
+  <a href="/#pricing">Pricing</a>
+  <a href="/terms">Terms</a>
+  <a href="/privacy-policy">Privacy</a>
+  <a href="/refund-policy">Refund policy</a>
+</footer>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  // Paddle's live client-side token: public by design, made for use in web pages.
+  var PADDLE_CLIENT_TOKEN = 'live_40f21da73a34d1816d3b4396657';
+  var PORTAL_SUBSCRIPTION_URL = 'https://portal.flexdays.app/settings/subscription';
+
+  function show(state) {
+    ['loading', 'missing', 'closed', 'error'].forEach(function (name) {
+      document.getElementById('state-' + name).hidden = name !== state;
+    });
+    document.getElementById('back').hidden = state === 'loading';
+  }
+
+  var transactionId = new URLSearchParams(window.location.search).get('_ptxn');
+  var completed = false;
+
+  if (!transactionId || transactionId.indexOf('txn_') !== 0) {
+    show('missing');
+  } else if (!window.Paddle) {
+    show('error');
+  } else {
+    // With ?_ptxn= in the address, Paddle.js opens the checkout for that transaction by itself.
+    Paddle.Initialize({
+      token: PADDLE_CLIENT_TOKEN,
+      checkout: { settings: { displayMode: 'overlay', successUrl: PORTAL_SUBSCRIPTION_URL } },
+      eventCallback: function (event) {
+        if (!event || !event.name) return;
+        if (event.name === 'checkout.completed') completed = true;
+        if (event.name === 'checkout.closed' && !completed) show('closed');
+        if (event.name === 'checkout.error') show('error');
+      }
+    });
+  }
+</script>
+</body>
+</html>
