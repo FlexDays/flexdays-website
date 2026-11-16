@@ -837,6 +837,18 @@
       .onb-inner       { grid-template-columns: 1fr; gap: 44px; }
       .showcase-inner  { grid-template-columns: 1fr; gap: 40px; }
     }
+      /* ── Nav sign-in / sign-up ── */
+    .nav-actions { display:flex; align-items:center; gap:10px; }
+    .btn-signin { background:transparent; color:var(--blue); border:2px solid var(--blue); box-shadow:none; }
+    .btn-signin:hover { background:#eef5fd; }
+    .btn-nav { white-space:nowrap; }
+    .cta-short { display:none; }
+    @media (max-width: 420px) {
+      .btn-nav { padding:8px 12px !important; font-size:13px !important; }
+      .brand-name { font-size:20px !important; }
+      .cta-long { display:none; }
+      .cta-short { display:inline; }
+    }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -888,7 +900,8 @@
         <span class="brand-name">FlexDays</span>
       </a>
       <div class="nav-right">
-        <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav">Get started free</a>
+        <a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">Sign in</a>
+        <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">Get started free</span><span class="cta-short">Sign up</span></a>
       </div>
     </div>
   </div>
