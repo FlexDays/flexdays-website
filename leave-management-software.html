@@ -180,7 +180,7 @@
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
     }
-    #features, #pricing, #setup, #waitlist { scroll-margin-top: 80px; }
+    #features, #pricing, #setup, #get-started { scroll-margin-top: 80px; }
 
     /* ── Nav ── */
     nav {
@@ -549,7 +549,7 @@
     .footer-social a:hover { background: rgba(255,255,255,.16); color: #fff; transform: translateY(-2px); }
     .footer-social svg { width: 18px; height: 18px; }
 
-    /* ── Waitlist ── */
+    /* ── Get started ── */
     .waitlist {
       padding: 96px 0;
       background: linear-gradient(165deg, #f0f7ff 0%, #e8f9fb 55%, #f5fff9 100%);
@@ -562,30 +562,13 @@
     }
     .waitlist-card .section-title { margin-top: 14px; }
     .waitlist-sub { font-size: 17px; color: var(--mid); line-height: 1.7; max-width: 520px; margin: 16px auto 32px; }
-    .wl-form { max-width: 520px; margin: 0 auto; position: relative; }
-    .wl-row { display: flex; gap: 12px; }
-    .wl-input {
-      flex: 1; min-width: 0; padding: 15px 18px;
-      font-family: var(--font-body); font-size: 15px; color: var(--dark);
-      background: var(--white); border: 1.5px solid var(--border); border-radius: 12px;
-      transition: border-color .15s ease, box-shadow .15s ease;
-    }
-    .wl-input::placeholder { color: #aab4c2; }
-    .wl-input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(22,121,215,.12); }
-    .wl-btn { flex-shrink: 0; }
-    .wl-btn:disabled { opacity: .65; cursor: default; transform: none; }
-    .wl-hp { position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; opacity: 0; }
     .wl-note { font-size: 12.5px; color: var(--mid); margin-top: 14px; }
-    .wl-msg { margin-top: 16px; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; line-height: 1.5; }
-    .wl-msg.ok  { background: #e3f7ec; color: #1f7a45; }
-    .wl-msg.err { background: #ffeded; color: #a5342c; }
     .wl-founders {
       margin: 34px auto 0; max-width: 540px; padding-top: 28px;
       border-top: 1px solid var(--border);
       font-size: 14px; color: var(--mid); line-height: 1.7; font-style: italic;
     }
     @media (max-width: 560px) {
-      .wl-row { flex-direction: column; }
       .waitlist-card { padding: 38px 22px; }
     }
 
@@ -919,7 +902,7 @@
         <span class="brand-name">FlexDays</span>
       </a>
       <div class="nav-right">
-        <a href="#waitlist" class="btn btn-primary btn-nav">Join the waitlist</a>
+        <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav">Get started free</a>
       </div>
     </div>
   </div>
@@ -941,7 +924,7 @@
         FlexDays turns messy leave tracking into one clean system: employees request in seconds, managers approve in a tap, and balances update in real time, connected to timesheets and schedules. Free for teams up to 10, at any size beyond.
       </p>
       <div class="hero-actions">
-        <a href="#waitlist" class="btn btn-primary">Join the waitlist</a>
+        <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
         <a href="#features" class="btn btn-outline">See features</a>
       </div>
       <div class="hero-social-proof">
@@ -1419,25 +1402,15 @@
   </div>
 </section>
 
-<!-- ── Waitlist ── -->
-<section class="waitlist" id="waitlist">
+<!-- ── Get started ── -->
+<section class="waitlist" id="get-started">
   <div class="container">
     <div class="waitlist-card reveal">
-      <span class="tag tag-teal tag--lead"><svg class="icon" style="width:14px;height:14px;vertical-align:-2px" aria-hidden="true"><use href="#i-rocket"/></svg> Launching soon</span>
-      <h2 class="section-title">Be first to try FlexDays.</h2>
-      <p class="waitlist-sub">We're putting the finishing touches on FlexDays. Join the waitlist and we'll email you the moment it's live. Early members get founding perks.</p>
-
-      <form class="wl-form" id="wl-form" novalidate>
-        <div class="wl-row">
-          <label class="sr-only" for="wl-email">Work email</label>
-          <input class="wl-input" type="email" id="wl-email" name="EMAIL" placeholder="you@company.com" autocomplete="email" required />
-          <button class="btn btn-primary wl-btn" type="submit">Join the waitlist</button>
-        </div>
-        <!-- honeypot: real people leave this blank; bots fill it -->
-        <input class="wl-hp" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <p class="wl-note">No spam, ever. We'll only email you about FlexDays, and you can unsubscribe anytime. <a href="/privacy-policy">Privacy policy</a></p>
-        <p class="wl-msg" id="wl-msg" role="status" aria-live="polite" hidden></p>
-      </form>
+      <span class="tag tag-teal tag--lead"><svg class="icon" style="width:14px;height:14px;vertical-align:-2px" aria-hidden="true"><use href="#i-rocket"/></svg> Live now</span>
+      <h2 class="section-title">Start using FlexDays today.</h2>
+      <p class="waitlist-sub">Create your company, invite your team and run leave, timesheets and time tracking in one place. Free for teams of up to 10.</p>
+      <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
+      <p class="wl-note">Already have an account? <a href="https://portal.flexdays.app/login">Sign in</a></p>
 
       <p class="wl-founders">Built by two founders who were tired of overpriced, bloated HR tools. FlexDays is our answer: simple, affordable HR that just works.</p>
     </div>
@@ -1463,7 +1436,8 @@
         <a href="/hr-software-mena">MENA</a>
         <a href="/free-leave-tracker">Free leave tracker</a>
       <a href="/blog/">Blog</a>
-        <a href="#waitlist">Join waitlist</a>
+        <a href="https://portal.flexdays.app/register">Sign up</a>
+        <a href="https://portal.flexdays.app/login">Sign in</a>
         <a href="/refund-policy">Refund policy</a>
       <a href="/privacy-policy">Privacy policy</a>
       <a href="/delete-account">Delete account</a>
@@ -1536,55 +1510,6 @@
     revealEls.forEach(el => io.observe(el));
   }
 
-  // ── Waitlist form → Brevo ──
-  const wlForm = document.getElementById('wl-form');
-  if (wlForm) {
-    const wlMsg   = document.getElementById('wl-msg');
-    const wlEmail = document.getElementById('wl-email');
-    const wlBtn   = wlForm.querySelector('.wl-btn');
-    const BREVO_ACTION = 'https://77eb9d71.sibforms.com/serve/MUIFAKFXS7vxW7nq4XoHgBAsytT-tzbEB4feQ4dswRFIdZpURsSEC5uV7hu36rHMgQyGGbhg2uGsfgDTJBwRFyuZFiiu6QLLd-zcAsgpfzWB4o3k_D4ODUurzJMKMApgnF9-uTixNKMwXpbycmBAq6vQz8hBW5B9GCOeVmd09ue7W2hs40reZfc1TsDxM31F26d5EUF0AY8esp7I_w==';
-
-    const showMsg = (text, ok) => {
-      wlMsg.textContent = text;
-      wlMsg.className = 'wl-msg ' + (ok ? 'ok' : 'err');
-      wlMsg.hidden = false;
-    };
-
-    wlForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (wlForm.email_address_check.value) return; // honeypot: silently drop bots
-      const email = wlEmail.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showMsg('Please enter a valid email address.', false);
-        wlEmail.focus();
-        return;
-      }
-      const label = wlBtn.textContent;
-      wlBtn.disabled = true;
-      wlBtn.textContent = 'Joining…';
-      try {
-        const body = new URLSearchParams();
-        body.append('EMAIL', email);
-        body.append('email_address_check', '');
-        body.append('locale', 'en');
-        body.append('html_type', 'simple');
-        await fetch(BREVO_ACTION, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body.toString()
-        });
-        try{ if(window.fbq) fbq('track','Lead',{content_name:'Waitlist'}); }catch(_){}
-        showMsg("🎉 Almost there! Check your inbox and click the confirmation link to lock in your spot.", true);
-        wlForm.reset();
-      } catch (err) {
-        showMsg('Something went wrong. Please try again in a moment.', false);
-      } finally {
-        wlBtn.disabled = false;
-        wlBtn.textContent = label;
-      }
-    });
-  }
 </script>
 </body>
 </html>

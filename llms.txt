@@ -7,7 +7,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 ## Key facts
 
 - Product: FlexDays, the HR super app
-- Status: launching soon (pre-launch), with an early-access waitlist at https://www.flexdays.app/#waitlist
+- Status: live. Sign up free at https://portal.flexdays.app/register (web portal); the iOS and Android apps are rolling out on the App Store and Google Play
 - Pricing: free for up to 10 employees with no time limit and no credit card; $2 per employee per month above 10 employees (you only pay for employees over 10); no setup fees; cancel anytime; 14-day refunds
 - Billing: handled securely by Paddle
 - Platforms: native iOS and Android apps plus a full web portal, always in sync
@@ -36,7 +36,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 
 ## Main pages
 
-- [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing, roadmap and waitlist
+- [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing, roadmap and sign-up
 - [Leave management software](https://www.flexdays.app/leave-management-software): how FlexDays handles leave requests, approvals and balances
 - [Free HR software for small teams](https://www.flexdays.app/free-hr-software-for-small-teams): the free plan for teams up to 10
 - [HR software for growing companies](https://www.flexdays.app/hr-software-growing-companies): how FlexDays scales from 10 to 500+ employees

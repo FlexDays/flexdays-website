@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://www.flexdays.app/og-card.png" />
   <script type="application/ld+json">
   { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Is the leave tracker really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free to download and use. Enter your email and you'll get the Excel file plus early access to FlexDays when it launches."}},
+    {"@type":"Question","name":"Is the leave tracker really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free to download and use. Enter your email and you'll get the Excel file plus occasional FlexDays news, and you can unsubscribe anytime."}},
     {"@type":"Question","name":"Does it work in Excel and Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's an .xlsx file that opens in Microsoft Excel, Google Sheets, and LibreOffice. Balances calculate automatically when you open it."}},
     {"@type":"Question","name":"What does the tracker include?","acceptedAnswer":{"@type":"Answer","text":"An Employees tab with automatic Days Taken and Remaining balances, a Leave Log with dropdowns for employee, leave type and status, a team Summary with live totals, and editable settings."}},
     {"@type":"Question","name":"What if I outgrow the spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"That's what FlexDays is for. It automates leave, timesheets, approvals and onboarding in one app, free for teams up to 10 and scaling to any size. You can upload the balances from your spreadsheet straight into it."}}
@@ -126,7 +126,7 @@
 <body>
 <nav><div class="container nav-inner">
   <a href="/" class="brand" aria-label="FlexDays home"><img src="icon.png" alt="FlexDays logo" /><span class="brand-name">FlexDays</span></a>
-  <a href="/#waitlist" class="btn btn-primary btn-nav">Join the waitlist</a>
+  <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav">Get started free</a>
 </div></nav>
 
 <main>
@@ -137,7 +137,7 @@
     <p class="lede">A clean spreadsheet to track staff leave for small teams, with balances that calculate themselves, dropdowns to avoid typos, and a live team summary. Free to download, no strings.</p>
     <div class="getcard">
       <h3>Get your free copy</h3>
-      <p class="sub">Enter your email to download the tracker instantly. You'll also get early access to FlexDays when we launch.</p>
+      <p class="sub">Enter your email to download the tracker instantly. You'll also get occasional FlexDays news, and you can unsubscribe anytime.</p>
       <form class="wl-form" id="wl-form" novalidate>
         <label class="wl-hp" for="wl-email">Work email</label>
         <input class="wl-input" type="email" id="wl-email" name="EMAIL" placeholder="you@company.com" autocomplete="email" required />
@@ -185,13 +185,13 @@
 <section class="band"><div class="container">
   <h2>Or skip the spreadsheet entirely</h2>
   <p>A tracker is a great start, but spreadsheets break as you grow. FlexDays does all of this automatically: leave requests, approvals, balances, timesheets, and onboarding in one simple app. Moving over is one upload: your team's current balances come with you. Free for teams up to 10, and it scales with you.</p>
-  <a href="/#waitlist" class="btn btn-teal">Join the FlexDays waitlist →</a>
+  <a href="https://portal.flexdays.app/register" class="btn btn-teal">Try FlexDays free →</a>
 </div></section>
 
 <section class="block alt"><div class="container">
   <div class="section-head"><h2>Questions</h2></div>
   <div class="faq">
-    <details open><summary>Is the leave tracker really free?</summary><p>Yes, completely free to download and use. Enter your email and you'll get the Excel file plus early access to FlexDays when it launches.</p></details>
+    <details open><summary>Is the leave tracker really free?</summary><p>Yes, completely free to download and use. Enter your email and you'll get the Excel file plus occasional FlexDays news, and you can unsubscribe anytime.</p></details>
     <details><summary>Does it work in Excel and Google Sheets?</summary><p>Yes, it's an .xlsx file that opens in Microsoft Excel, Google Sheets, and LibreOffice. Balances calculate automatically when you open it.</p></details>
     <details><summary>What does the tracker include?</summary><p>An Employees tab with automatic Days Taken and Remaining balances, a Leave Log with dropdowns for employee, leave type and status, a team Summary with live totals, and editable settings.</p></details>
     <details><summary>What if I outgrow the spreadsheet?</summary><p>That's exactly what FlexDays is for. It automates leave, timesheets, approvals, and onboarding in one app, free for teams up to 10 and scaling to any size. You can upload the balances from your spreadsheet straight into it, so nobody starts from zero.</p></details>
@@ -236,7 +236,7 @@
         body.append('EMAIL',email);body.append('email_address_check','');body.append('locale','en');body.append('html_type','simple');
         await fetch(BREVO_ACTION,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()});
         try{ if(window.fbq) fbq('track','Lead',{content_name:'Free leave tracker'}); }catch(_){}
-        showMsg("🎉 Your download is starting! Please check your inbox to confirm your spot on the FlexDays waitlist.",true);
+        showMsg("🎉 Your download is starting! Please check your inbox to confirm your email.",true);
         dlwrap.hidden=false;
         try{ dl.click(); }catch(_){}
         wlEmail.value='';
