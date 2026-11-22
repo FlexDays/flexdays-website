@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#1679d7" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     :root { --font-body:'DM Sans',system-ui,sans-serif; --font-display:'Plus Jakarta Sans',system-ui,sans-serif; --blue:#1679d7; --blue-dk:#0e5fad; --teal:#09bccc; --dark:#1E1E24; --mid:#6B6B76; --border:#D9DCE1; --bg:#F5F7FA; }
@@ -59,6 +59,10 @@
       .cta-long { display:none; }
       .cta-short { display:inline; }
     }
+    .lang { font-family:'IBM Plex Sans Arabic',system-ui,sans-serif; font-weight:600; font-size:15px; color:var(--dark); text-decoration:none; }
+    .lang:hover { color:var(--blue); }
+    /* phones: the bar keeps sign-in / sign-up; the language link is in the footer */
+    @media (max-width: 480px) { .nav-actions .lang, .nav-right .lang { display:none; } }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -76,7 +80,7 @@
 <body>
 <nav><div class="container nav-inner">
   <a href="/" class="brand" aria-label="FlexDays home"><img src="icon.png" alt="FlexDays logo" /><span class="brand-name">FlexDays</span></a>
-  <div class="nav-actions"><a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">Sign in</a><a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">Get started free</span><span class="cta-short">Sign up</span></a></div>
+  <div class="nav-actions"><a href="/ar/" class="lang" lang="ar" hreflang="ar">العربية</a><a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">Sign in</a><a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">Get started free</span><span class="cta-short">Sign up</span></a></div>
 </div></nav>
 
 <main style="text-align:center;padding-top:40px;padding-bottom:40px">
