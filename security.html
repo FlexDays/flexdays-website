@@ -6,6 +6,9 @@
   <title>Security | FlexDays</title>
   <meta name="description" content="How FlexDays protects your company&#x27;s data: encrypted connections, Cloudflare protection, database-level isolation between companies, hashed passwords and secure payments." />
   <link rel="canonical" href="https://www.flexdays.app/security" />
+  <link rel="alternate" hreflang="en" href="https://www.flexdays.app/security" />
+  <link rel="alternate" hreflang="ar" href="https://www.flexdays.app/ar/security" />
+  <link rel="alternate" hreflang="x-default" href="https://www.flexdays.app/security" />
   <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
@@ -18,7 +21,7 @@
   <meta property="og:image" content="https://www.flexdays.app/og-card.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     :root { --font-body:'DM Sans',system-ui,sans-serif; --font-display:'Plus Jakarta Sans',system-ui,sans-serif; --blue:#1679d7; --blue-dk:#0e5fad; --teal:#09bccc; --dark:#1E1E24; --mid:#6B6B76; --border:#D9DCE1; --bg:#F5F7FA; }
@@ -81,6 +84,10 @@
       .cta-long { display:none; }
       .cta-short { display:inline; }
     }
+    .lang { font-family:'IBM Plex Sans Arabic',system-ui,sans-serif; font-weight:600; font-size:15px; color:var(--dark); text-decoration:none; }
+    .lang:hover { color:var(--blue); }
+    /* phones: the bar keeps sign-in / sign-up; the language link is in the footer */
+    @media (max-width: 480px) { .nav-actions .lang, .nav-right .lang { display:none; } }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -99,7 +106,7 @@
 <body>
 <nav><div class="container nav-inner">
   <a href="/" class="brand" aria-label="FlexDays home"><img src="/icon-96.png" alt="FlexDays logo" /><span class="brand-name">FlexDays</span></a>
-  <div class="nav-actions"><a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">Sign in</a><a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">Get started free</span><span class="cta-short">Sign up</span></a></div>
+  <div class="nav-actions"><a href="/ar/security" class="lang" lang="ar" hreflang="ar">العربية</a><a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">Sign in</a><a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">Get started free</span><span class="cta-short">Sign up</span></a></div>
 </div></nav>
 
 <main>
@@ -154,6 +161,7 @@
       <a href="/terms">Terms</a>
       <a href="/security">Security</a>
       <a href="mailto:hello@beanvoid.com">Contact</a>
+      <a href="/ar/security" lang="ar" hreflang="ar">العربية</a>
     </div>
   </div>
   <div class="footer-bottom">© 2026 FlexDays. Built by <a href="https://www.beanvoid.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75)">beanvoid</a>. "Less Delays, More FlexDays."</div>

@@ -6,6 +6,9 @@
   <title>FlexDays | The HR Super App for Leave &amp; Time Tracking</title>
   <meta name="description" content="FlexDays is the modern HR super app, simple, fast, and built for leave, timesheets and time tracking at a price that makes sense. Your first 10 employees are free." />
   <link rel="canonical" href="https://www.flexdays.app/" />
+  <link rel="alternate" hreflang="en" href="https://www.flexdays.app/" />
+  <link rel="alternate" hreflang="ar" href="https://www.flexdays.app/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.flexdays.app/" />
 
   <!-- Favicons & app icons -->
   <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
@@ -56,7 +59,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@600&display=swap" rel="stylesheet" />
   <style>
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -850,6 +853,11 @@
       .cta-long { display:none; }
       .cta-short { display:inline; }
     }
+    .lang-switch { font-family:'IBM Plex Sans Arabic',system-ui,sans-serif; font-weight:600; font-size:15px; color:var(--dark); text-decoration:none; }
+    .lang-switch:hover { color:var(--blue); }
+    /* phones: the bar keeps sign-in / sign-up; the language link is in the footer */
+    @media (max-width: 480px) { .nav-actions .lang-switch, .nav-right .lang-switch { display:none; } }
+    .ts-inner > * { min-width: 0; } /* lets the phone mockup shrink on narrow screens */
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -902,6 +910,7 @@
         <span class="brand-name">FlexDays</span>
       </a>
       <div class="nav-right">
+        <a href="/ar/" class="lang-switch" lang="ar" hreflang="ar">العربية</a>
         <a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">Sign in</a>
         <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">Get started free</span><span class="cta-short">Sign up</span></a>
       </div>
@@ -1443,6 +1452,7 @@
       <a href="/terms">Terms</a>
       <a href="/security">Security</a>
         <a href="mailto:hello@beanvoid.com">Contact</a>
+        <a href="/ar/" lang="ar" hreflang="ar">العربية</a>
       </div>
       <div class="footer-social">
         <a href="https://www.linkedin.com/company/flexdays/" aria-label="FlexDays on LinkedIn" target="_blank" rel="noopener">

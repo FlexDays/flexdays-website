@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأمان | FlexDays</title>
+  <meta name="description" content="كيف يحمي FlexDays بيانات شركتك: اتصالات مشفّرة، وحماية Cloudflare، وعزل بيانات الشركات على مستوى قاعدة البيانات، وكلمات مرور مجزّأة، ومدفوعات آمنة." />
+  <link rel="canonical" href="https://www.flexdays.app/ar/security" />
+  <link rel="alternate" hreflang="en" href="https://www.flexdays.app/security" />
+  <link rel="alternate" hreflang="ar" href="https://www.flexdays.app/ar/security" />
+  <link rel="alternate" hreflang="x-default" href="https://www.flexdays.app/security" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+  <meta name="theme-color" content="#1679d7" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlexDays" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:title" content="الأمان | FlexDays" />
+  <meta property="og:description" content="كيف يحمي FlexDays بيانات شركتك: اتصالات مشفّرة، وحماية Cloudflare، وعزل بيانات الشركات على مستوى قاعدة البيانات، وكلمات مرور مجزّأة، ومدفوعات آمنة." />
+  <meta property="og:url" content="https://www.flexdays.app/ar/security" />
+  <meta property="og:image" content="https://www.flexdays.app/og-card.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root { --font-body:'IBM Plex Sans Arabic',system-ui,sans-serif; --font-display:'IBM Plex Sans Arabic',system-ui,sans-serif; --font-brand:'Plus Jakarta Sans',system-ui,sans-serif; --blue:#1679d7; --blue-dk:#0e5fad; --teal:#09bccc; --dark:#1E1E24; --mid:#6B6B76; --border:#D9DCE1; --bg:#F5F7FA; }
+    body { font-family:var(--font-body); color:var(--dark); background:#fff; line-height:1.85; -webkit-font-smoothing:antialiased; }
+    .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+    a { color:var(--blue); }
+    h1,h2 { font-family:var(--font-display); line-height:1.35; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:10px 20px; border-radius:10px; font-weight:700; font-size:14px; text-decoration:none; font-family:var(--font-display); }
+    .btn-primary { background:var(--blue); color:#fff; box-shadow:0 4px 18px rgba(22,121,215,.38); }
+    .btn-primary:hover { background:var(--blue-dk); }
+    nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+    .nav-actions { display:flex; align-items:center; gap:16px; }
+    .lang { font-family:'DM Sans',system-ui,sans-serif; font-weight:600; font-size:14px; color:var(--dark); text-decoration:none; }
+    .lang:hover { color:var(--blue); }
+    .brand { display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .brand img { height:34px; width:34px; }
+    .brand-name { font-family:var(--font-brand); font-size:24px; font-weight:800; color:var(--dark); letter-spacing:-.5px; }
+    .hero { padding:56px 0 40px; background:linear-gradient(165deg,#f0f7ff 0%,#e8f9fb 55%,#f5fff9 100%); }
+    h1 { font-size:clamp(30px,4.4vw,42px); font-weight:700; margin-bottom:10px; }
+    .updated { font-size:14px; color:var(--mid); }
+    .intro { margin-top:14px; max-width:760px; color:#33333b; }
+    .policy { max-width:760px; padding:48px 24px 72px; }
+    .policy h2 { font-size:22px; font-weight:700; margin:36px 0 10px; }
+    .policy h2:first-child { margin-top:0; }
+    .policy p, .policy li { font-size:16px; color:#33333b; }
+    .policy p { margin-bottom:12px; }
+    footer { background:var(--dark); color:rgba(255,255,255,.55); padding:40px 0 26px; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+    .footer-inner .brand-name { color:#fff; }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-links a { color:rgba(255,255,255,.6); text-decoration:none; font-size:14px; }
+    .footer-links a:hover { color:#fff; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.08); margin-top:24px; padding-top:20px; font-size:13px; }
+    .toc { margin-top:22px; background:#fff; border:1px solid rgba(13,37,63,.08); border-radius:14px; padding:18px 24px; }
+    .toc strong { display:block; margin-bottom:6px; }
+    .toc ol { padding-inline-start:20px; columns:2; column-gap:32px; }
+    .toc li { margin:3px 0; font-size:15px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:8px 0 18px; }
+    .scard { background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px 20px; }
+    .scard h3 { font-family:var(--font-display); font-size:17px; margin-bottom:6px; }
+    .scard p { font-size:15px; margin:0; color:#4a4a55; }
+    /* ── Nav sign-in / sign-up ── */
+    .btn-signin { background:transparent; color:var(--blue); border:2px solid var(--blue); box-shadow:none; }
+    .btn-signin:hover { background:#eef5fd; }
+    .btn-nav { white-space:nowrap; }
+    .cta-short { display:none; }
+    @media (max-width: 480px) {
+      .nav-actions { gap:8px; }
+      .nav-actions .lang { display:none; }
+      .btn-nav { padding:8px 12px; font-size:13px; }
+      .brand-name { font-size:20px; }
+      .cta-long { display:none; }
+      .cta-short { display:inline; }
+    }
+    @media (max-width:720px){ .toc ol{ columns:1; } .grid2{ grid-template-columns:1fr; } }
+  </style>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','3091025977769402');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3091025977769402&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
+</head>
+<body>
+<nav><div class="container nav-inner">
+  <a href="/ar/" class="brand" aria-label="الصفحة الرئيسية لـ FlexDays"><img src="/icon-96.png" alt="شعار FlexDays" /><span class="brand-name">FlexDays</span></a>
+  <div class="nav-actions">
+    <a href="/security" class="lang" lang="en" hreflang="en">English</a>
+    <a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">تسجيل الدخول</a>
+    <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">ابدأ مجانًا</span><span class="cta-short">إنشاء حساب</span></a>
+  </div>
+</div></nav>
+
+<main>
+<header class="hero"><div class="container">
+  <h1>الأمان في FlexDays</h1>
+  <p class="updated">آخر تحديث 10 أكتوبر 2026 · سارية من 10 أكتوبر 2026</p>
+  <p class="intro">بيانات الموارد البشرية لشركتك حساسة، ونتعامل معها على هذا الأساس. إليك كيف يحميها FlexDays، بلغة واضحة. ولا نذكر إلا ما هو مطبَّق فعلًا اليوم.</p>
+  <div class="toc"><strong>المحتويات</strong><ol><li><a href="#transit">البيانات أثناء النقل</a></li><li><a href="#network">حماية الشبكة</a></li><li><a href="#isolation">عزل بيانات الشركات</a></li><li><a href="#accounts">حماية الحسابات</a></li><li><a href="#access">الصلاحيات وسجل التدقيق</a></li><li><a href="#payments">المدفوعات</a></li><li><a href="#privacy">الخصوصية منذ التصميم</a></li><li><a href="#report">الإبلاغ عن مشكلة أمنية</a></li></ol></div>
+</div></header>
+
+<div class="container policy">
+  <h2 id="transit">1. البيانات أثناء النقل</h2>
+  <div class="grid2"><div class="scard"><h3>اتصالات مشفّرة</h3><p>تمر جميع الاتصالات بين متصفحك أو هاتفك وFlexDays عبر TLS (HTTPS). ويُعاد توجيه اتصالات HTTP العادية، ويُطلب من المتصفحات استخدام HTTPS دائمًا (HSTS).</p></div><div class="scard"><h3>تثبيت الشهادات في تطبيقات الجوال</h3><p>تتحقق تطبيقات FlexDays من أنها تتصل بخوادمنا الحقيقية، فلا يمكن لشبكة Wi-Fi مخترقة اعتراض الطلبات خلسة.</p></div></div>
+
+  <h2 id="network">2. حماية الشبكة</h2>
+  <div class="grid2"><div class="scard"><h3>Cloudflare في الواجهة</h3><p>يعمل FlexDays خلف شبكة Cloudflare وجدار الحماية الخاص بها، ولا تقبل خوادمنا الاتصالات إلا عبر هذه الطبقة، فلا يمكن الوصول إليها مباشرة.</p></div><div class="scard"><h3>تحديد معدل الطلبات</h3><p>يُحدَّد معدل الطلبات لتسجيل الدخول ونقاط النهاية الحساسة الأخرى لإبطاء الهجمات الآلية.</p></div></div>
+
+  <h2 id="isolation">3. عزل بيانات الشركات</h2>
+  <p>تستخدم شركات كثيرة FlexDays في الوقت نفسه. وتُفصل بيانات كل شركة <strong>داخل قاعدة البيانات نفسها</strong> باستخدام أمان مستوى الصفوف (row-level security): فقاعدة البيانات هي التي تقصر كل استعلام على الشركة المسجّلة الدخول، وليس شيفرة تطبيقنا وحدها. وحتى لو وقع خطأ في شيفرتنا، فلن يُظهر بيانات شركة لشركة أخرى.</p>
+
+  <h2 id="accounts">4. حماية الحسابات</h2>
+  <div class="grid2"><div class="scard"><h3>كلمات مرور مجزّأة</h3><p>تُخزَّن كلمات المرور فقط كتجزئات bcrypt، فلا نستطيع رؤية كلمة مرورك أو استعادتها.</p></div><div class="scard"><h3>القفل المؤقت</h3><p>تؤدي محاولات تسجيل الدخول الفاشلة المتكررة إلى قفل الحساب مؤقتًا، ولرموز التحقق عدد محدود من المحاولات.</p></div><div class="scard"><h3>جلسات قصيرة الأجل</h3><p>تنتهي صلاحية رموز الوصول بعد 15 دقيقة. وتُخزَّن رموز الجلسات كتجزئات أحادية الاتجاه، وتغيير كلمة المرور يُنهي جلساتك الأخرى.</p></div><div class="scard"><h3>تخزين آمن على الهواتف</h3><p>على iOS وAndroid، تُحفظ رموز تسجيل الدخول في Keychain أو Keystore، وهما مساحتا التخزين الآمن المدمجتان في الهاتف.</p></div></div>
+
+  <h2 id="access">5. الصلاحيات وسجل التدقيق</h2>
+  <p>يعرض FlexDays لكل شخص ما يسمح به دوره فقط: يرى الموظفون سجلاتهم، ويرى المديرون فرقهم، ويدير المسؤولون مساحة العمل. وتُسجَّل التغييرات في سجل تدقيق (من غيّر ماذا ومتى)، ليكون لدى المسؤولين سجل واضح.</p>
+
+  <h2 id="payments">6. المدفوعات</h2>
+  <p>تتولى المدفوعات <strong>Paddle</strong>، البائع المسجَّل (Merchant of Record) لدينا ومزوّد دفع متوافق مع معيار PCI DSS. تذهب تفاصيل البطاقات مباشرة إلى Paddle ولا تمر أبدًا بخوادم FlexDays. ويُتحقق من إشعارات الدفع الواردة من Paddle بتوقيع مشفّر، فلا يمكن تزويرها.</p>
+
+  <h2 id="privacy">7. الخصوصية منذ التصميم</h2>
+  <p>لا تحتوي تطبيقات FlexDays وبوابة الويب على أي أدوات تتبّع إعلانية أو تحليلية. نجمع ما تحتاجه الخدمة فقط، وتذكر <a href="/ar/privacy-policy">سياسة الخصوصية</a> كل مزوّد يعالج البيانات لصالحنا.</p>
+
+  <h2 id="report">8. الإبلاغ عن مشكلة أمنية</h2>
+  <p>إذا اعتقدت أنك وجدت مشكلة أمنية في FlexDays، فيُرجى مراسلتنا على <a href="mailto:support@beanvoid.com">support@beanvoid.com</a> مع التفاصيل. ونرجو ألا تصل إلى بيانات الآخرين أو تعطّل الخدمة أثناء الاختبار. سنرد سريعًا، ونُطلعك على المستجدات، وننسب إليك الفضل إن رغبت.</p>
+
+</div>
+</main>
+
+<footer><div class="container">
+  <div class="footer-inner">
+    <a href="/ar/" class="brand"><img src="/icon-96.png" alt="" width="48" height="48" /><span class="brand-name">FlexDays</span></a>
+    <div class="footer-links">
+      <a href="/ar/">الرئيسية</a>
+      <a href="/ar/#pricing">الأسعار</a>
+      <a href="/ar/refund-policy">سياسة الاسترداد</a>
+      <a href="/ar/privacy-policy">سياسة الخصوصية</a>
+      <a href="/ar/delete-account">حذف الحساب</a>
+      <a href="/ar/terms">الشروط</a>
+      <a href="/ar/security">الأمان</a>
+      <a href="mailto:hello@beanvoid.com">تواصل معنا</a>
+      <a href="https://portal.flexdays.app/login">تسجيل الدخول</a>
+      <a href="/security" lang="en" hreflang="en">English</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 FlexDays. من تطوير <a href="https://www.beanvoid.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75)">beanvoid</a>. تأخير أقل، مرونة أكثر مع FlexDays.</div>
+</div></footer>
+</body>
+</html>

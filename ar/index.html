@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlexDays | تطبيق الموارد البشرية الشامل للإجازات وتتبّع الوقت</title>
+  <meta name="description" content="FlexDays تطبيق موارد بشرية شامل وحديث، بسيط وسريع، صُمّم للإجازات والجداول الزمنية وتتبّع الوقت بسعر منطقي. أول 10 موظفين مجانًا." />
+  <link rel="canonical" href="https://www.flexdays.app/ar/" />
+  <link rel="alternate" hreflang="en" href="https://www.flexdays.app/" />
+  <link rel="alternate" hreflang="ar" href="https://www.flexdays.app/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.flexdays.app/" />
+
+  <!-- Favicons & app icons -->
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#1679d7" />
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlexDays" />
+  <meta property="og:title" content="FlexDays | تأخير أقل، مرونة أكثر مع FlexDays." />
+  <meta property="og:description" content="FlexDays تطبيق موارد بشرية شامل وحديث، بسيط وسريع، صُمّم للإجازات والجداول الزمنية وتتبّع الوقت بسعر منطقي. أول 10 موظفين مجانًا." />
+  <meta property="og:url" content="https://www.flexdays.app/ar/" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:image" content="https://www.flexdays.app/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FlexDays | تأخير أقل، مرونة أكثر مع FlexDays." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlexDays | تأخير أقل، مرونة أكثر مع FlexDays." />
+  <meta name="twitter:description" content="FlexDays تطبيق موارد بشرية شامل وحديث، بسيط وسريع، صُمّم للإجازات والجداول الزمنية وتتبّع الوقت بسعر منطقي. أول 10 موظفين مجانًا." />
+  <meta name="twitter:image" content="https://www.flexdays.app/og-card.png" />
+  <meta name="twitter:image:alt" content="FlexDays | تأخير أقل، مرونة أكثر مع FlexDays." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FlexDays",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "url": "https://www.flexdays.app/ar/",
+    "inLanguage": "ar",
+    "description": "FlexDays تطبيق موارد بشرية شامل وحديث، بسيط وسريع، صُمّم للإجازات والجداول الزمنية وتتبّع الوقت بسعر منطقي. أول 10 موظفين مجانًا.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "مجاني للفرق حتى 10 موظفين" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FlexDays",
+    "url": "https://www.flexdays.app/",
+    "logo": "https://www.flexdays.app/flexdays-logo-512.png"
+  }
+  </script>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=DM+Sans:wght@600&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: #1E1E24;
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Brand tokens ── */
+    :root {
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --blue:    #1679d7;
+      --blue-dk: #0e5fad;
+      --teal:    #09bccc;
+      --green:   #06bbae;
+      --success: #2EB872;
+      --warn:    #FFC107;
+      --danger:  #E8574F;
+      --dark:    #1E1E24;
+      --mid:     #6B6B76;
+      --border:  #D9DCE1;
+      --bg:      #F5F7FA;
+      --white:   #ffffff;
+      --radius:  12px;
+      --shadow-sm: 0 1px 4px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg: 0 16px 48px rgba(22,121,215,.18);
+    }
+
+    /* ── Utility ── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .text-center { text-align: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 30px; border-radius: 10px; font-weight: 700;
+      font-size: 15px; cursor: pointer;
+      transition: transform .18s ease-out, box-shadow .18s ease-out,
+                  background-color .18s ease-out, border-color .18s ease-out, opacity .18s ease-out;
+      text-decoration: none; border: none; white-space: nowrap; font-family: inherit;
+    }
+    .btn-block { width: 100%; justify-content: center; }
+    .btn-primary {
+      background: var(--blue); color: #fff;
+      box-shadow: 0 4px 18px rgba(22,121,215,.38);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::after {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 40%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: translateX(-130%) skewX(-18deg);
+      transition: transform .5s ease; pointer-events: none;
+    }
+    .btn-primary:hover { background: var(--blue-dk); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(22,121,215,.48); }
+    .btn-primary:hover::after { transform: translateX(320%) skewX(-18deg); }
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal), var(--green));
+      color: #fff; box-shadow: 0 4px 18px rgba(9,188,204,.35);
+    }
+    .btn-teal:hover { opacity: .92; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(9,188,204,.45); }
+    .btn-outline {
+      background: transparent; color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+    .btn-outline:hover { background: #eef5fd; transform: translateY(-1px); }
+
+    /* ── "Coming soon" badge (non-clickable, replaces portal CTAs) ── */
+    .btn-soon {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 28px; border-radius: 10px;
+      font-family: var(--font-display); font-weight: 700; font-size: 15px;
+      color: var(--mid); background: var(--bg);
+      border: 1px dashed var(--border);
+      cursor: default; white-space: nowrap; user-select: none;
+    }
+    .btn-soon .soon-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+      background: var(--warn); box-shadow: 0 0 0 4px rgba(255,193,7,.2);
+    }
+    .btn-soon-nav { padding: 9px 18px; font-size: 13px; }
+
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid var(--blue); outline-offset: 3px;
+    }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 20px; font-size: 12px;
+      font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+    }
+    .tag-blue { background: #e8f2fd; color: var(--blue); }
+    .tag-teal { background: #e0f7f9; color: #0899a8; }
+    .tag-vision { background: rgba(9,188,204,.15); color: var(--teal); }
+    .tag--lead { margin-bottom: 18px; }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 44px); font-weight: 800;
+      line-height: 1.15; color: var(--dark);
+    }
+    .section-sub {
+      font-size: 17px; color: var(--mid); max-width: 580px;
+      margin: 0 auto; line-height: 1.75;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .mt-sm { margin-top: 14px; }
+    .mt-xs { margin-top: 8px; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    #features, #pricing, #setup, #get-started { scroll-margin-top: 80px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background-color .25s ease, box-shadow .25s ease;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 4px 24px rgba(30,30,36,.08);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0;
+      transition: padding .25s ease;
+    }
+    nav.scrolled .nav-inner { padding: 7px 0; }
+    .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .brand img { height: 38px; width: 38px; object-fit: contain; }
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 800; color: var(--dark); letter-spacing: -.5px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .btn-nav { padding: 10px 22px; font-size: 14px; }
+    .nav-signin {
+      font-size: 14px; font-weight: 600; color: var(--mid);
+      text-decoration: none; transition: color .15s;
+    }
+    .nav-signin:hover { color: var(--blue); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 90px 0 80px;
+      background: linear-gradient(165deg, #f0f7ff 0%, #e8f9fb 55%, #f5fff9 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(25deg, rgba(22,121,215,.08) 0%, rgba(9,188,204,.06) 45%, rgba(6,187,174,.09) 100%);
+      opacity: 0; animation: hero-glow 14s ease-in-out infinite alternate;
+    }
+    @keyframes hero-glow { to { opacity: 1; } }
+    .blob {
+      position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: .45;
+      will-change: transform;
+    }
+    .blob-1 { width: 500px; height: 500px; background: #c5e3fb; top: -120px; right: -80px; animation: drift-1 16s ease-in-out infinite; }
+    .blob-2 { width: 380px; height: 380px; background: #b3f0f3; bottom: -80px; left: -60px; animation: drift-2 20s ease-in-out infinite; }
+    @keyframes drift-1 { 50% { transform: translate(-36px, 28px) scale(1.07); } }
+    @keyframes drift-2 { 50% { transform: translate(30px, -24px) scale(1.05); } }
+
+    .hero-inner { position: relative; z-index: 1; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+    .hero-eyebrow, .hero h1, .hero-hook, .hero-lede, .hero-actions, .hero-social-proof {
+      animation: rise .6s cubic-bezier(.22,.61,.36,1) both;
+    }
+    .hero-eyebrow      { animation-delay: .05s; }
+    .hero h1           { animation-delay: .14s; }
+    .hero-hook         { animation-delay: .24s; }
+    .hero-lede         { animation-delay: .32s; }
+    .hero-actions      { animation-delay: .42s; }
+    .hero-social-proof { animation-delay: .52s; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5.5vw, 62px); font-weight: 800;
+      line-height: 1.08; color: var(--dark); margin-bottom: 10px;
+    }
+    .hero-hook {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.8vw, 26px); font-weight: 700;
+      color: var(--blue); margin-bottom: 22px; line-height: 1.3;
+    }
+    .hero p {
+      font-size: 17px; color: var(--mid); margin-bottom: 36px;
+      line-height: 1.75; max-width: 530px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-social-proof {
+      margin-top: 48px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .proof-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--mid); font-weight: 500; }
+    .proof-icon { font-size: 18px; }
+
+    /* ── Hook strip ── */
+    .hooks-strip {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+    .hooks-inner {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hook-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 20px; font-size: 14px; font-weight: 600; color: var(--dark);
+      white-space: nowrap;
+    }
+    .hook-item + .hook-item { border-left: 1px solid var(--border); }
+    .hook-dot {
+      width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+    .hook-dot.blue  { background: #e8f2fd; }
+    .hook-dot.teal  { background: #e0f7f9; }
+    .hook-dot.green { background: #d8f5f0; }
+    .hook-soon { font-size: 11px; color: var(--mid); margin-left: 4px; }
+
+    /* ── Replace Legacy ── */
+    .replace { padding: 96px 0; background: var(--white); }
+    .replace-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .replace-left .section-title { margin-bottom: 20px; }
+    .replace-left p { font-size: 16px; color: var(--mid); line-height: 1.75; margin-top: 18px; margin-bottom: 28px; }
+
+    .vs-table { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .vs-header {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      background: var(--bg); padding: 14px 20px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; color: var(--mid);
+    }
+    .vs-header .good { color: var(--blue); }
+    .vs-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      padding: 14px 20px; border-top: 1px solid var(--border);
+      align-items: center; font-size: 14px;
+      transition: background-color .15s ease-out;
+    }
+    .vs-row:nth-child(even) { background: #fafbfc; }
+    .vs-row:hover { background: #f0f7ff; }
+    .vs-label { font-weight: 600; color: var(--dark); }
+    .vs-bad  { color: var(--danger); display: flex; align-items: center; gap: 5px; font-weight: 500; }
+    .vs-good { color: var(--success); display: flex; align-items: center; gap: 5px; font-weight: 600; }
+
+    /* ── Features ── */
+    .features { padding: 96px 0; background: var(--bg); }
+    .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+    .feat-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
+    }
+    .feat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px) scale(1.01); border-color: #b3d4f5; }
+    .feat-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 18px;
+    }
+    .bg-blue   { background: #e8f2fd; }
+    .bg-teal   { background: #e0f7f9; }
+    .bg-green  { background: #d8f5f0; }
+    .bg-amber  { background: #fff3cd; }
+    .bg-red    { background: #fde8e8; }
+    .bg-purple { background: #ede9fe; }
+    .bg-pink   { background: #fce7f3; }
+    .feat-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
+    .feat-card p  { font-size: 14px; color: var(--mid); line-height: 1.65; }
+    .feat-badge { display: inline-block; margin-top: 12px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+    .feat-badge.coming { background: #fff3cd; color: #92400e; }
+    .feat-badge.phase1 { background: #e8f2fd; color: var(--blue); }
+
+    /* ── AI vision card ── */
+    .ai-card {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #0f1724 0%, #0a2540 60%, #0d3050 100%);
+      border: 1px solid rgba(9,188,204,.3);
+      position: relative; overflow: hidden;
+    }
+    .ai-card:hover { border-color: rgba(9,188,204,.55); }
+    .ai-glow {
+      position: absolute; top: -40px; right: -40px; width: 220px; height: 220px;
+      border-radius: 50%; pointer-events: none;
+      background: radial-gradient(circle, rgba(9,188,204,.12) 0%, transparent 70%);
+    }
+    .ai-row { display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .ai-emoji { font-size: 52px; flex-shrink: 0; line-height: 1; }
+    .ai-body { flex: 1; min-width: 260px; }
+    .ai-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .ai-head h3 { color: #fff; font-size: 20px; margin: 0; }
+    .ai-badge {
+      background: rgba(167,139,250,.2); color: #c4b5fd; border: 1px solid rgba(167,139,250,.3);
+      padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;
+      letter-spacing: .5px; text-transform: uppercase;
+    }
+    .ai-desc { color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.7; margin-bottom: 20px; max-width: 620px; }
+    .ai-quotes { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ai-quote {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: 10px 16px; font-size: 13px;
+      color: rgba(255,255,255,.8); font-style: italic;
+    }
+
+    /* ── Timesheet ── */
+    .timesheet { padding: 96px 0; background: var(--white); }
+    .ts-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .ts-copy > p { color: var(--mid); font-size: 16px; margin-top: 14px; line-height: 1.75; }
+    .ts-points { display: grid; gap: 20px; margin-top: 32px; }
+    .ts-point { display: flex; gap: 16px; }
+    .ts-num {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff; font-weight: 800; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ts-point h4 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--dark); }
+    .ts-point p  { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+    .ts-visual {
+      background: linear-gradient(145deg, #eaf4ff, #e0f8fb);
+      border-radius: 20px; padding: 32px;
+    }
+    .ts-highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .ts-hl {
+      background: var(--white); border-radius: 14px; padding: 22px;
+      border: 1px solid var(--border);
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
+    }
+    .ts-hl:hover { border-color: #93c5fd; box-shadow: var(--shadow-md); transform: translateY(-3px) scale(1.01); }
+    .ts-hl-icon  { font-size: 26px; margin-bottom: 12px; }
+    .ts-hl-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .ts-hl-desc  { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+    /* ── How it works ── */
+    .how { padding: 96px 0; background: var(--bg); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px; }
+    .steps-grid-6 { grid-template-columns: repeat(3,1fr); }
+    .steps-grid-6 .step-card:nth-child(3n)::after { display: none; }
+    .how-done {
+      max-width: 640px; margin: 40px auto 0; text-align: center;
+      font-size: 15px; font-weight: 600; color: var(--dark);
+      background: var(--white); border: 1px solid rgba(13,37,63,.08);
+      border-radius: 12px; padding: 16px 24px; box-shadow: 0 1px 2px rgba(13,37,63,.04);
+    }
+    .step-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 22px; text-align: center;
+      position: relative;
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
+    }
+    .step-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px) scale(1.01); border-color: #b3d4f5; }
+    .step-card::after {
+      content: '→';
+      content: '→' / '';
+      position: absolute; right: -20px; top: 44px;
+      font-size: 20px; color: var(--border); font-weight: 700;
+    }
+    .step-card:last-child::after { display: none; }
+    .js .step-card::after { opacity: 0; }
+    .step-card.in::after { animation: arrow-in .4s ease-out both; animation-delay: calc(var(--d, 0s) + .25s); }
+    @keyframes arrow-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff; font-size: 20px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px; box-shadow: 0 4px 14px rgba(22,121,215,.35);
+    }
+    .step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
+    .step-card p  { font-size: 13px; color: var(--mid); line-height: 1.65; }
+    .step-time {
+      display: inline-block; margin-top: 12px; padding: 3px 10px;
+      background: #e8f2fd; color: var(--blue); border-radius: 20px;
+      font-size: 11px; font-weight: 700;
+    }
+
+    /* ── Pricing ── */
+    .pricing { padding: 96px 0; background: var(--white); }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 860px; margin: 56px auto 0; }
+    .plan-card {
+      border: 2px solid var(--border); border-radius: 18px;
+      padding: 36px 32px; position: relative; background: var(--white);
+      transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out;
+    }
+    .plan-card:hover { border-color: #93c5fd; box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .plan-card.featured {
+      border-color: var(--blue); box-shadow: var(--shadow-lg);
+      background: linear-gradient(180deg, #f4faff 0%, var(--white) 42%);
+    }
+    .plan-card.featured:hover { border-color: var(--blue); }
+    .plan-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #fff; font-size: 11px; font-weight: 700;
+      padding: 4px 16px; border-radius: 20px; letter-spacing: .5px;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .plan-name  { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--mid); margin-bottom: 8px; }
+    .plan-price { font-size: 48px; font-weight: 900; color: var(--dark); line-height: 1; margin-bottom: 6px; }
+    .plan-price span { font-size: 22px; font-weight: 600; color: var(--mid); }
+    .plan-price-sm { font-size: 32px; line-height: 1.2; }
+    .plan-price-sm span { font-size: 14px; }
+    .plan-desc  { font-size: 14px; color: var(--mid); margin-bottom: 28px; line-height: 1.6; }
+    .plan-features { list-style: none; display: grid; gap: 12px; margin-bottom: 32px; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--dark); }
+    .plan-features li::before { content: '✓'; color: var(--success); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .plan-features li.no { color: var(--mid); }
+    .plan-features li.no::before { content: '×'; color: var(--border); }
+    .plan-features li.limited { color: var(--dark); }
+    .plan-features li.limited::before { content: '~'; color: var(--warn); font-weight: 800; }
+    .plan-features:last-child, .plan-features:has(+ .plan-section-label) { margin-bottom: 0; }
+    .plan-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--mid); margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+    .paddle-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; font-size: 12px; color: var(--mid); }
+    .paddle-badge svg { flex-shrink: 0; }
+    .paddle-badge strong { color: var(--blue); }
+
+    /* ── Roadmap ── */
+    .roadmap {
+      padding: 96px 0;
+      background: linear-gradient(160deg, #0f1724 0%, #0a2540 50%, #0d2d3f 100%);
+      position: relative; overflow: hidden;
+    }
+    .roadmap::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(9,188,204,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .roadmap-inner { position: relative; z-index: 1; }
+    .roadmap-inner .section-title { color: #fff; }
+    .roadmap-inner .section-sub   { color: rgba(255,255,255,.6); }
+    .phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 60px; }
+    .phase-card {
+      border: 1px solid rgba(255,255,255,.1); border-radius: 14px;
+      padding: 28px; background: rgba(255,255,255,.04);
+      backdrop-filter: blur(8px);
+      transition: transform .2s ease-out, border-color .2s ease-out, background-color .2s ease-out;
+    }
+    .phase-card:hover { border-color: rgba(9,188,204,.4); background: rgba(255,255,255,.07); transform: translateY(-3px); }
+    .phase-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px; }
+    .phase-label.now    { color: var(--teal); }
+    .phase-label.next   { color: #fbbf24; }
+    .phase-label.future { color: #a78bfa; }
+    .phase-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+    .phase-items { list-style: none; display: grid; gap: 8px; }
+    .phase-items li { font-size: 13px; color: rgba(255,255,255,.65); display: flex; align-items: flex-start; gap: 8px; }
+    .phase-items li::before { content: '›'; color: var(--teal); font-weight: 800; }
+    .phase-quote { color: rgba(255,255,255,.6); font-size: 12px; }
+    .super-app-banner {
+      margin-top: 48px; padding: 28px 32px;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px; text-align: center;
+    }
+    .super-app-banner h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .super-app-banner p  { font-size: 15px; color: rgba(255,255,255,.6); max-width: 520px; margin: 0 auto; }
+
+    /* ── Footer ── */
+    footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 48px 0 28px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 36px; }
+    .footer-tagline { font-size: 14px; font-style: italic; color: rgba(255,255,255,.65); }
+    footer .brand img { height: 34px; width: 34px; }
+    footer .brand-name { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,.6); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .15s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
+      transition: background-color .15s ease, color .15s ease, transform .15s ease;
+    }
+    .footer-social a:hover { background: rgba(255,255,255,.16); color: #fff; transform: translateY(-2px); }
+    .footer-social svg { width: 18px; height: 18px; }
+
+    /* ── Get started ── */
+    .waitlist {
+      padding: 96px 0;
+      background: linear-gradient(165deg, #f0f7ff 0%, #e8f9fb 55%, #f5fff9 100%);
+    }
+    .waitlist-card {
+      max-width: 680px; margin: 0 auto; text-align: center;
+      background: var(--white); border: 1px solid rgba(13,37,63,.08);
+      border-radius: 22px; padding: 52px 44px;
+      box-shadow: 0 24px 60px -24px rgba(22,121,215,.28);
+    }
+    .waitlist-card .section-title { margin-top: 14px; }
+    .waitlist-sub { font-size: 17px; color: var(--mid); line-height: 1.7; max-width: 520px; margin: 16px auto 32px; }
+    .wl-note { font-size: 12.5px; color: var(--mid); margin-top: 14px; }
+    .wl-founders {
+      margin: 34px auto 0; max-width: 540px; padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 14px; color: var(--mid); line-height: 1.7; font-style: italic;
+    }
+    @media (max-width: 560px) {
+      .waitlist-card { padding: 38px 22px; }
+    }
+
+    /* ── Scroll reveal & motion ── */
+    .js .reveal { opacity: 0; }
+    .js .reveal.in {
+      opacity: 1;
+      animation: rise .55s cubic-bezier(.22,.61,.36,1) backwards;
+      animation-delay: var(--d, 0s);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0s !important;
+      }
+      .js .reveal, .js .step-card::after { opacity: 1; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1080px) {
+      .hooks-inner { gap: 4px 10px; }
+      .hook-item + .hook-item { border-left: none; }
+    }
+    @media (max-width: 900px) {
+      .replace-inner  { grid-template-columns: 1fr; }
+      .ts-inner       { grid-template-columns: 1fr; }
+      .features-grid  { grid-template-columns: 1fr 1fr; }
+      .steps-grid     { grid-template-columns: 1fr 1fr; }
+      .step-card::after { display: none; }
+      .pricing-grid   { grid-template-columns: 1fr; max-width: 420px; }
+      .phase-grid     { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .brand-name     { font-size: 22px; }
+      .brand img      { height: 32px; width: 32px; }
+      .nav-right      { gap: 10px; }
+      .btn-nav        { padding: 9px 14px; font-size: 13px; }
+      .features-grid  { grid-template-columns: 1fr; }
+      .steps-grid     { grid-template-columns: 1fr; }
+      .hook-item + .hook-item { border-left: none; border-top: 1px solid var(--border); }
+      .hooks-inner    { flex-direction: column; align-items: stretch; }
+      .footer-inner   { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ════════════════════════════════════════════
+       MODERN PASS: icons · hero mockup · bento · type
+       ════════════════════════════════════════════ */
+
+    /* ── Line-icon system ── */
+    .icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      fill: none; stroke: currentColor; stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .feat-icon .icon { width: 26px; height: 26px; }
+    .hook-dot .icon  { width: 18px; height: 18px; }
+    .proof-icon      { display: inline-flex; }
+    .proof-icon .icon { width: 18px; height: 18px; }
+    .ts-hl-icon .icon { width: 26px; height: 26px; }
+    .vs-good .icon, .vs-bad .icon { width: 16px; height: 16px; stroke-width: 2.5; }
+
+    /* icon colors keyed to each tinted tile */
+    .feat-icon.bg-blue,   .hook-dot.blue   { color: var(--blue); }
+    .feat-icon.bg-teal,   .hook-dot.teal   { color: #0899a8; }
+    .feat-icon.bg-green,  .hook-dot.green  { color: #06a596; }
+    .feat-icon.bg-amber   { color: #d97706; }
+    .feat-icon.bg-red     { color: var(--danger); }
+    .feat-icon.bg-purple  { color: #7c3aed; }
+    .feat-icon.bg-pink    { color: #db2777; }
+    .proof-icon { color: var(--blue); }
+    .ts-hl-icon { color: var(--blue); }
+
+    /* ── Tighter, more designed type ── */
+    .hero h1, .hero-hook, .section-title, .brand-name,
+    .plan-price, .plan-name, .btn, h2, h3, h4 {
+      font-family: var(--font-display);
+    }
+    .hero h1        { letter-spacing: -.03em; }
+    .section-title  { letter-spacing: -.022em; }
+    .plan-price     { letter-spacing: -.02em; font-weight: 800; }
+    .brand-name     { letter-spacing: -.6px; }
+
+    /* ── Softer cards (less hard 1px border, subtle depth) ── */
+    .feat-card, .step-card, .plan-card:not(.featured), .ts-hl {
+      border-color: rgba(13,37,63,.08);
+      box-shadow: 0 1px 2px rgba(13,37,63,.04);
+    }
+
+    /* ── Hero: two columns with product mockup ── */
+    .hero-inner {
+      display: grid; grid-template-columns: 1.04fr .96fr;
+      gap: 56px; align-items: center;
+    }
+    .hero-copy { max-width: 560px; }
+    .hero-visual {
+      position: relative; z-index: 1;
+      animation: rise .6s cubic-bezier(.22,.61,.36,1) both; animation-delay: .34s;
+    }
+    .app-window {
+      background: #fff; border-radius: 18px; overflow: hidden;
+      border: 1px solid rgba(13,37,63,.06);
+      box-shadow: 0 30px 60px -22px rgba(22,121,215,.4), 0 12px 28px rgba(13,37,63,.1);
+      animation: float-window 6s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes float-window { 50% { transform: translateY(-10px); } }
+    .app-top {
+      display: flex; align-items: center; gap: 7px;
+      padding: 13px 16px; background: #fbfcfe;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .app-title { margin-left: 10px; font-size: 12px; font-weight: 700; color: var(--mid); letter-spacing: .2px; }
+    .app-body { padding: 20px; }
+    .app-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 18px; }
+    .app-stat {
+      background: linear-gradient(150deg, #f4faff, #eafafb);
+      border: 1px solid rgba(22,121,215,.12);
+      border-radius: 12px; padding: 12px 10px; text-align: center;
+    }
+    .app-stat-num { display: block; font-size: 24px; font-weight: 800; color: var(--dark); line-height: 1; }
+    .app-stat-label { display: block; margin-top: 5px; font-size: 11px; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: .4px; }
+    .app-list { display: grid; gap: 10px; }
+    .app-req {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 12px; border-radius: 12px;
+      border: 1px solid var(--border); background: #fff;
+    }
+    .app-avatar {
+      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 12px; font-weight: 700;
+    }
+    .app-req-main { flex: 1; min-width: 0; }
+    .app-req-name { display: block; font-size: 13px; font-weight: 700; color: var(--dark); }
+    .app-req-sub  { display: block; font-size: 12px; color: var(--mid); margin-top: 1px; }
+    .app-badge {
+      font-size: 11px; font-weight: 700; padding: 4px 10px;
+      border-radius: 20px; white-space: nowrap;
+    }
+    .app-badge.ok      { background: #e3f7ec; color: #1f9d57; }
+    .app-badge.pending { background: #fff3cd; color: #92600e; }
+    .hero-toast {
+      position: absolute; left: -24px; bottom: -22px; z-index: 2;
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid rgba(13,37,63,.08);
+      border-radius: 14px; padding: 12px 16px;
+      box-shadow: 0 16px 34px rgba(13,37,63,.16);
+      animation: float-window 6s ease-in-out infinite; animation-delay: .8s;
+    }
+    .hero-toast-ic {
+      width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--success), #23a866);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-toast-ic .icon { width: 17px; height: 17px; stroke-width: 3; }
+    .hero-toast strong { display: block; font-size: 13px; color: var(--dark); }
+    .hero-toast span   { display: block; font-size: 12px; color: var(--mid); }
+
+    /* ── Phone frame (real app screenshot) ── */
+    .hero-visual { display: flex; justify-content: center; }
+    .phone {
+      position: relative;
+      width: 300px; max-width: 100%;
+      padding: 7px;
+      background: linear-gradient(155deg, #2b3648 0%, #141c28 100%);
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 20px 40px -20px rgba(13,37,63,.34), 0 6px 16px rgba(13,37,63,.12);
+      animation: float-window 6s ease-in-out infinite;
+      will-change: transform;
+    }
+    .phone-screen {
+      position: relative;
+      display: block; overflow: hidden;
+      border-radius: 30px; background: #fff;  /* sits flush inside the thinner bezel */
+      aspect-ratio: 9 / 19.5;                 /* always phone-shaped */
+    }
+    .phone-screen img {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+    }
+    .phone-fallback {
+      display: none;
+      position: absolute; inset: 0;
+      align-items: center; justify-content: center;
+      padding: 26px; text-align: center;
+      font-size: 13px; color: var(--mid); line-height: 1.7;
+    }
+    .phone-fallback[style*="block"] { display: flex !important; }
+    .app-soon { display: inline-block; font-size: 13px; font-weight: 600; color: var(--dark); background: #fff3cd; border-radius: 999px; padding: 6px 14px; }
+
+    /* ── Bento feature grid ── */
+    .features-grid { grid-template-columns: repeat(4, 1fr); }
+    .feat-card.span2 { grid-column: span 2; }
+    .feat-card.flagship {
+      background: linear-gradient(145deg, #f5faff 0%, #ecfafb 100%);
+      border-color: rgba(22,121,215,.16);
+    }
+    .feat-card.flagship:hover { border-color: rgba(22,121,215,.34); }
+
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .feat-card.span2 { grid-column: span 2; }
+    }
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-copy  { max-width: none; }
+      .hero-visual { max-width: 460px; }
+      .hero-toast { left: auto; right: 10px; }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .feat-card.span2 { grid-column: span 1; }
+      .app-body { padding: 16px; }
+      .hero-toast { display: none; }
+    }
+
+    /* ════════════════════════════════════════════
+       PRODUCT SCREENSHOTS: browser frame · showcase
+       ════════════════════════════════════════════ */
+    .shot-frame { display: flex; justify-content: center; }
+
+    /* browser window frame for web-portal screenshots */
+    .browser {
+      width: 100%; background: #fff; border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(13,37,63,.08);
+      box-shadow: 0 24px 50px -22px rgba(22,121,215,.4), 0 10px 24px rgba(13,37,63,.1);
+    }
+    .browser-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 11px 14px; background: #fbfcfe; border-bottom: 1px solid var(--border);
+    }
+    .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .browser-url {
+      display: none;                          /* hidden for now (portal URL) */
+      margin-left: 10px; flex: 1; min-width: 0;
+      background: #fff; border: 1px solid var(--border); border-radius: 7px;
+      padding: 5px 12px; font-size: 12px; color: var(--mid);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .browser-shot { display: block; width: 100%; height: auto; }
+    .browser-fallback { padding: 40px 26px; text-align: center; font-size: 13px; color: var(--mid); line-height: 1.7; }
+
+    /* onboarding: phone + step list side by side */
+    .onb-inner {
+      display: grid; grid-template-columns: .82fr 1.18fr;
+      gap: 64px; align-items: center; margin-top: 56px;
+    }
+    .onb-visual { display: flex; justify-content: center; }
+    .onb-steps { display: grid; gap: 22px; }
+
+    /* timesheet visual now holds a phone */
+    .ts-visual--shot { display: flex; justify-content: center; }
+
+    /* mobile + web showcase */
+    .showcase { padding: 96px 0; background: var(--bg); }
+    .showcase-inner {
+      display: grid; grid-template-columns: .82fr 1.18fr;
+      gap: 56px; align-items: center; margin-top: 56px;
+    }
+    .showcase-web { display: grid; gap: 22px; min-width: 0; }
+
+    @media (max-width: 900px) {
+      .onb-inner       { grid-template-columns: 1fr; gap: 44px; }
+      .showcase-inner  { grid-template-columns: 1fr; gap: 40px; }
+    }
+      /* ── Nav sign-in / sign-up ── */
+    .nav-actions { display:flex; align-items:center; gap:10px; }
+    .btn-signin { background:transparent; color:var(--blue); border:2px solid var(--blue); box-shadow:none; }
+    .btn-signin:hover { background:#eef5fd; }
+    .btn-nav { white-space:nowrap; }
+    .cta-short { display:none; }
+    @media (max-width: 420px) {
+      .btn-nav { padding:8px 12px !important; font-size:13px !important; }
+      .brand-name { font-size:20px !important; }
+      .cta-long { display:none; }
+      .cta-short { display:inline; }
+    }
+    /* ════════════════════════════════════════════
+       ARABIC (RTL): font, line height, mirrored layout
+       ════════════════════════════════════════════ */
+    :root { --font-body: 'IBM Plex Sans Arabic', system-ui, sans-serif; --font-display: 'IBM Plex Sans Arabic', system-ui, sans-serif; }
+    body { line-height: 1.8; }
+    .hero h1, .section-title, .plan-price, h2, h3, h4 { letter-spacing: 0; }
+    .hero h1 { line-height: 1.3; }
+    .section-title { line-height: 1.4; }
+    .hero-hook { line-height: 1.6; }
+    .tag, .plan-name, .plan-section-label, .phase-label { letter-spacing: 0; text-transform: none; }
+    .brand-name { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .lang { font-family: 'DM Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: var(--dark); text-decoration: none; }
+    .lang:hover { color: var(--blue); }
+    /* phones: the bar keeps sign-in / sign-up; the language link moves to the footer */
+    @media (max-width: 480px) { .nav-right .lang { display: none; } }
+    .hook-item + .hook-item { border-left: none; border-right: 1px solid var(--border); }
+    @media (max-width: 1080px) { .hook-item + .hook-item { border-right: none; } }
+    .hook-soon { margin-left: 0; margin-right: 4px; }
+    .footer-inner { text-align: right; }
+    /* lets the phone mockup shrink on narrow screens (same fix as the English page) */
+    .ts-inner > * { min-width: 0; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','3091025977769402');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3091025977769402&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
+</head>
+<body>
+
+<!-- ── Icon sprite (Lucide-style line icons, one consistent set) ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="14" r="8"/><path d="M12 10v4l2.5 2.5M10 2h4M12 2v4M19 7l1.5-1.5"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M8 11h.01M8 16h.01M12 11h4M12 16h4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 5V5L7 10H4a1 1 0 0 0-1 1z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19.5 5.5a9 9 0 0 1 0 13"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M8 2h8"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M2 14h2M20 14h2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M21 2v6h-6M3 22v-6h6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/></symbol>
+  </defs>
+</svg>
+
+<!-- ── Nav ── -->
+<nav aria-label="Primary">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="brand" aria-label="الصفحة الرئيسية لـ FlexDays">
+        <img src="/icon-96.png" alt="" width="48" height="48" />
+        <span class="brand-name">FlexDays</span>
+      </a>
+      <div class="nav-right">
+        <a href="/" class="lang" lang="en" hreflang="en">English</a>
+        <a href="https://portal.flexdays.app/login" class="btn btn-signin btn-nav">تسجيل الدخول</a>
+        <a href="https://portal.flexdays.app/register" class="btn btn-primary btn-nav"><span class="cta-long">ابدأ مجانًا</span><span class="cta-short">إنشاء حساب</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span class="tag tag-teal">تطبيق الموارد البشرية الشامل</span>
+      </div>
+      <h1>تأخير أقل،<br /><span class="gradient-text">مرونة أكثر مع FlexDays.</span></h1>
+      <p class="hero-hook">الإجازات والجداول الزمنية وتتبّع الوقت، مترابطة،<br />بسعر منطقي فعلًا.</p>
+      <p class="hero-lede">
+        FlexDays منصة موارد بشرية متكاملة صُمّمت للشركات الحديثة، تبدأ بإدارة الإجازات والجداول الزمنية وتتبّع الوقت،
+        وتنمو لتصبح تطبيق الموارد البشرية الشامل الذي يستحقه فريقك. بلا تعقيد، ولا عقود مبالغ في أسعارها. فقط ما ينفع فعلًا.
+      </p>
+      <div class="hero-actions">
+        <a href="https://portal.flexdays.app/register" class="btn btn-primary">ابدأ مجانًا</a>
+        <a href="#features" class="btn btn-outline">استعرض المزايا</a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span> إعداد في أقل من 5 دقائق</div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span> مجاني للفرق حتى 10 موظفين</div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span> يدعم عدة دول</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/ar/img/app-calendar.webp" alt="تطبيق FlexDays للجوال يعرض تقويم الفريق وإجازاتك والزملاء الغائبين" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <div class="phone-fallback">لقطة شاشة التطبيق غير متاحة حاليًا.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Hook Strip ── -->
+<div class="hooks-strip">
+  <div class="container">
+    <div class="hooks-inner" data-stagger>
+      <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div> إدارة الإجازات</div>
+      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div> الجداول الزمنية</div>
+      <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div> متتبّع الوقت</div>
+      <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div> جداول العمل</div>
+      <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div> الموافقات</div>
+      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div> تحليلات الموارد البشرية <span class="hook-soon">(قريبًا)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Replace Legacy ── -->
+<section class="replace">
+  <div class="container">
+    <div class="replace-inner">
+      <div class="replace-left reveal">
+        <span class="tag tag-blue tag--lead">لماذا FlexDays؟</span>
+        <h2 class="section-title">جداول البيانات وأدوات الموارد البشرية المعقدة تكلّفك أكثر مما تظن.</h2>
+        <p>
+          البرامج المعقدة والتراخيص الباهظة وجداول البيانات التي لا تنتهي هي السائد، لكنها ليست قدرًا محتومًا.
+          بُني FlexDays من الأساس ليكون سريع الإعداد، سهل الاستخدام، وبسعر عادل للشركات بكل أحجامها.
+        </p>
+        <a href="#features" class="btn btn-primary mt-xs">اكتشف ما بداخله ←</a>
+      </div>
+      <div>
+        <div class="vs-table" data-stagger>
+          <div class="vs-header">
+            <span>الميزة</span>
+            <span>جداول البيانات والأدوات القديمة</span>
+            <span class="good">FlexDays ✦</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">وقت الإعداد</span>
+            <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> من أيام إلى أسابيع</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> أقل من 5 دقائق</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">التسعير</span>
+            <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> مكلفة أو يدوية</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> مجاني حتى 10 موظفين</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">الإجازات والجداول الزمنية وتتبّع الوقت</span>
+            <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> أدوات منفصلة</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> كلها في مكان واحد</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">العطلات في عدة دول</span>
+            <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> إدخال يدوي</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> تلقائيًا حسب الموقع</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">موافقات حسب الفريق</span>
+            <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> مسارات عمل جامدة</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> قابلة للتخصيص بالكامل</span>
+          </div>
+          <div class="vs-row">
+            <span class="vs-label">الجوال أولًا</span>
+            <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> الحاسوب أولًا</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> مصمَّم للجوال أولًا</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-blue">ما بداخله</span>
+      <h2 class="section-title mt-sm">كل ما يحتاجه فريق الموارد البشرية،<br />ولا شيء زائد.</h2>
+      <p class="section-sub mt-sm">يأتي FlexDays بالمزايا الأساسية التي سيستخدمها فريقك فعلًا، وينمو معك بينما نبني تطبيق الموارد البشرية الشامل.</p>
+    </div>
+    <div class="features-grid" data-stagger>
+      <div class="feat-card span2 flagship">
+        <div class="feat-icon bg-blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <h3>إدارة الإجازات</h3>
+        <p>يطلب الموظفون إجازاتهم في ثوانٍ. تتبّع ذكي للأرصدة للإجازات السنوية والمرضية والعمل من المنزل والأنواع المخصّصة، وكل ذلك تلقائيًا.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card flagship">
+        <div class="feat-icon bg-teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div>
+        <h3>الجداول الزمنية</h3>
+        <p>جداول زمنية مرتبطة مباشرة بالإجازات وبجدول العمل الذي ضبطته. بلا إدخال مزدوج، ولا عناء في المزامنة.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card flagship">
+        <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
+        <h3>متتبّع الوقت بلمسة واحدة</h3>
+        <p>ابدأ المؤقت بلمسة واحدة وتتبّع وقتك أثناء العمل. كل دقيقة تنتقل مباشرة إلى جدولك الزمني، دون إدخال يدوي.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div>
+        <h3>ضبط جداول العمل</h3>
+        <p>يحدد المسؤولون أيام العمل وعطلات نهاية الأسبوع وساعات العمل لكل موقع، مع جداول خاصة للموظفين بدوام جزئي. وتتبعها الجداول الزمنية وحسابات أرصدة الإجازات تلقائيًا.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon bg-amber" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div>
+        <h3>موافقات حسب الفريق</h3>
+        <p>مسارات موافقة متعددة المستويات تُضبط لكل فريق. يستطيع مسؤولو الفرق والموارد البشرية إعداد سلاسل موافقة مخصّصة دون الحاجة إلى قسم تقنية المعلومات.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon bg-blue" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></div>
+        <h3>العطلات في عدة دول</h3>
+        <p>تُطبَّق العطلات الرسمية تلقائيًا حسب الدولة والموقع، فتحصل الفرق في البلدان المختلفة دائمًا على أيام الإجازة الصحيحة.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon bg-red" aria-hidden="true"><svg class="icon"><use href="#i-user-plus"/></svg></div>
+        <h3>إضافة الموظفين دفعة واحدة</h3>
+        <p>استورد جميع موظفيك من ملف Excel، ثم انقل أرصدة إجازاتهم الحالية في ملف واحد. بلا إدخال يدوي للبيانات، ويكون فريقك جاهزًا خلال دقائق.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card span2 flagship">
+        <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
+        <h3>المشاريع وتقارير الوقت</h3>
+        <p>سجّل الوقت على المشاريع والمهام، وحدّد ما هو قابل للفوترة، واطّلع عليه في تقارير لوحة المعلومات والملخص والتفاصيل والعرض الأسبوعي والحضور. احفظ طرق العرض التي تستخدمها وصدّرها إلى Excel أو CSV.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card flagship">
+        <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-bell"/></svg></div>
+        <h3>إشعارات ذكية</h3>
+        <p>إشعارات فورية لموافقات الإجازات والجداول الزمنية والقرارات وإعلانات الشركة، ليبقى الجميع على اطلاع.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card flagship">
+        <div class="feat-icon bg-amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div>
+        <h3>الفعاليات والإعلانات</h3>
+        <p>شارك أخبار الشركة وفعالياتها مع الجميع، أو مع موقع أو قسم أو فريق أو أشخاص بعينهم. تُنشر فورًا مع إشعار وتظهر في تقويم الفريق.</p>
+        <span class="feat-badge phase1">✦ المرحلة 1</span>
+      </div>
+      <div class="feat-card span2">
+        <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
+        <h3>تحليلات الموارد البشرية وتقاريرها</h3>
+        <p>خرائط حرارية، واتجاهات الإجازات، وتوفّر الفريق، وتقارير الأرصدة. اطّلع على جميع موظفيك بنظرة واحدة.</p>
+        <span class="feat-badge coming">⏳ قريبًا</span>
+      </div>
+      <div class="feat-card span2">
+        <div class="feat-icon bg-pink" aria-hidden="true"><svg class="icon"><use href="#i-card"/></svg></div>
+        <h3>التكامل مع الرواتب</h3>
+        <p>اربط أرصدة الإجازات والجداول الزمنية بالرواتب مباشرة، وتخلّص من المطابقة اليدوية نهائيًا.</p>
+        <span class="feat-badge coming">⏳ قريبًا</span>
+      </div>
+
+      <div class="feat-card ai-card">
+        <div class="ai-glow" aria-hidden="true"></div>
+        <div class="ai-row">
+          <div class="ai-emoji" aria-hidden="true"><svg class="icon" style="width:52px;height:52px;color:#7cd9e4"><use href="#i-bot"/></svg></div>
+          <div class="ai-body">
+            <div class="ai-head">
+              <h3>مساعد موارد بشرية بالذكاء الاصطناعي</h3>
+              <span class="ai-badge">✦ رؤيتنا</span>
+            </div>
+            <p class="ai-desc">
+              هذا هو الاتجاه الذي نسير فيه، ونريد أن نكون صريحين بشأنه. الهدف يوم تصف فيه ما تحتاجه بلغة بسيطة فينفّذه FlexDays فورًا. بلا نقرات، ولا قوائم، ولا تدريب.
+            </p>
+            <div class="ai-quotes">
+              <div class="ai-quote">"وافق على كل الطلبات المعلّقة من فريق الهندسة"</div>
+              <div class="ai-quote">"من في إجازة الأسبوع القادم؟"</div>
+              <div class="ai-quote">"امنح أحمد 3 أيام إجازة إضافية"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Timesheet Deep Dive ── -->
+<section class="timesheet">
+  <div class="container">
+    <div class="ts-inner">
+      <div class="ts-copy reveal">
+        <span class="tag tag-teal tag--lead">الجداول الزمنية × الإجازات × جدول العمل</span>
+        <h2 class="section-title">ثلاثي يعمل معًا<br />فعلًا.</h2>
+        <p>
+          تتعامل معظم أدوات الموارد البشرية مع الجداول الزمنية والإجازات كنظامين منفصلين. أما FlexDays فيربطهما من اليوم الأول، فتبقى بياناتك متسقة دائمًا ولا يضطر فريقك إلى المطابقة يدويًا أبدًا.
+        </p>
+        <div class="ts-points" data-stagger>
+          <div class="ts-point">
+            <div class="ts-num">1</div>
+            <div>
+              <h4>يضبط المسؤول جدول العمل مرة واحدة</h4>
+              <p>حدّد أيام العمل وساعات الورديات والمواقع لكل فريق، ويعتمد عليها كل ما يليها كمصدر وحيد للحقيقة.</p>
+            </div>
+          </div>
+          <div class="ts-point">
+            <div class="ts-num">2</div>
+            <div>
+              <h4>تُخصم الإجازة من جدول العمل تلقائيًا</h4>
+              <p>تظهر أيام الإجازة المعتمدة فورًا في الجداول الزمنية. بلا تعديلات يدوية، ولا مطابقة على الإطلاق.</p>
+            </div>
+          </div>
+          <div class="ts-point">
+            <div class="ts-num">3</div>
+            <div>
+              <h4>تبقى الأرصدة دقيقة لحظة بلحظة</h4>
+              <p>تتحدّث أرصدة الإجازات لحظة اعتماد الطلب أو إلغائه أو تعديله، محدّثة وصحيحة دائمًا.</p>
+            </div>
+          </div>
+          <div class="ts-point">
+            <div class="ts-num">4</div>
+            <div>
+              <h4>يرى المديرون الصورة كاملة</h4>
+              <p>جداول الفريق وتداخل الإجازات وساعات العمل في عرض واحد موحّد، دون التنقل بين التطبيقات.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ts-visual ts-visual--shot reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="/ar/img/app-timesheet.webp" loading="lazy" decoding="async" alt="الجدول الزمني في تطبيق FlexDays للجوال يعرض الساعات الفعلية مقابل المتوقعة وتفصيل الأيام وقيود المشاريع" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="phone-fallback">لقطة شاشة الجدول الزمني غير متاحة حاليًا.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How it works ── -->
+<section class="how" id="setup">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-blue">إعداد سهل لدرجة مدهشة</span>
+      <h2 class="section-title mt-sm">قائمة مهام إرشادية تجهّزك<br />في ست خطوات سريعة.</h2>
+      <p class="section-sub mt-sm">قائمة إعداد خطوة بخطوة ترشدك إلى كل شيء داخل التطبيق نفسه. بلا قسم تقنية معلومات، ولا رسوم تنفيذ، ولا تدريب.</p>
+    </div>
+    <div class="onb-inner">
+      <div class="onb-visual reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="/ar/img/app-onboarding.webp" loading="lazy" decoding="async" alt="قائمة إعداد مساحة العمل في FlexDays تعرض خطوات الإعداد الست ونسبة التقدّم" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="phone-fallback">لقطة شاشة إعداد مساحة العمل غير متاحة حاليًا.</div>
+          </div>
+        </div>
+      </div>
+      <div class="onb-steps" data-stagger>
+        <div class="ts-point">
+          <div class="ts-num">1</div>
+          <div>
+            <h4>🏢 إعداد الشركة</h4>
+            <p>أضف المعلومات الأساسية لشركتك ومقرّها الرئيسي ودولتها، فهي الأساس الذي يُبنى عليه كل شيء.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">2</div>
+          <div>
+            <h4>🗓️ العطلات الرسمية</h4>
+            <p>العطلات الرسمية لدولتك محمّلة مسبقًا، فقط راجع الأيام التي تنطبق على فريقك وأكّدها.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">3</div>
+          <div>
+            <h4>📅 أيام العمل</h4>
+            <p>اضبط جدول عملك: أيام العمل وعطلات نهاية الأسبوع وساعات العمل، وتتبعها الجداول الزمنية والأرصدة.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">4</div>
+          <div>
+            <h4>🌿 أنواع الإجازات</h4>
+            <p>حدّد فئات الإجازات: السنوية والمرضية والعمل من المنزل وأي أنواع مخصّصة تحتاجها شركتك، ولكلٍّ منها قواعده.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">5</div>
+          <div>
+            <h4>🏛️ الهيكل التنظيمي</h4>
+            <p>أضف الأقسام والفرق لتصل الموافقات إلى وجهتها الصحيحة ويكون كل شخص في مكانه المناسب.</p>
+          </div>
+        </div>
+        <div class="ts-point">
+          <div class="ts-num">6</div>
+          <div>
+            <h4>👥 استيراد الموظفين</h4>
+            <p>أضف أعضاء فريقك دفعة واحدة من ملف Excel أو ادعُهم فرادى، وتُضبط أرصدة الإجازات فورًا.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="how-done reveal">✓ هذا كل شيء، اكتمل الإعداد. يقدّم الموظفون الطلبات، ويعتمدها المديرون، وتطّلع الموارد البشرية على كل شيء.</p>
+  </div>
+</section>
+
+<!-- ── Mobile + Web Showcase ── -->
+<section class="showcase">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-teal">تطبيق الجوال + بوابة الويب</span>
+      <h2 class="section-title mt-sm">منصة واحدة،<br />على كل شاشة.</h2>
+      <p class="app-soon mt-sm">بوابة الويب متاحة الآن، وتطبيقا iOS وAndroid يصلان هذا الشهر.</p>
+      <p class="section-sub mt-sm">يحصل الموظفون والمسؤولون على حدٍّ سواء على تطبيق الجوال وبوابة الويب الكاملة. اطلب إجازة، وسجّل ساعاتك، واعتمد الطلبات، وأدِر فريقك من أيهما تفضّل، مع مزامنة دائمة.</p>
+    </div>
+    <div class="showcase-inner">
+      <div class="onb-visual reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="/ar/img/app-home.webp" loading="lazy" decoding="async" alt="الشاشة الرئيسية في تطبيق FlexDays للجوال مع الإجازة القادمة والموافقات المعلّقة والأرصدة وجدول هذا الأسبوع" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="phone-fallback">لقطة الشاشة الرئيسية غير متاحة حاليًا.</div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-web" data-stagger>
+        <div class="browser reveal">
+          <div class="browser-bar">
+            <span class="browser-dot" style="background:#ff5f57"></span>
+            <span class="browser-dot" style="background:#febc2e"></span>
+            <span class="browser-dot" style="background:#28c840"></span>
+            <span class="browser-url">portal.flexdays.app/calendar</span>
+          </div>
+          <img class="browser-shot" src="/ar/img/portal-calendar.webp" loading="lazy" decoding="async" alt="تقويم بوابة FlexDays يعرض إجازات الفريق والموافقات المعلّقة وعطلات الشهر" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <div class="browser-fallback" style="display:none">لقطة شاشة تقويم البوابة غير متاحة حاليًا.</div>
+        </div>
+        <div class="browser reveal">
+          <div class="browser-bar">
+            <span class="browser-dot" style="background:#ff5f57"></span>
+            <span class="browser-dot" style="background:#febc2e"></span>
+            <span class="browser-dot" style="background:#28c840"></span>
+            <span class="browser-url">portal.flexdays.app/sign-in</span>
+          </div>
+          <img class="browser-shot" src="/ar/img/portal-login.webp" loading="lazy" decoding="async" alt="شاشة تسجيل الدخول في بوابة FlexDays بهوية الشركة" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <div class="browser-fallback" style="display:none">لقطة شاشة تسجيل الدخول غير متاحة حاليًا.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ── -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-blue">الأسعار</span>
+      <h2 class="section-title mt-sm">أسعار عادلة.<br />بلا مفاجآت.</h2>
+      <p class="section-sub mt-sm">مجاني للفرق الصغيرة، وبسعر تنافسي كلما كبرت. وتُدار الفوترة بأمان عبر Paddle.</p>
+    </div>
+    <div class="pricing-grid" data-stagger>
+      <div class="plan-card">
+        <div class="plan-name">المبتدئة</div>
+        <div class="plan-price">مجانًا</div>
+        <div class="plan-desc">للفرق الصغيرة. مجانية دائمًا، دون حد زمني.</div>
+        <ul class="plan-features">
+          <li><strong>حتى 10 موظفين</strong></li>
+          <li>لا حاجة لبطاقة ائتمان</li>
+        </ul>
+        <div class="plan-section-label">المزايا الأساسية</div>
+        <ul class="plan-features">
+          <li>إدارة الإجازات والأرصدة</li>
+          <li>الجداول الزمنية</li>
+          <li>متتبّع الوقت بلمسة واحدة</li>
+          <li>المشاريع وتقارير الوقت</li>
+          <li>ضبط جداول العمل</li>
+          <li>موافقات حسب الفريق</li>
+          <li>دعم العطلات في عدة دول</li>
+          <li>استيراد الموظفين دفعة واحدة من Excel</li>
+          <li>استيراد أرصدة الإجازات من Excel</li>
+          <li>إشعارات ذكية</li>
+          <li>الفعاليات والإعلانات</li>
+          <li>تطبيق الجوال (iOS وAndroid، يصل هذا الشهر)</li>
+        </ul>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">للفرق الأكبر</div>
+        <div class="plan-name">الاحترافية</div>
+        <div class="plan-price plan-price-sm"><bdi>$2</bdi><span> / موظف / شهريًا</span></div>
+        <div class="plan-desc">للفرق التي يزيد عدد موظفيها على 10.</div>
+        <ul class="plan-features">
+          <li><strong>كل ما في الخطة المبتدئة</strong></li>
+          <li>تتوسّع مع عدد موظفيك</li>
+          <li>تدفع فقط عن الموظفين الزائدين على 10</li>
+          <li>بلا رسوم إعداد، وألغِ في أي وقت</li>
+        </ul>
+      </div>
+    </div>
+    <div class="paddle-badge reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#1679d7"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>
+      المدفوعات عبر <strong>Paddle</strong>، بأمان على مستوى المؤسسات لكل معاملة. استرداد خلال 14 يومًا (راجع <a href="/ar/refund-policy">سياسة الاسترداد</a>).
+    </div>
+  </div>
+</section>
+
+<!-- ── Roadmap / Super App ── -->
+<section class="roadmap">
+  <div class="container roadmap-inner">
+    <div class="text-center reveal">
+      <span class="tag tag-vision tag--lead">الرؤية</span>
+      <h2 class="section-title">هذه مجرد البداية.</h2>
+      <p class="section-sub mt-sm">يبدأ FlexDays بالإجازات والجداول الزمنية وتتبّع الوقت، وينمو ليصبح تطبيق الموارد البشرية الشامل الذي يحلّ محل كل أدواتك.</p>
+    </div>
+    <div class="phase-grid" data-stagger>
+      <div class="phase-card">
+        <div class="phase-label now">▶ المرحلة 1، متاحة الآن</div>
+        <h3>أساس الموارد البشرية</h3>
+        <ul class="phase-items">
+          <li>إدارة الإجازات والأرصدة</li>
+          <li>الجداول الزمنية</li>
+          <li>متتبّع الوقت بلمسة واحدة</li>
+          <li>المشاريع وتقارير الوقت</li>
+          <li>ضبط جداول العمل</li>
+          <li>موافقات متعددة المستويات حسب الفريق</li>
+          <li>إضافة الموظفين دفعة واحدة</li>
+          <li>استيراد أرصدة الإجازات</li>
+          <li>العطلات الرسمية في عدة دول</li>
+          <li>جداول الموظفين بدوام جزئي</li>
+          <li>قواعد ترحيل الأرصدة</li>
+          <li>تطبيقات الجوال (iOS وAndroid، تصل هذا الشهر)</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label next">◆ المرحلة 2، قريبًا</div>
+        <h3>التحليلات والتكاملات</h3>
+        <ul class="phase-items">
+          <li>تحليلات الموارد البشرية والخرائط الحرارية للإجازات</li>
+          <li>التكامل مع الرواتب</li>
+          <li>تسجيل الدخول الموحّد (SSO)</li>
+          <li>تصدير كشف الإجازات بصيغة PDF</li>
+          <li>تبادل الإجازات بين الموظفين</li>
+          <li>طلبات أيام العمل الإضافية</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label future">✦ التطبيق الشامل، الصورة الكبرى</div>
+        <h3>تطبيق الموارد البشرية الشامل</h3>
+        <ul class="phase-items">
+          <li>التوظيف ونظام تتبّع المتقدمين</li>
+          <li>تقييمات الأداء</li>
+          <li>الهيكل التنظيمي ودليل الموظفين</li>
+          <li>بوابة الخدمة الذاتية للموظفين</li>
+          <li>المزايا والتعويضات</li>
+          <li>مسارات تهيئة الموظفين الجدد</li>
+          <li>منصة موارد بشرية واحدة لكل شيء</li>
+          <li>مساعد موارد بشرية بالذكاء الاصطناعي: صِف ما تحتاجه بلغة بسيطة فينفّذه FlexDays. <em class="phase-quote">"وافق على كل الطلبات المعلّقة من فريق الهندسة"</em></li>
+        </ul>
+      </div>
+    </div>
+    <div class="super-app-banner reveal">
+      <h3><svg class="icon" style="display:inline-block;vertical-align:-3px;width:22px;height:22px;color:var(--teal)" aria-hidden="true"><use href="#i-rocket"/></svg> منصة واحدة لكل أدوات الموارد البشرية.</h3>
+      <p>نبني تطبيق الموارد البشرية الشامل الذي ينتظره السوق، بدءًا بالمزايا التي تستخدمها الفرق يوميًا، ولن نتوقف حتى نغطي كل شيء.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Get started ── -->
+<section class="waitlist" id="get-started">
+  <div class="container">
+    <div class="waitlist-card reveal">
+      <span class="tag tag-teal tag--lead"><svg class="icon" style="width:14px;height:14px;vertical-align:-2px" aria-hidden="true"><use href="#i-rocket"/></svg> متاح الآن</span>
+      <h2 class="section-title">ابدأ استخدام FlexDays اليوم.</h2>
+      <p class="waitlist-sub">أنشئ شركتك، وادعُ فريقك، وأدِر الإجازات والجداول الزمنية وتتبّع الوقت في مكان واحد. مجاني للفرق حتى 10 موظفين.</p>
+      <a href="https://portal.flexdays.app/register" class="btn btn-primary">ابدأ مجانًا</a>
+      <p class="wl-note">لديك حساب بالفعل؟ <a href="https://portal.flexdays.app/login">تسجيل الدخول</a></p>
+
+      <p class="wl-founders">بناه مؤسسان سئما أدوات الموارد البشرية المعقدة والمبالغ في أسعارها. وFlexDays هو جوابنا: موارد بشرية بسيطة وبأسعار معقولة، تعمل كما ينبغي.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="brand">
+        <img src="/icon-96.png" alt="" width="48" height="48" />
+        <span class="brand-name">FlexDays</span>
+      </div>
+      <div class="footer-links">
+        <a href="#features">المزايا</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="https://portal.flexdays.app/register">إنشاء حساب</a>
+        <a href="https://portal.flexdays.app/login">تسجيل الدخول</a>
+        <a href="/ar/refund-policy">سياسة الاسترداد</a>
+        <a href="/ar/privacy-policy">سياسة الخصوصية</a>
+        <a href="/ar/delete-account">حذف الحساب</a>
+        <a href="/ar/terms">الشروط</a>
+        <a href="/ar/security">الأمان</a>
+        <a href="mailto:hello@beanvoid.com">تواصل معنا</a>
+        <a href="/" lang="en" hreflang="en">English</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/flexdays/" aria-label="FlexDays على LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96v14H.02V8zM8 8h4.75v1.9h.07c.66-1.2 2.28-2.47 4.7-2.47 5.03 0 5.96 3.3 5.96 7.6V22h-4.96v-6.4c0-1.53-.03-3.5-2.13-3.5-2.13 0-2.46 1.66-2.46 3.38V22H8V8z"/></svg>
+        </a>
+        <a href="https://x.com/flexdays" aria-label="FlexDays على X" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.5h3.6l-7.9 9 9.3 12.3h-7.3l-5.7-7.5-6.5 7.5H.7l8.4-9.6L0 1.5h7.5l5.2 6.9 5.2-6.9zm-1.3 18.6h2L6.5 3.4H4.4l13.2 16.7z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FlexDays. جميع الحقوق محفوظة.</span>
+      <span class="footer-tagline">"تأخير أقل، مرونة أكثر مع FlexDays."</span>
+      <span>صُنع بـ <svg class="icon" style="display:inline-block;vertical-align:-2px;width:14px;height:14px;color:var(--danger);fill:currentColor" aria-hidden="true"><use href="#i-heart"/></svg> من <a href="https://www.beanvoid.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75)">beanvoid</a> لفرق الموارد البشرية الحديثة.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 72, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      }
+    });
+  });
+
+  // Sticky nav: solid background + shadow + tighter padding once scrolled
+  const nav = document.querySelector('nav');
+  let navTick = false;
+  function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 12); navTick = false; }
+  window.addEventListener('scroll', () => {
+    if (!navTick) { navTick = true; requestAnimationFrame(updateNav); }
+  }, { passive: true });
+  updateNav();
+
+  // Stagger: children of [data-stagger] groups cascade in with incremental delays
+  document.querySelectorAll('[data-stagger]').forEach(group => {
+    [...group.children].forEach((child, i) => {
+      child.classList.add('reveal');
+      child.style.setProperty('--d', Math.min(i * 60, 480) + 'ms');
+    });
+  });
+
+  // Scroll reveal via IntersectionObserver (skipped for reduced-motion users)
+  const revealEls = document.querySelectorAll('.reveal');
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+</script>
+</body>
+</html>
