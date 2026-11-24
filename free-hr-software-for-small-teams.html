@@ -40,7 +40,7 @@
     "operatingSystem": "Web, iOS, Android",
     "url": "https://www.flexdays.app/",
     "description": "Free HR software for small teams: leave, timesheets and onboarding in one simple app. First 10 employees free, $2 for each one after. Set up in 5 minutes.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for teams up to 10 employees" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Your first 10 employees are free" }
   }
   </script>
 
@@ -55,10 +55,10 @@
   </script>
   <script type="application/ld+json">
   { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Is FlexDays really free for small teams?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free for teams of up to 10 employees, with no time limit and no credit card. Above 10, you pay $2 per month only for each employee beyond the first 10."}},
+    {"@type":"Question","name":"Is FlexDays really free for small teams?","acceptedAnswer":{"@type":"Answer","text":"Yes, your first 10 employees are completely free, with no time limit and no credit card. Above 10, you pay $2 per month only for each employee beyond the first 10."}},
     {"@type":"Question","name":"What is the best free HR app for a small business?","acceptedAnswer":{"@type":"Answer","text":"FlexDays is built for small businesses that find big HR suites too expensive and complex. It sets up in under 5 minutes and combines leave, timesheets, and onboarding in one place, free up to 10."}},
     {"@type":"Question","name":"Does it work for larger or growing teams?","acceptedAnswer":{"@type":"Answer","text":"Yes. FlexDays scales from a handful of people to hundreds on the same platform, with team-based approvals, time reports, and multi-country support."}},
-    {"@type":"Question","name":"How much does it cost after 10 employees?","acceptedAnswer":{"@type":"Answer","text":"A flat $2 per employee per month, and you only pay for employees beyond the first 10. No setup fees, cancel anytime."}},
+    {"@type":"Question","name":"How much does it cost after 10 employees?","acceptedAnswer":{"@type":"Answer","text":"Your first 30 days are free at any size. After that, a flat $2 per employee per month, and you only pay for employees beyond the first 10. No setup fees, cancel anytime."}},
     {"@type":"Question","name":"Can we bring over our existing leave balances?","acceptedAnswer":{"@type":"Answer","text":"Yes. Download the balance template, add each employee's email and the days they have left for each leave type, and upload it. FlexDays previews every change before applying it, and if any row has a mistake nothing is changed."}}
   ]}
   </script>
@@ -758,7 +758,7 @@
       border-radius: 30px; background: #fff;  /* sits flush inside the thinner bezel */
       aspect-ratio: 9 / 19.5;                 /* always phone-shaped */
     }
-    .phone-screen img {
+    .phone-screen img, .phone-screen video {
       display: block; width: 100%; height: 100%;
       object-fit: cover; object-position: top center;
     }
@@ -937,7 +937,7 @@
   <div class="container hero-inner">
     <div class="hero-copy">
       <div class="hero-eyebrow">
-        <span class="tag tag-teal">Free for teams up to 10</span>
+        <span class="tag tag-teal">First 10 employees free</span>
       </div>
       <h1>Free HR software<br /><span class="gradient-text">for small teams.</span></h1>
       <p class="hero-hook">Leave, timesheets &amp; onboarding in one simple app,<br />without the price tag of big HR suites.</p>
@@ -952,7 +952,8 @@
       </div>
       <div class="hero-social-proof">
         <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span> Set up in under 5 minutes</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span> Free for teams up to 10</div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span> Your first 10 employees are free</div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span> 30 days free for any team size</div>
         <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span> Multi-country support</div>
       </div>
     </div>
@@ -960,8 +961,9 @@
     <div class="hero-visual">
       <div class="phone">
         <div class="phone-screen">
-          <img src="app-calendar.webp" alt="FlexDays mobile app showing the team calendar, personal leave, and colleagues who are out" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <div class="phone-fallback">Save your app screenshot as <strong>app-calendar.png</strong> in the website folder to show it here.</div>
+          <video class="hero-clip" autoplay muted loop playsinline preload="auto" poster="/hook-clip-poster.webp" width="720" height="1560" aria-label="In the FlexDays app, a manager approves Sophia's 3 days of annual leave, and her timesheet marks those days as leave by itself.">
+            <source src="/hook-clip.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -988,7 +990,7 @@
     <span class="tag tag-blue tag--lead">For small teams</span>
     <h2 class="section-title">The simple, affordable HR app small businesses actually want</h2>
     <p>Most HR tools are built for big companies: heavy, expensive, and full of features a small team will never touch. FlexDays takes the opposite approach: the everyday essentials done brilliantly: requesting time off, tracking timesheets, and onboarding new people, all in one clean app, on mobile and web.</p>
-    <p>If your team still runs leave through spreadsheets, WhatsApp, or email chains, FlexDays replaces that with one always-accurate system that sets up in under five minutes. And it's genuinely free for teams up to 10, with no credit card and no time limit.</p>
+    <p>If your team still runs leave through spreadsheets, WhatsApp, or email chains, FlexDays replaces that with one always-accurate system that sets up in under five minutes. And your first 10 employees are genuinely free, with no credit card and no time limit.</p>
     <p>It isn't only for small teams, either: FlexDays <strong>grows with you</strong>, scaling to 50, 100, or more employees on the same platform at a flat <strong>$2 per employee / month</strong> beyond the first 10. Free is how you start, not a ceiling.</p>
   </div>
 </section>
@@ -1021,7 +1023,7 @@
           <div class="vs-row">
             <span class="vs-label">Pricing</span>
             <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> Costly or manual</span>
-            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> Free up to 10 employees</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> First 10 employees free</span>
           </div>
           <div class="vs-row">
             <span class="vs-label">Leave, timesheets &amp; time tracking</span>
@@ -1318,7 +1320,7 @@
     <div class="text-center reveal">
       <span class="tag tag-blue">Pricing</span>
       <h2 class="section-title mt-sm">Fair pricing.<br />No surprises.</h2>
-      <p class="section-sub mt-sm">Free for small teams. Competitively priced as you grow. Billing handled securely through Paddle.</p>
+      <p class="section-sub mt-sm">Every company gets its first 30 days free, at any size. After that, your first 10 employees stay free. Billing handled securely through Paddle.</p>
     </div>
     <div class="pricing-grid" data-stagger>
       <div class="plan-card">
@@ -1348,6 +1350,7 @@
           <li>Everything in Starter</li>
           <li><strong>Scales with your headcount</strong></li>
           <li>No setup fees, cancel anytime</li>
+          <li>First 30 days free, whatever your size</li>
           <li>Only pay for employees over 10</li>
         </ul>
       </div>
@@ -1425,10 +1428,10 @@
   <div class="container">
     <div class="text-center reveal"><span class="tag tag-blue">FAQ</span><h2 class="section-title mt-sm">Questions, answered.</h2></div>
     <div class="faqwrap" data-stagger>
-      <details open><summary>Is FlexDays really free for small teams?</summary><p>Yes, completely free for teams of up to 10 employees, with no time limit and no credit card. You get leave management, timesheets, working schedules, multi-country holidays, team approvals, and the mobile app. Above 10, it's just $2/month for each employee beyond the first 10.</p></details>
+      <details open><summary>Is FlexDays really free for small teams?</summary><p>Yes, your first 10 employees are completely free, with no time limit and no credit card. You get leave management, timesheets, working schedules, multi-country holidays, team approvals, and the mobile app. Above 10, it's just $2/month for each employee beyond the first 10.</p></details>
       <details><summary>What's the best free HR app for a small business?</summary><p>FlexDays is built for small businesses that find big HR suites too expensive and complex. It sets up in under 5 minutes, works on mobile and web, and combines leave, timesheets, and onboarding in one place, free up to 10.</p></details>
       <details><summary>Does it work for larger or growing teams?</summary><p>Yes. FlexDays scales from a handful of people to hundreds on the same platform, with team-based approvals, time reports, and multi-country support for distributed workforces. Free is how you start, not a ceiling.</p></details>
-      <details><summary>How much does it cost after 10 employees?</summary><p>A flat $2 per employee/month, and you only pay for employees beyond the first 10. No setup fees, cancel anytime. Billing is secure via Paddle.</p></details>
+      <details><summary>How much does it cost after 10 employees?</summary><p>Your first 30 days are free at any size. After that, a flat $2 per employee/month, and you only pay for employees beyond the first 10. No setup fees, cancel anytime. Billing is secure via Paddle.</p></details>
       <details><summary>Can we bring over our existing leave balances?</summary><p>Yes. Download the balance template, add each employee's email and the days they have left for each leave type, and upload it. FlexDays previews every change before applying it, and if any row has a mistake nothing is changed.</p></details>
     </div>
   </div>
@@ -1440,7 +1443,7 @@
     <div class="waitlist-card reveal">
       <span class="tag tag-teal tag--lead"><svg class="icon" style="width:14px;height:14px;vertical-align:-2px" aria-hidden="true"><use href="#i-rocket"/></svg> Live now</span>
       <h2 class="section-title">Start using FlexDays today.</h2>
-      <p class="waitlist-sub">Create your company, invite your team and run leave, timesheets and time tracking in one place. Free for teams of up to 10.</p>
+      <p class="waitlist-sub">Create your company, invite your team and run leave, timesheets and time tracking in one place. Your first 30 days are free at any size, and your first 10 employees stay free after that.</p>
       <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
       <p class="wl-note">Already have an account? <a href="https://portal.flexdays.app/login">Sign in</a></p>
 
@@ -1496,6 +1499,15 @@
 
 <script>
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero clip: with reduced motion, hold one frame of the filled timesheet instead of looping.
+  const heroClip = document.querySelector('.hero-clip');
+  if (heroClip && prefersReducedMotion) {
+    heroClip.removeAttribute('autoplay');
+    heroClip.pause();
+    const hold = () => { heroClip.currentTime = 13; };
+    if (heroClip.readyState >= 1) hold(); else heroClip.addEventListener('loadedmetadata', hold, { once: true });
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {

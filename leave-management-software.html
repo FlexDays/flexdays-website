@@ -40,7 +40,7 @@
     "operatingSystem": "Web, iOS, Android",
     "url": "https://www.flexdays.app/",
     "description": "Leave management software that just works: request, approve and track time off with always-accurate balances. First 10 employees free, $2 for each one after.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for teams up to 10 employees" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Your first 10 employees are free" }
   }
   </script>
 
@@ -54,7 +54,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is leave management software?", "acceptedAnswer": {"@type": "Answer", "text": "It lets employees request time off, managers approve it, and HR track balances automatically, replacing spreadsheets and email chains. FlexDays does this in one app on mobile and web, connected to timesheets and schedules."}}, {"@type": "Question", "name": "Is FlexDays leave management free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, free for teams up to 10 with no time limit. Above that it's $2 per employee/month, the same at any size, and you only pay for employees beyond the first 10."}}, {"@type": "Question", "name": "Can it handle different leave types and multi-country holidays?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Annual, sick, WFH, and custom types each with their own rules, and public holidays applied automatically by country and location."}}, {"@type": "Question", "name": "Does it work for large teams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FlexDays scales to hundreds of employees with team-based approvals, time reports, and configurable schedules."}}, {"@type": "Question", "name": "Can we bring over our existing leave balances?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Download the balance template, add each employee's email and the days they have left for each leave type, and upload it. FlexDays previews every change before applying it, and if any row has a mistake nothing is changed."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is leave management software?", "acceptedAnswer": {"@type": "Answer", "text": "It lets employees request time off, managers approve it, and HR track balances automatically, replacing spreadsheets and email chains. FlexDays does this in one app on mobile and web, connected to timesheets and schedules."}}, {"@type": "Question", "name": "Is FlexDays leave management free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, your first 10 employees are free, with no time limit, and every company gets its first 30 days free at any size. Above that it's $2 per employee/month, the same at any size, and you only pay for employees beyond the first 10."}}, {"@type": "Question", "name": "Can it handle different leave types and multi-country holidays?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Annual, sick, WFH, and custom types each with their own rules, and public holidays applied automatically by country and location."}}, {"@type": "Question", "name": "Does it work for large teams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FlexDays scales to hundreds of employees with team-based approvals, time reports, and configurable schedules."}}, {"@type": "Question", "name": "Can we bring over our existing leave balances?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Download the balance template, add each employee's email and the days they have left for each leave type, and upload it. FlexDays previews every change before applying it, and if any row has a mistake nothing is changed."}}]}
   </script>
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -752,7 +752,7 @@
       border-radius: 30px; background: #fff;  /* sits flush inside the thinner bezel */
       aspect-ratio: 9 / 19.5;                 /* always phone-shaped */
     }
-    .phone-screen img {
+    .phone-screen img, .phone-screen video {
       display: block; width: 100%; height: 100%;
       object-fit: cover; object-position: top center;
     }
@@ -936,7 +936,7 @@
       <h1>Leave management<br /><span class="gradient-text">software that just works.</span></h1>
       <p class="hero-hook">Request, approve &amp; track time off in one place.<br />Balances always accurate, no spreadsheets.</p>
       <p class="hero-lede">
-        FlexDays turns messy leave tracking into one clean system: employees request in seconds, managers approve in a tap, and balances update in real time, connected to timesheets and schedules. Free for teams up to 10, at any size beyond.
+        FlexDays turns messy leave tracking into one clean system: employees request in seconds, managers approve in a tap, and balances update in real time, connected to timesheets and schedules. Your first 10 employees are free, whatever your size.
       </p>
       <div class="hero-actions">
         <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
@@ -944,7 +944,8 @@
       </div>
       <div class="hero-social-proof">
         <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span> Set up in under 5 minutes</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span> Free for teams up to 10</div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span> Your first 10 employees are free</div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span> 30 days free for any team size</div>
         <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span> Multi-country support</div>
       </div>
     </div>
@@ -952,8 +953,9 @@
     <div class="hero-visual">
       <div class="phone">
         <div class="phone-screen">
-          <img src="app-calendar.webp" alt="FlexDays mobile app showing the team calendar, personal leave, and colleagues who are out" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <div class="phone-fallback">Save your app screenshot as <strong>app-calendar.png</strong> in the website folder to show it here.</div>
+          <video class="hero-clip" autoplay muted loop playsinline preload="auto" poster="/hook-clip-poster.webp" width="720" height="1560" aria-label="In the FlexDays app, a manager approves Sophia's 3 days of annual leave, and her timesheet marks those days as leave by itself.">
+            <source src="/hook-clip.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -1013,7 +1015,7 @@
           <div class="vs-row">
             <span class="vs-label">Pricing</span>
             <span class="vs-bad"><svg class="icon"><use href="#i-x"/></svg> Costly or manual</span>
-            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> Free up to 10 employees</span>
+            <span class="vs-good"><svg class="icon"><use href="#i-check"/></svg> First 10 employees free</span>
           </div>
           <div class="vs-row">
             <span class="vs-label">Leave, timesheets &amp; time tracking</span>
@@ -1310,7 +1312,7 @@
     <div class="text-center reveal">
       <span class="tag tag-blue">Pricing</span>
       <h2 class="section-title mt-sm">Fair pricing.<br />No surprises.</h2>
-      <p class="section-sub mt-sm">Free for small teams. Competitively priced as you grow. Billing handled securely through Paddle.</p>
+      <p class="section-sub mt-sm">Every company gets its first 30 days free, at any size. After that, your first 10 employees stay free. Billing handled securely through Paddle.</p>
     </div>
     <div class="pricing-grid" data-stagger>
       <div class="plan-card">
@@ -1340,6 +1342,7 @@
           <li>Everything in Starter</li>
           <li><strong>Scales with your headcount</strong></li>
           <li>No setup fees, cancel anytime</li>
+          <li>First 30 days free, whatever your size</li>
           <li>Only pay for employees over 10</li>
         </ul>
       </div>
@@ -1418,7 +1421,7 @@
     <div class="text-center reveal"><span class="tag tag-blue">FAQ</span><h2 class="section-title mt-sm">Questions, answered.</h2></div>
     <div class="faqwrap" data-stagger>
       <details open><summary>What is leave management software?</summary><p>It lets employees request time off, managers approve it, and HR track balances automatically, replacing spreadsheets and email chains. FlexDays does this in one app on mobile and web, connected to timesheets and schedules.</p></details>
-      <details><summary>Is FlexDays leave management free?</summary><p>Yes, free for teams up to 10 with no time limit. Above that it's $2 per employee/month, the same at any size, and you only pay for employees beyond the first 10.</p></details>
+      <details><summary>Is FlexDays leave management free?</summary><p>Yes, your first 10 employees are free, with no time limit, and every company gets its first 30 days free at any size. Above that it's $2 per employee/month, the same at any size, and you only pay for employees beyond the first 10.</p></details>
       <details><summary>Can it handle different leave types and multi-country holidays?</summary><p>Yes. Annual, sick, WFH, and custom types each with their own rules, and public holidays applied automatically by country and location.</p></details>
       <details><summary>Does it work for large teams?</summary><p>Yes. FlexDays scales to hundreds of employees with team-based approvals, time reports, and configurable schedules.</p></details>
       <details><summary>Can we bring over our existing leave balances?</summary><p>Yes. Download the balance template, add each employee's email and the days they have left for each leave type, and upload it. FlexDays previews every change before applying it, and if any row has a mistake nothing is changed.</p></details>
@@ -1432,7 +1435,7 @@
     <div class="waitlist-card reveal">
       <span class="tag tag-teal tag--lead"><svg class="icon" style="width:14px;height:14px;vertical-align:-2px" aria-hidden="true"><use href="#i-rocket"/></svg> Live now</span>
       <h2 class="section-title">Start using FlexDays today.</h2>
-      <p class="waitlist-sub">Create your company, invite your team and run leave, timesheets and time tracking in one place. Free for teams of up to 10.</p>
+      <p class="waitlist-sub">Create your company, invite your team and run leave, timesheets and time tracking in one place. Your first 30 days are free at any size, and your first 10 employees stay free after that.</p>
       <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
       <p class="wl-note">Already have an account? <a href="https://portal.flexdays.app/login">Sign in</a></p>
 
@@ -1488,6 +1491,15 @@
 
 <script>
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero clip: with reduced motion, hold one frame of the filled timesheet instead of looping.
+  const heroClip = document.querySelector('.hero-clip');
+  if (heroClip && prefersReducedMotion) {
+    heroClip.removeAttribute('autoplay');
+    heroClip.pause();
+    const hold = () => { heroClip.currentTime = 13; };
+    if (heroClip.readyState >= 1) hold(); else heroClip.addEventListener('loadedmetadata', hold, { once: true });
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {

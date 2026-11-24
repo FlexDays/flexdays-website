@@ -1,6 +1,6 @@
 # FlexDays
 
-> FlexDays is the HR super app: one simple, affordable app for leave management, timesheets, a one-tap time tracker, and company events and announcements, on iOS, Android and the web. It is free for teams of up to 10 employees, then $2 per employee per month, at any company size. FlexDays is launching soon and taking early-access signups on its waitlist.
+> FlexDays is the HR super app: one simple, affordable app for leave management, timesheets, a one-tap time tracker, and company events and announcements, on iOS, Android and the web. Every company gets its first 30 days free at any size; after that, the first 10 employees are free, then $2 per employee per month. FlexDays is launching soon and taking early-access signups on its waitlist.
 
 FlexDays is built for companies that want to replace spreadsheets, email chains, messaging apps and expensive legacy HR systems with one modern app. It sets up in under 5 minutes, needs no IT team, and works for companies of any size, from small teams to 500+ employees. It supports teams in any country, with public holidays and working weeks set automatically by country and location. FlexDays is built by beanvoid, a product studio based in Egypt.
 
@@ -8,7 +8,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 
 - Product: FlexDays, the HR super app
 - Status: live. Sign up free at https://portal.flexdays.app/register (web portal); the iOS and Android apps are rolling out on the App Store and Google Play
-- Pricing: free for up to 10 employees with no time limit and no credit card; $2 per employee per month above 10 employees (you only pay for employees over 10); no setup fees; cancel anytime; 14-day refunds
+- Pricing: every company gets its first 30 days free at any size; after that, the first 10 employees are free, with no time limit and no credit card; $2 per employee per month above 10 employees (you only pay for employees over 10); no setup fees; cancel anytime; 14-day refunds
 - Billing: handled securely by Paddle
 - Platforms: native iOS and Android apps plus a full web portal, always in sync
 - Setup: under 5 minutes with a guided 6-step checklist (company, public holidays, working days, leave types, org structure, employee import)
@@ -38,7 +38,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 
 - [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing, roadmap and sign-up
 - [Leave management software](https://www.flexdays.app/leave-management-software): how FlexDays handles leave requests, approvals and balances
-- [Free HR software for small teams](https://www.flexdays.app/free-hr-software-for-small-teams): the free plan for teams up to 10
+- [Free HR software for small teams](https://www.flexdays.app/free-hr-software-for-small-teams): the free plan: your first 10 employees are free
 - [HR software for growing companies](https://www.flexdays.app/hr-software-growing-companies): how FlexDays scales from 10 to 500+ employees
 - [HR software for Southeast Asia](https://www.flexdays.app/hr-software-southeast-asia): FlexDays for teams in the Philippines, Indonesia, Vietnam, Malaysia, Singapore and Thailand
 - [HR software for the Middle East & North Africa](https://www.flexdays.app/hr-software-mena): FlexDays for MENA teams, with local work weeks and holidays
