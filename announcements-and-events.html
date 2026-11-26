@@ -1147,6 +1147,10 @@
     .band-note strong { color: #fff; }
     @media (max-width: 900px) { .duo { grid-template-columns: 1fr; } }
 
+    /* calendar section: wide screenshot under the copy */
+    .cal-points { grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1000px; margin: 40px auto 0; }
+    .cal-visual { max-width: 1000px; margin: 48px auto 0; }
+    @media (max-width: 900px) { .cal-points { grid-template-columns: 1fr; gap: 18px; } }
     /* use cases */
     .uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
     .use {
@@ -1382,19 +1386,19 @@
 </section>
 
 <!-- ── Calendar spotlight ── -->
-<section class="spot">
+<section class="spot cal-spot">
   <div class="container">
-    <div class="spot-inner flip">
-      <div class="spot-copy reveal">
-        <span class="tag tag-teal tag--lead">One calendar for everything</span>
-        <h2 class="section-title">News and events sit next to<br />who's off and what's on.</h2>
-        <p>The FlexDays team calendar already shows leave and public holidays. Events and announcements land there too, so people plan around a town hall the same way they plan around a colleague's vacation.</p>
-        <div class="ts-points" data-stagger>
+    <div class="text-center reveal">
+      <span class="tag tag-teal tag--lead">One calendar for everything</span>
+      <h2 class="section-title">News and events,<br />on the calendar.</h2>
+      <p class="section-sub mt-sm">The FlexDays team calendar already shows leave and public holidays. Events and announcements land there too, so people plan around a town hall the same way they plan around a colleague's vacation.</p>
+    </div>
+    <div class="ts-points cal-points" data-stagger>
           <div class="ts-point">
             <div class="ts-num">1</div>
             <div>
               <h4>Everything on one screen</h4>
-              <p>Leave, holidays, events and announcements for each day, side by side.</p>
+              <p>Pick a day to see who's off, what's waiting for approval, and that day's events and announcements.</p>
             </div>
           </div>
           <div class="ts-point">
@@ -1412,15 +1416,12 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="spot-visual reveal">
-        <div class="glow-orb" aria-hidden="true"></div>
-        <div class="phone">
-          <div class="phone-screen">
-            <img src="/app-calendar.webp" width="700" height="1501" loading="lazy" decoding="async" alt="FlexDays mobile team calendar for November with colored markers for leave, holidays and events, requests awaiting a decision, and colleagues who are out" />
-          </div>
+    <div class="spot-visual cal-visual reveal">
+      <div class="glow-orb" aria-hidden="true"></div>
+      <div class="browser shot">
+          <div class="browser-bar"><span class="browser-dot" style="background:#ff5f57"></span><span class="browser-dot" style="background:#febc2e"></span><span class="browser-dot" style="background:#28c840"></span></div>
+          <img class="browser-shot" src="/portal-calendar-events.webp" width="1600" height="1047" loading="lazy" decoding="async" alt="The FlexDays team calendar in the web portal for November 2026: dots for leave, pending approvals, holidays, events and announcements, and Thursday 26 November selected with a pending approval, three colleagues on leave, the Security awareness training event and the Office closed on Friday announcement" />
         </div>
-      </div>
     </div>
   </div>
 </section>

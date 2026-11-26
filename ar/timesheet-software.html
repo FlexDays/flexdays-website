@@ -1179,6 +1179,10 @@
     .band-note strong { color: #fff; }
     @media (max-width: 900px) { .duo { grid-template-columns: 1fr; } }
 
+    /* calendar section: wide screenshot under the copy */
+    .cal-points { grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1000px; margin: 40px auto 0; }
+    .cal-visual { max-width: 1000px; margin: 48px auto 0; }
+    @media (max-width: 900px) { .cal-points { grid-template-columns: 1fr; gap: 18px; } }
     /* use cases */
     .uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
     .use {

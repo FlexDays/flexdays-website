@@ -1179,6 +1179,10 @@
     .band-note strong { color: #fff; }
     @media (max-width: 900px) { .duo { grid-template-columns: 1fr; } }
 
+    /* calendar section: wide screenshot under the copy */
+    .cal-points { grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1000px; margin: 40px auto 0; }
+    .cal-visual { max-width: 1000px; margin: 48px auto 0; }
+    @media (max-width: 900px) { .cal-points { grid-template-columns: 1fr; gap: 18px; } }
     /* use cases */
     .uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
     .use {
@@ -1422,19 +1426,19 @@
 </section>
 
 <!-- ── Calendar spotlight ── -->
-<section class="spot">
+<section class="spot cal-spot">
   <div class="container">
-    <div class="spot-inner flip">
-      <div class="spot-copy reveal">
-        <span class="tag tag-teal tag--lead">تقويم واحد لكل شيء</span>
-        <h2 class="section-title">الأخبار والفعاليات بجانب<br />من في إجازة وما هو قادم.</h2>
-        <p>تقويم الفريق في FlexDays يعرض أصلًا الإجازات والعطلات الرسمية. والفعاليات والإعلانات تظهر فيه أيضًا، فيخطط الجميع حول الاجتماع العام كما يخططون حول إجازة زميل.</p>
-        <div class="ts-points" data-stagger>
+    <div class="text-center reveal">
+      <span class="tag tag-teal tag--lead">تقويم واحد لكل شيء</span>
+      <h2 class="section-title">الأخبار والفعاليات<br />في تقويم الفريق.</h2>
+      <p class="section-sub mt-sm">تقويم الفريق في FlexDays يعرض أصلًا الإجازات والعطلات الرسمية. والفعاليات والإعلانات تظهر فيه أيضًا، فيخطط الجميع حول الاجتماع العام كما يخططون حول إجازة زميل.</p>
+    </div>
+    <div class="ts-points cal-points" data-stagger>
           <div class="ts-point">
             <div class="ts-num">1</div>
             <div>
               <h4>كل شيء في شاشة واحدة</h4>
-              <p>الإجازات والعطلات والفعاليات والإعلانات لكل يوم، جنبًا إلى جنب.</p>
+              <p>اختر يومًا لترى من في إجازة، وما ينتظر الموافقة، وفعاليات ذلك اليوم وإعلاناته.</p>
             </div>
           </div>
           <div class="ts-point">
@@ -1452,15 +1456,12 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="spot-visual reveal">
-        <div class="glow-orb" aria-hidden="true"></div>
-        <div class="phone">
-          <div class="phone-screen">
-            <img src="/ar/img/app-calendar.webp" width="700" height="1501" loading="lazy" decoding="async" alt="تقويم الفريق في تطبيق FlexDays للجوال مع علامات ملونة للإجازات والعطلات والفعاليات، والطلبات بانتظار القرار، والزملاء الغائبين" />
-          </div>
+    <div class="spot-visual cal-visual reveal">
+      <div class="glow-orb" aria-hidden="true"></div>
+      <div class="browser shot">
+          <div class="browser-bar"><span class="browser-dot" style="background:#ff5f57"></span><span class="browser-dot" style="background:#febc2e"></span><span class="browser-dot" style="background:#28c840"></span></div>
+          <img class="browser-shot" src="/ar/img/portal-calendar-events.webp" width="1600" height="1047" loading="lazy" decoding="async" alt="تقويم الفريق في بوابة FlexDays لشهر نوفمبر 2026: نقاط للإجازات والموافقات المعلّقة والعطلات والفعاليات والإعلانات، ويوم الخميس 26 نوفمبر محدد ويعرض موافقة معلّقة وثلاثة زملاء في إجازة وفعالية تدريب التوعية الأمنية وإعلان المكتب مغلق يوم الجمعة" />
         </div>
-      </div>
     </div>
   </div>
 </section>
