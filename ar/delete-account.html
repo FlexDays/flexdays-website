@@ -54,13 +54,42 @@
     .policy p { margin-bottom:12px; }
     .policy ol, .policy ul { padding-inline-start:22px; margin-bottom:12px; }
     .policy li { margin:6px 0; }
-    footer { background:var(--dark); color:rgba(255,255,255,.55); padding:40px 0 26px; }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
-    .footer-inner .brand-name { color:#fff; }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
-    .footer-links a { color:rgba(255,255,255,.6); text-decoration:none; font-size:14px; }
-    .footer-links a:hover { color:#fff; }
-    .footer-bottom { border-top:1px solid rgba(255,255,255,.08); margin-top:24px; padding-top:20px; font-size:13px; }
+    /* ── Footer ── */
+    footer { background: var(--dark); color: rgba(255,255,255,.55); padding: 64px 0 28px; }
+    .footer-inner {
+      display: grid; grid-template-columns: minmax(220px, 1.4fr) repeat(var(--footer-cols, 4), minmax(0, 1fr));
+      gap: 40px 32px; margin-bottom: 48px;
+    }
+    .footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+    footer .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    footer .brand img { height: 34px; width: 34px; }
+    footer .brand-name { color: #fff; }
+    .footer-tagline { font-size: 14px; font-style: italic; color: rgba(255,255,255,.65); }
+    .footer-heading {
+      font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.9); margin: 0 0 16px;
+    }
+    .footer-heading:lang(ar) { font-size: 14px; letter-spacing: 0; text-transform: none; }
+    .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+    .footer-links li { margin: 0; padding: 0; }
+    .footer-links a { color: rgba(255,255,255,.6); text-decoration: none; font-size: 14px; font-weight: 500; line-height: 1.4; transition: color .15s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
+      transition: background-color .15s ease, color .15s ease, transform .15s ease;
+    }
+    .footer-social a:hover { background: rgba(255,255,255,.16); color: #fff; transform: translateY(-2px); }
+    .footer-social svg { width: 18px; height: 18px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
+    .footer-bottom a { color: rgba(255,255,255,.75); }
+    .footer-heart { display: inline-block; vertical-align: -2px; width: 14px; height: 14px; fill: var(--danger, #ef4444); }
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-brand { grid-column: 1 / -1; }
+    }
     /* ── Nav sign-in / sign-up ── */
     .btn-signin { background:transparent; color:var(--blue); border:2px solid var(--blue); box-shadow:none; }
     .btn-signin:hover { background:#eef5fd; }
@@ -74,7 +103,6 @@
       .cta-long { display:none; }
       .cta-short { display:inline; }
     }
-    @media (max-width:720px){ }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -169,23 +197,55 @@
 </div>
 </main>
 
-<footer><div class="container">
-  <div class="footer-inner">
-    <a href="/ar/" class="brand"><img src="/icon-96.png" alt="" width="48" height="48" /><span class="brand-name">FlexDays</span></a>
-    <div class="footer-links">
-      <a href="/ar/">الرئيسية</a>
-      <a href="/ar/#pricing">الأسعار</a>
-      <a href="/ar/refund-policy">سياسة الاسترداد</a>
-      <a href="/ar/privacy-policy">سياسة الخصوصية</a>
-      <a href="/ar/delete-account">حذف الحساب</a>
-      <a href="/ar/terms">الشروط</a>
-      <a href="/ar/security">الأمان</a>
-      <a href="mailto:hello@beanvoid.com">تواصل معنا</a>
-      <a href="https://portal.flexdays.app/login">تسجيل الدخول</a>
-      <a href="/delete-account" lang="en" hreflang="en">English</a>
+<footer>
+  <div class="container">
+    <div class="footer-inner" style="--footer-cols:3">
+      <div class="footer-brand">
+        <a href="/ar/" class="brand"><img src="/icon-96.png" alt="" width="48" height="48" /><span class="brand-name">FlexDays</span></a>
+        <span class="footer-tagline">"تأخير أقل، مرونة أكثر مع FlexDays."</span>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/flexdays/" aria-label="FlexDays على LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96v14H.02V8zM8 8h4.75v1.9h.07c.66-1.2 2.28-2.47 4.7-2.47 5.03 0 5.96 3.3 5.96 7.6V22h-4.96v-6.4c0-1.53-.03-3.5-2.13-3.5-2.13 0-2.46 1.66-2.46 3.38V22H8V8z"/></svg>
+          </a>
+          <a href="https://x.com/flexdays" aria-label="FlexDays على X" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.5h3.6l-7.9 9 9.3 12.3h-7.3l-5.7-7.5-6.5 7.5H.7l8.4-9.6L0 1.5h7.5l5.2 6.9 5.2-6.9zm-1.3 18.6h2L6.5 3.4H4.4l13.2 16.7z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">المنتج</p>
+        <ul class="footer-links">
+          <li><a href="/ar/#features">المزايا</a></li>
+          <li><a href="/ar/#pricing">الأسعار</a></li>
+          <li><a href="/ar/#faq">الأسئلة الشائعة</a></li>
+          <li><a href="/free-leave-tracker">متتبع الإجازات المجاني</a></li>
+          <li><a href="https://portal.flexdays.app/register">إنشاء حساب</a></li>
+          <li><a href="https://portal.flexdays.app/login">تسجيل الدخول</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">الموارد</p>
+        <ul class="footer-links">
+          <li><a href="/ar/security">الأمان</a></li>
+          <li><a href="mailto:hello@beanvoid.com">تواصل معنا</a></li>
+          <li><a href="/delete-account" lang="en" hreflang="en">English</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">قانوني</p>
+        <ul class="footer-links">
+          <li><a href="/ar/privacy-policy">سياسة الخصوصية</a></li>
+          <li><a href="/ar/terms">الشروط</a></li>
+          <li><a href="/ar/refund-policy">سياسة الاسترداد</a></li>
+          <li><a href="/ar/delete-account">حذف الحساب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FlexDays. جميع الحقوق محفوظة.</span>
+      <span>صُنع بـ <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-heart"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg> من <a href="https://www.beanvoid.com/" target="_blank" rel="noopener">beanvoid</a> لفرق الموارد البشرية الحديثة.</span>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 FlexDays. من تطوير <a href="https://www.beanvoid.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.75)">beanvoid</a>. تأخير أقل، مرونة أكثر مع FlexDays.</div>
-</div></footer>
+</footer>
 </body>
 </html>
