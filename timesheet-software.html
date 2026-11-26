@@ -1187,6 +1187,60 @@
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3091025977769402&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel -->
   <script src="/track.js" defer></script>
+<style id="hero-v2-css">
+  /* ── Hero v2: centred copy + product shot ── */
+  .hero.hero-v2 { padding: 88px 0 72px; }
+  .hero-v2 .hero-center { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-v2 .hero-eyebrow { justify-content: center; margin-bottom: 24px; }
+  .hero-news {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #fff; border: 1px solid #d6e6f7; border-radius: 999px;
+    padding: 6px 14px 6px 6px; padding-inline: 6px 14px;
+    font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .hero-news:hover { border-color: rgba(22,121,215,.45); box-shadow: 0 4px 14px rgba(22,121,215,.12); }
+  .hero-news-tag { background: #e3f7f5; color: #04766d; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+  .hero-news .icon { width: 16px; height: 16px; }
+  [dir="rtl"] .hero-news .icon { transform: scaleX(-1); }
+  .hero-v2 h1 { font-size: clamp(40px, 6.4vw, 76px); line-height: 1.04; letter-spacing: -.035em; max-width: 920px; margin: 0 auto 22px; }
+  [dir="rtl"] .hero-v2 h1 { letter-spacing: 0; line-height: 1.2; }
+  .hero-v2 .hero-accent { color: var(--blue); }
+  .hero-v2 p.hero-lede { font-size: clamp(17px, 2vw, 20px); line-height: 1.6; max-width: 660px; margin: 0 auto 32px; color: #55555f; }
+  .hero-v2 .hero-actions { justify-content: center; }
+  .hero-v2 .hero-social-proof { margin-top: 26px; justify-content: center; gap: 10px 26px; }
+  .hero-v2 .proof-icon { color: #06a296; }
+  .hero-v2 .proof-icon .icon { stroke-width: 2.6; }
+  .hero-shot {
+    position: relative; width: 100%; max-width: 1080px; margin: 56px auto 28px;
+    animation: rise .6s cubic-bezier(.22,.61,.36,1) both; animation-delay: .6s;
+  }
+  .hero-shot .browser-win {
+    margin-inline-start: clamp(0px, 8%, 110px); background: #fff;
+    border: 1px solid rgba(13,37,63,.08); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(16,42,77,.16);
+  }
+  .hero-shot .browser-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #fafbfc; border-bottom: 1px solid #eef0f3; }
+  .hero-shot .browser-bar i { width: 11px; height: 11px; border-radius: 50%; }
+  .hero-shot .browser-url { margin-inline-start: 14px; font-size: 12px; color: var(--mid); background: #f0f2f5; padding: 3px 12px; border-radius: 6px; direction: ltr; }
+  .hero-shot .browser-win img { display: block; width: 100%; height: auto; }
+  .hero-shot .phone {
+    position: absolute; inset-inline-start: 0; bottom: -28px;
+    width: clamp(120px, 22%, 236px);
+    box-shadow: 0 24px 60px rgba(16,42,77,.30);
+  }
+  @media (max-width: 600px) {
+    .hero.hero-v2 { padding: 64px 0 48px; }
+    .hero-shot { margin-top: 40px; }
+    .hero-shot .browser-bar { padding: 8px 12px; }
+    .hero-shot .browser-url { display: none; }
+  }
+</style>
+<style id="hero-v2-pages-css">
+  .hero-v2 .hero-eyebrow .tag { margin: 0; }
+  .hero-v2 p.hero-lede br { display: none; }
+  @media (min-width: 700px) { .hero-v2 p.hero-lede br { display: inline; } }
+</style>
 </head>
 <body>
 
@@ -1251,34 +1305,32 @@
 
 <main>
 <!-- ── Hero ── -->
-<section class="hero hero--ts">
+<section class="hero hero-v2 hero--ts">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <div class="hero-eyebrow">
-        <span class="tag tag-teal">Timesheet software</span>
+  <div class="container hero-center">
+    <div class="hero-eyebrow">
+      <span class="tag tag-teal">Timesheet software</span>
         <span class="tag tag-live"><span class="live-dot" aria-hidden="true"></span> Live now</span>
-      </div>
-      <h1>Timesheets that<br /><span class="gradient-text">fill themselves in.</span></h1>
-      <p class="hero-hook">Pre-filled from schedules, leave and the timer.<br />Submitted in a tap, approved in another.</p>
-      <p class="hero-lede">
-        FlexDays timesheets already know each person's working hours, public holidays and approved leave, so every period opens with the right expected hours and most of the work done. Employees check it and submit it, managers approve it, and HR exports it for payroll. Your first 10 employees are free, whatever your size.
-      </p>
-      <div class="hero-actions">
-        <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
+    </div>
+    <h1>Timesheets that <span class="hero-accent">fill themselves in.</span></h1>
+    <p class="hero-lede">Pre-filled from schedules, leave and the timer. <br />Submitted in a tap, approved in another.</p>
+    <div class="hero-actions">
+      <a href="https://portal.flexdays.app/register" class="btn btn-primary">Get started free</a>
         <a href="#how" class="btn btn-outline">See how it works</a>
-      </div>
-      <div class="hero-social-proof">
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span> Pre-filled from work schedules</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span> Leave and holidays built in</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span> Multi-level approvals</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-download"/></svg></span> Excel and CSV export</div>
-      </div>
+    </div>
+    <div class="hero-social-proof">
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> Pre-filled from work schedules</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> Leave and holidays built in</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> Multi-level approvals</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> Excel and CSV export</div>
     </div>
 
-    <div class="hero-visual">
-      <div class="glow-orb" aria-hidden="true"></div>
+    <div class="hero-shot">
+      <div class="browser-win">
+        <div class="browser-bar" aria-hidden="true"><i style="background:#e8574f"></i><i style="background:#f5b731"></i><i style="background:#2eb872"></i><span class="browser-url">portal.flexdays.app</span></div>
+        <img src="/portal-timesheet.webp" width="1600" height="956" alt="FlexDays web portal timesheet with worked and expected hours for the week" fetchpriority="high" decoding="async" />
+      </div>
       <div class="phone">
         <div class="phone-screen">
           <img src="/app-timesheet.webp" width="700" height="1501" decoding="async" fetchpriority="high" alt="FlexDays mobile timesheet showing worked against expected hours, a day by day breakdown, and project entries" />

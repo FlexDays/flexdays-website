@@ -1021,6 +1021,55 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3091025977769402&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel -->
+<style id="hero-v2-css">
+  /* ── Hero v2: centred copy + product shot ── */
+  .hero.hero-v2 { padding: 88px 0 72px; }
+  .hero-v2 .hero-center { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-v2 .hero-eyebrow { justify-content: center; margin-bottom: 24px; }
+  .hero-news {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #fff; border: 1px solid #d6e6f7; border-radius: 999px;
+    padding: 6px 14px 6px 6px; padding-inline: 6px 14px;
+    font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .hero-news:hover { border-color: rgba(22,121,215,.45); box-shadow: 0 4px 14px rgba(22,121,215,.12); }
+  .hero-news-tag { background: #e3f7f5; color: #04766d; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+  .hero-news .icon { width: 16px; height: 16px; }
+  [dir="rtl"] .hero-news .icon { transform: scaleX(-1); }
+  .hero-v2 h1 { font-size: clamp(40px, 6.4vw, 76px); line-height: 1.04; letter-spacing: -.035em; max-width: 920px; margin: 0 auto 22px; }
+  [dir="rtl"] .hero-v2 h1 { letter-spacing: 0; line-height: 1.2; }
+  .hero-v2 .hero-accent { color: var(--blue); }
+  .hero-v2 p.hero-lede { font-size: clamp(17px, 2vw, 20px); line-height: 1.6; max-width: 660px; margin: 0 auto 32px; color: #55555f; }
+  .hero-v2 .hero-actions { justify-content: center; }
+  .hero-v2 .hero-social-proof { margin-top: 26px; justify-content: center; gap: 10px 26px; }
+  .hero-v2 .proof-icon { color: #06a296; }
+  .hero-v2 .proof-icon .icon { stroke-width: 2.6; }
+  .hero-shot {
+    position: relative; width: 100%; max-width: 1080px; margin: 56px auto 28px;
+    animation: rise .6s cubic-bezier(.22,.61,.36,1) both; animation-delay: .6s;
+  }
+  .hero-shot .browser-win {
+    margin-inline-start: clamp(0px, 8%, 110px); background: #fff;
+    border: 1px solid rgba(13,37,63,.08); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(16,42,77,.16);
+  }
+  .hero-shot .browser-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #fafbfc; border-bottom: 1px solid #eef0f3; }
+  .hero-shot .browser-bar i { width: 11px; height: 11px; border-radius: 50%; }
+  .hero-shot .browser-url { margin-inline-start: 14px; font-size: 12px; color: var(--mid); background: #f0f2f5; padding: 3px 12px; border-radius: 6px; direction: ltr; }
+  .hero-shot .browser-win img { display: block; width: 100%; height: auto; }
+  .hero-shot .phone {
+    position: absolute; inset-inline-start: 0; bottom: -28px;
+    width: clamp(120px, 22%, 236px);
+    box-shadow: 0 24px 60px rgba(16,42,77,.30);
+  }
+  @media (max-width: 600px) {
+    .hero.hero-v2 { padding: 64px 0 48px; }
+    .hero-shot { margin-top: 40px; }
+    .hero-shot .browser-bar { padding: 8px 12px; }
+    .hero-shot .browser-url { display: none; }
+  }
+</style>
 </head>
 <body>
 
@@ -1042,7 +1091,7 @@
     <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
     <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M8 2h8"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M2 14h2M20 14h2"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
     <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
@@ -1069,33 +1118,30 @@
 
 <main>
 <!-- ── Hero ── -->
-<section class="hero">
+<section class="hero hero-v2">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <div class="hero-eyebrow">
-        <span class="tag tag-teal">تطبيق الموارد البشرية الشامل</span>
-      </div>
-      <h1>تأخير أقل،<br /><span class="gradient-text">مرونة أكثر مع FlexDays.</span></h1>
-      <p class="hero-hook">الإجازات والجداول الزمنية وتتبّع الوقت، مترابطة،<br />بسعر منطقي فعلًا.</p>
-      <p class="hero-lede">
-        FlexDays منصة موارد بشرية متكاملة صُمّمت للشركات الحديثة، تبدأ بإدارة الإجازات والجداول الزمنية وتتبّع الوقت،
-        وتنمو لتصبح تطبيق الموارد البشرية الشامل الذي يستحقه فريقك. بلا تعقيد، ولا عقود مبالغ في أسعارها. فقط ما ينفع فعلًا.
-      </p>
-      <div class="hero-actions">
-        <a href="https://portal.flexdays.app/register" class="btn btn-primary">ابدأ مجانًا</a>
-        <a href="#features" class="btn btn-outline">استعرض المزايا</a>
-      </div>
-      <div class="hero-social-proof">
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span> إعداد في أقل من 5 دقائق</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span> أول 10 موظفين مجانًا</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span> أول 30 يومًا مجانًا لأي حجم فريق</div>
-        <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span> يدعم عدة دول</div>
-      </div>
+  <div class="container hero-center">
+    <div class="hero-eyebrow">
+      <a class="hero-news" href="/ar/time-tracking-software"><span class="hero-news-tag">جديد</span><span>المشاريع وتقارير الوقت متاحة الآن</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <h1>الإجازات والجداول الزمنية وتتبّع الوقت. <span class="hero-accent">أخيرًا في تطبيق واحد.</span></h1>
+    <p class="hero-lede">طلبات وموافقات وأرصدة وساعات عمل متطابقة دائمًا، لأنها كلها تعمل على جدول واحد. الإعداد في خمس دقائق، ومجاني لأول 10 موظفين.</p>
+    <div class="hero-actions">
+      <a href="https://portal.flexdays.app/register" class="btn btn-primary">ابدأ مجانًا</a>
+      <a href="#setup" class="btn btn-outline">شاهد كيف يعمل</a>
+    </div>
+    <div class="hero-social-proof">
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> بدون بطاقة ائتمان</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> أول 30 يومًا مجانًا لأي حجم فريق</div>
+      <div class="proof-item"><span class="proof-icon" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span> بالعربية والإنجليزية</div>
     </div>
 
-    <div class="hero-visual">
+    <div class="hero-shot">
+      <div class="browser-win">
+        <div class="browser-bar" aria-hidden="true"><i style="background:#e8574f"></i><i style="background:#f5b731"></i><i style="background:#2eb872"></i><span class="browser-url">portal.flexdays.app</span></div>
+        <img src="/ar/img/portal-calendar.webp" width="1400" height="669" alt="تقويم الفريق في بوابة FlexDays يعرض الإجازات والموافقات المعلّقة والعطلات الرسمية" fetchpriority="high" decoding="async" />
+      </div>
       <div class="phone">
         <div class="phone-screen">
           <video class="hero-clip" autoplay muted loop playsinline preload="auto" poster="/ar/img/hook-clip-poster.webp" width="720" height="1560" aria-label="في تطبيق FlexDays، المدير يوافق على إجازة سارة 3 أيام، وجدول أوقاتها يسجل الأيام دي إجازة لوحده.">
