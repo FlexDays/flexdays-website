@@ -913,6 +913,101 @@
     .hook-soon { margin-left: 0; margin-right: 4px; }
     /* lets the phone mockup shrink on narrow screens (same fix as the English page) */
     .ts-inner > * { min-width: 0; }
+
+    /* ── Module cards: cross-links between the product pages ── */
+    .modules {
+      padding: 96px 0; position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #0f1724 0%, #0a2540 55%, #0d2d3f 100%);
+    }
+    .modules::before {
+      content: ''; position: absolute; width: 680px; height: 680px; border-radius: 50%;
+      top: -300px; left: 50%; transform: translateX(-50%); pointer-events: none;
+      background: radial-gradient(circle, rgba(9,188,204,.2) 0%, transparent 68%);
+    }
+    .modules .container { position: relative; z-index: 1; }
+    .modules .section-title { color: #fff; }
+    .modules .section-sub { color: rgba(255,255,255,.64); }
+    .mod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 52px; }
+    .mod-card {
+      --c: #09bccc;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 12px;
+      padding: 26px 22px 22px; border-radius: 16px;
+      text-decoration: none; color: #fff;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.1);
+      transition: transform .22s ease-out, border-color .22s ease-out, background-color .22s ease-out, box-shadow .22s ease-out;
+    }
+    .mod-card::after {
+      content: ''; position: absolute; left: -30%; right: -30%; bottom: -90px; height: 170px;
+      background: radial-gradient(ellipse at center, var(--c) 0%, transparent 70%);
+      opacity: .22; transition: opacity .25s ease-out; pointer-events: none;
+    }
+    .mod-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--c) 65%, transparent);
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 22px 44px -20px color-mix(in srgb, var(--c) 80%, transparent);
+    }
+    .mod-card:hover::after { opacity: .5; }
+    .mod-ic {
+      width: 48px; height: 48px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center; color: #fff;
+      background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 50%, #0a2540));
+      box-shadow: 0 10px 24px -8px var(--c);
+    }
+    .mod-ic .icon { width: 23px; height: 23px; }
+    .mod-card h3 { font-size: 17px; font-weight: 800; color: #fff; margin: 4px 0 0; }
+    .mod-card p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.68); flex: 1; position: relative; z-index: 1; }
+    .mod-go {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-display); font-size: 13.5px; font-weight: 700;
+      color: color-mix(in srgb, var(--c) 55%, #fff);
+      transition: gap .2s ease-out;
+    }
+    .mod-card:hover .mod-go { gap: 11px; }
+    .mod-card[aria-current="page"] { border-color: color-mix(in srgb, var(--c) 50%, transparent); }
+    .mod-here {
+      position: absolute; top: 16px; right: 16px;
+      font-size: 10.5px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 20px; background: rgba(255,255,255,.12); color: rgba(255,255,255,.85);
+    }
+    .mod-blue  { --c: #1679d7; }
+    .mod-teal  { --c: #09bccc; }
+    .mod-green { --c: #06bbae; }
+    .mod-amber { --c: #f59e0b; }
+    @media (max-width: 960px) { .mod-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .mod-grid { grid-template-columns: 1fr; } .modules { padding: 72px 0; } }
+
+    /* hook strip items that link to their module page */
+    /* hook strip as pills: wraps cleanly now that it holds every module */
+    .hooks-inner { gap: 10px; }
+    .hook-item { background: var(--bg); border-radius: 999px; padding: 7px 16px 7px 7px; }
+    .hook-item + .hook-item { border: none; }
+    .hook-dot { border-radius: 50%; }
+    a.hook-item { text-decoration: none; border-radius: 999px; transition: background-color .15s ease-out, color .15s ease-out; }
+    a.hook-item:hover { background: #f0f7ff; color: var(--blue); }
+    .feat-more {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; margin-left: 10px;
+      font-family: var(--font-display); font-size: 13px; font-weight: 700;
+      color: var(--blue); text-decoration: none; transition: gap .2s ease-out;
+    }
+    .feat-more:hover { gap: 10px; }
+    .hook-dot.amber { background: #fff3cd; color: #d97706; }
+
+    /* ── RTL fixes for the module pages ── */
+    .cmp-table th { text-align: right; }
+    .mod-here { right: auto; left: 16px; }
+    .feat-more { margin-left: 0; margin-right: 10px; }
+    .flow-arrows { transform: scaleX(-1); }
+    .flow-src:hover { transform: translateX(-4px); }
+    .hook-item { padding: 7px 7px 7px 16px; }
+    .step-card::after { content: '←'; content: '←' / ''; right: auto; left: -20px; }
+    .step-card.in::after { animation-name: arrow-in-rtl; }
+    @keyframes arrow-in-rtl { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+    .tag-live { letter-spacing: 0; }
+    .duo-card h3, .mod-card h3, .flow-core h3 { letter-spacing: 0; }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -1016,9 +1111,10 @@
 <div class="hooks-strip">
   <div class="container">
     <div class="hooks-inner" data-stagger>
-      <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div> إدارة الإجازات</div>
-      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div> الجداول الزمنية</div>
-      <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div> متتبّع الوقت</div>
+      <a class="hook-item" href="#features"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div> إدارة الإجازات</a>
+      <a class="hook-item" href="/ar/timesheet-software"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div> الجداول الزمنية</a>
+      <a class="hook-item" href="/ar/time-tracking-software"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div> متتبّع الوقت</a>
+      <a class="hook-item" href="/ar/announcements-and-events"><div class="hook-dot amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div> الإعلانات</a>
       <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div> جداول العمل</div>
       <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div> الموافقات</div>
       <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div> تحليلات الموارد البشرية <span class="hook-soon">(قريبًا)</span></div>
@@ -1101,13 +1197,13 @@
         <div class="feat-icon bg-teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div>
         <h3>الجداول الزمنية</h3>
         <p>جداول زمنية مرتبطة مباشرة بالإجازات وبجدول العمل الذي ضبطته. بلا إدخال مزدوج، ولا عناء في المزامنة.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
+        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/timesheet-software">استكشف الجداول الزمنية <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
         <h3>متتبّع الوقت بلمسة واحدة</h3>
         <p>ابدأ المؤقت بلمسة واحدة وتتبّع وقتك أثناء العمل. كل دقيقة تنتقل مباشرة إلى جدولك الزمني، دون إدخال يدوي.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
+        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/time-tracking-software">استكشف تتبّع الوقت <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div>
@@ -1137,7 +1233,7 @@
         <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
         <h3>المشاريع وتقارير الوقت</h3>
         <p>سجّل الوقت على المشاريع والمهام، وحدّد ما هو قابل للفوترة، واطّلع عليه في تقارير لوحة المعلومات والملخص والتفاصيل والعرض الأسبوعي والحضور. احفظ طرق العرض التي تستخدمها وصدّرها إلى Excel أو CSV.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
+        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/time-tracking-software">شاهد تقارير الوقت <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-bell"/></svg></div>
@@ -1149,7 +1245,7 @@
         <div class="feat-icon bg-amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div>
         <h3>الفعاليات والإعلانات</h3>
         <p>شارك أخبار الشركة وفعالياتها مع الجميع، أو مع موقع أو قسم أو فريق أو أشخاص بعينهم. تُنشر فورًا مع إشعار وتظهر في تقويم الفريق.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
+        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/announcements-and-events">استكشف الإعلانات <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card span2">
         <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
@@ -1184,6 +1280,43 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Modules ── -->
+<section class="modules" id="modules">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-vision tag--lead">متاح اليوم</span>
+      <h2 class="section-title">أربع وحدات، متاحة اليوم.</h2>
+      <p class="section-sub mt-sm">الإجازات والجداول الزمنية وتتبّع الوقت وأخبار الشركة تتشارك الأشخاص وجداول العمل والتقويم نفسها. اختر واحدة لترى كيف تعمل.</p>
+    </div>
+    <div class="mod-grid" data-stagger>
+      <a class="mod-card mod-blue" href="/ar/#features">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <h3>إدارة الإجازات</h3>
+        <p>طلبات في ثوانٍ، وموافقات بلمسة واحدة، وأرصدة صحيحة دائمًا.</p>
+        <span class="mod-go">استكشف الإجازات <span aria-hidden="true">←</span></span>
+      </a>
+      <a class="mod-card mod-teal" href="/ar/timesheet-software">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div>
+        <h3>الجداول الزمنية</h3>
+        <p>تُعبّأ من جداول العمل والإجازات والوقت المسجّل. قدّم ووافق وصدّر.</p>
+        <span class="mod-go">استكشف الجداول الزمنية <span aria-hidden="true">←</span></span>
+      </a>
+      <a class="mod-card mod-green" href="/ar/time-tracking-software">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
+        <h3>متتبّع الوقت</h3>
+        <p>مؤقت بلمسة واحدة على المشاريع، أو حضور وانصراف مع الاستراحات. والتقارير مشمولة.</p>
+        <span class="mod-go">استكشف تتبّع الوقت <span aria-hidden="true">←</span></span>
+      </a>
+      <a class="mod-card mod-amber" href="/ar/announcements-and-events">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div>
+        <h3>الإعلانات والفعاليات</h3>
+        <p>أخبار الشركة وفعالياتها للأشخاص المعنيين بالضبط، مع إشعار فوري.</p>
+        <span class="mod-go">استكشف الإعلانات <span aria-hidden="true">←</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -1524,6 +1657,9 @@
           <li><a href="#features">المزايا</a></li>
           <li><a href="#pricing">الأسعار</a></li>
           <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="/ar/timesheet-software">الجداول الزمنية</a></li>
+          <li><a href="/ar/time-tracking-software">متتبّع الوقت</a></li>
+          <li><a href="/ar/announcements-and-events">الإعلانات والفعاليات</a></li>
           <li><a href="/free-leave-tracker">متتبع الإجازات المجاني</a></li>
           <li><a href="https://portal.flexdays.app/register">إنشاء حساب</a></li>
           <li><a href="https://portal.flexdays.app/login">تسجيل الدخول</a></li>

@@ -896,6 +896,88 @@
     .cmp-table td.cmp-good { color: var(--dark); background: #f4f9ff; }
     @media (max-width: 600px) { .lp-compare { padding: 64px 0; } .cmp-table { font-size: 14px; } .cmp-table th, .cmp-table td { padding: 12px; } .cmp-table td:first-child { white-space: normal; } }
     .cmp-note { margin-top: 22px; font-size: 15px; color: var(--mid); text-align: center; }
+  
+    /* ── Module cards: cross-links between the product pages ── */
+    .modules {
+      padding: 96px 0; position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #0f1724 0%, #0a2540 55%, #0d2d3f 100%);
+    }
+    .modules::before {
+      content: ''; position: absolute; width: 680px; height: 680px; border-radius: 50%;
+      top: -300px; left: 50%; transform: translateX(-50%); pointer-events: none;
+      background: radial-gradient(circle, rgba(9,188,204,.2) 0%, transparent 68%);
+    }
+    .modules .container { position: relative; z-index: 1; }
+    .modules .section-title { color: #fff; }
+    .modules .section-sub { color: rgba(255,255,255,.64); }
+    .mod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 52px; }
+    .mod-card {
+      --c: #09bccc;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 12px;
+      padding: 26px 22px 22px; border-radius: 16px;
+      text-decoration: none; color: #fff;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.1);
+      transition: transform .22s ease-out, border-color .22s ease-out, background-color .22s ease-out, box-shadow .22s ease-out;
+    }
+    .mod-card::after {
+      content: ''; position: absolute; left: -30%; right: -30%; bottom: -90px; height: 170px;
+      background: radial-gradient(ellipse at center, var(--c) 0%, transparent 70%);
+      opacity: .22; transition: opacity .25s ease-out; pointer-events: none;
+    }
+    .mod-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--c) 65%, transparent);
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 22px 44px -20px color-mix(in srgb, var(--c) 80%, transparent);
+    }
+    .mod-card:hover::after { opacity: .5; }
+    .mod-ic {
+      width: 48px; height: 48px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center; color: #fff;
+      background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 50%, #0a2540));
+      box-shadow: 0 10px 24px -8px var(--c);
+    }
+    .mod-ic .icon { width: 23px; height: 23px; }
+    .mod-card h3 { font-size: 17px; font-weight: 800; color: #fff; margin: 4px 0 0; }
+    .mod-card p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.68); flex: 1; position: relative; z-index: 1; }
+    .mod-go {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-display); font-size: 13.5px; font-weight: 700;
+      color: color-mix(in srgb, var(--c) 55%, #fff);
+      transition: gap .2s ease-out;
+    }
+    .mod-card:hover .mod-go { gap: 11px; }
+    .mod-card[aria-current="page"] { border-color: color-mix(in srgb, var(--c) 50%, transparent); }
+    .mod-here {
+      position: absolute; top: 16px; right: 16px;
+      font-size: 10.5px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 20px; background: rgba(255,255,255,.12); color: rgba(255,255,255,.85);
+    }
+    .mod-blue  { --c: #1679d7; }
+    .mod-teal  { --c: #09bccc; }
+    .mod-green { --c: #06bbae; }
+    .mod-amber { --c: #f59e0b; }
+    @media (max-width: 960px) { .mod-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .mod-grid { grid-template-columns: 1fr; } .modules { padding: 72px 0; } }
+
+    /* hook strip items that link to their module page */
+    /* hook strip as pills: wraps cleanly now that it holds every module */
+    .hooks-inner { gap: 10px; }
+    .hook-item { background: var(--bg); border-radius: 999px; padding: 7px 16px 7px 7px; }
+    .hook-item + .hook-item { border: none; }
+    .hook-dot { border-radius: 50%; }
+    a.hook-item { text-decoration: none; border-radius: 999px; transition: background-color .15s ease-out, color .15s ease-out; }
+    a.hook-item:hover { background: #f0f7ff; color: var(--blue); }
+    .feat-more {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; margin-left: 10px;
+      font-family: var(--font-display); font-size: 13px; font-weight: 700;
+      color: var(--blue); text-decoration: none; transition: gap .2s ease-out;
+    }
+    .feat-more:hover { gap: 10px; }
+    .hook-dot.amber { background: #fff3cd; color: #d97706; }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -935,6 +1017,7 @@
     <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
     <symbol id="i-sync" viewBox="0 0 24 24"><path d="M21 2v6h-6M3 22v-6h6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 5V5L7 10H4a1 1 0 0 0-1 1z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19.5 5.5a9 9 0 0 1 0 13"/></symbol>
   </defs>
 </svg>
 
@@ -997,9 +1080,10 @@
 <div class="hooks-strip">
   <div class="container">
     <div class="hooks-inner" data-stagger>
-      <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div> Leave Management</div>
-      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div> Timesheets</div>
-      <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div> Time Tracker</div>
+      <a class="hook-item" href="/leave-management-software" aria-current="page"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div> Leave Management</a>
+      <a class="hook-item" href="/timesheet-software"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div> Timesheets</a>
+      <a class="hook-item" href="/time-tracking-software"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div> Time Tracker</a>
+      <a class="hook-item" href="/announcements-and-events"><div class="hook-dot amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div> Announcements</a>
       <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div> Schedules</div>
       <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div> Approvals</div>
       <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div> HR Analytics <span class="hook-soon">(soon)</span></div>
@@ -1093,13 +1177,13 @@
         <div class="feat-icon bg-teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div>
         <h3>Timesheet Tracking</h3>
         <p>Timesheets integrated directly with leaves and your configured working schedule. No double entry, no sync headaches.</p>
-        <span class="feat-badge phase1">✦ Phase 1</span>
+        <span class="feat-badge phase1">✦ Phase 1</span><a class="feat-more" href="/timesheet-software">Explore timesheets <span aria-hidden="true">→</span></a>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
         <h3>One-Tap Time Tracker</h3>
         <p>Start a timer with one tap and track time as you work. Every minute flows straight into your timesheet, with no manual entry.</p>
-        <span class="feat-badge phase1">✦ Phase 1</span>
+        <span class="feat-badge phase1">✦ Phase 1</span><a class="feat-more" href="/time-tracking-software">Explore time tracking <span aria-hidden="true">→</span></a>
       </div>
       <div class="feat-card">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div>
@@ -1129,7 +1213,7 @@
         <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
         <h3>Projects &amp; Time Reports</h3>
         <p>Log time against projects and tasks, mark what's billable, and see it in dashboard, summary, detailed, weekly and attendance reports. Save the views you use and export to Excel or CSV.</p>
-        <span class="feat-badge phase1">&#10022; Phase 1</span>
+        <span class="feat-badge phase1">&#10022; Phase 1</span><a class="feat-more" href="/time-tracking-software">See time reports <span aria-hidden="true">→</span></a>
       </div>
       <div class="feat-card span2 flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-bell"/></svg></div>
@@ -1488,6 +1572,43 @@
   </div>
 </section>
 
+<!-- ── Modules ── -->
+<section class="modules" id="modules">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="tag tag-vision tag--lead">Live today</span>
+      <h2 class="section-title">One app. Every module connected.</h2>
+      <p class="section-sub mt-sm">Leave, timesheets, time tracking and company news share the same people, schedules and calendar, so nothing has to be entered twice.</p>
+    </div>
+    <div class="mod-grid" data-stagger>
+      <a class="mod-card mod-blue" href="/leave-management-software" aria-current="page"><span class="mod-here">You are here</span>
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <h3>Leave management</h3>
+        <p>Requests in seconds, one-tap approvals, and balances that are always right.</p>
+        <span class="mod-go">Explore leave <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="mod-card mod-teal" href="/timesheet-software">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div>
+        <h3>Timesheets</h3>
+        <p>Pre-filled from schedules, leave and tracked time. Submit, approve, export.</p>
+        <span class="mod-go">Explore timesheets <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="mod-card mod-green" href="/time-tracking-software">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
+        <h3>Time tracker</h3>
+        <p>A one-tap timer on projects, or clock in and out with breaks. Reports included.</p>
+        <span class="mod-go">Explore time tracking <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="mod-card mod-amber" href="/announcements-and-events">
+        <div class="mod-ic" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div>
+        <h3>Announcements &amp; events</h3>
+        <p>Company news and events to exactly the right people, with a push notification.</p>
+        <span class="mod-go">Explore announcements <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── Get started ── -->
 <section class="waitlist" id="get-started">
   <div class="container">
@@ -1535,6 +1656,9 @@
         <p class="footer-heading">Solutions</p>
         <ul class="footer-links">
           <li><a href="/leave-management-software">Leave management software</a></li>
+          <li><a href="/timesheet-software">Timesheet software</a></li>
+          <li><a href="/time-tracking-software">Time tracking software</a></li>
+          <li><a href="/announcements-and-events">Announcements &amp; events</a></li>
           <li><a href="/free-hr-software-for-small-teams">HR software for small teams</a></li>
           <li><a href="/hr-software-growing-companies">Growing companies</a></li>
           <li><a href="/hr-software-southeast-asia">Southeast Asia</a></li>

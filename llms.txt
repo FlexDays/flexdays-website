@@ -20,7 +20,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 
 - Leave management: employees request leave in seconds; balances for annual, sick, WFH and custom leave types update automatically; carry-over rules; part-time schedules
 - Timesheets: connected directly to leave and working schedules, so there is no double entry
-- One-tap time tracker: start a timer with one tap and every minute flows straight into the timesheet
+- Time tracker: a one-tap timer on projects and tasks, or clock in and out with breaks; every minute flows straight into the timesheet
 - Working schedules: working days, weekends and shifts set per location
 - Team-based approvals: multi-level approval chains configured per team, without IT
 - Multi-country public holidays: applied automatically by country and location
@@ -38,6 +38,10 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 
 - [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing, roadmap and sign-up
 - [Leave management software](https://www.flexdays.app/leave-management-software): how FlexDays handles leave requests, approvals and balances
+- [Timesheet software](https://www.flexdays.app/timesheet-software): timesheets pre-filled from work schedules, leave and tracked time, with weekly or monthly periods, multi-level approvals and Excel or CSV export
+- [Time tracking software](https://www.flexdays.app/time-tracking-software): a one-tap timer on projects and tasks, or clock in and out with breaks, plus five time reports
+- [Announcements and events](https://www.flexdays.app/announcements-and-events): company news and events sent to chosen locations, departments, teams or people, with push notifications and a spot on the team calendar
+- Arabic versions of these three pages: [الجداول الزمنية](https://www.flexdays.app/ar/timesheet-software), [متتبّع الوقت](https://www.flexdays.app/ar/time-tracking-software), [الإعلانات والفعاليات](https://www.flexdays.app/ar/announcements-and-events)
 - [Free HR software for small teams](https://www.flexdays.app/free-hr-software-for-small-teams): the free plan: your first 10 employees are free
 - [HR software for growing companies](https://www.flexdays.app/hr-software-growing-companies): how FlexDays scales from 10 to 500+ employees
 - [HR software for Southeast Asia](https://www.flexdays.app/hr-software-southeast-asia): FlexDays for teams in the Philippines, Indonesia, Vietnam, Malaysia, Singapore and Thailand
