@@ -164,6 +164,81 @@
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3091025977769402&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel -->
   <script src="/track.js" defer></script>
+<style id="one-app-css">
+  /* ── "one app" headline animation ── */
+  .one-app {
+    position: relative; display: inline-block; white-space: normal;
+    padding: 0 .04em .08em;
+    background: linear-gradient(100deg, #1679d7 0%, #09bccc 30%, #06bbae 50%, #09bccc 70%, #1679d7 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    animation:
+      oa-boom .95s cubic-bezier(.18,1.5,.4,1) .75s both,
+      oa-shimmer 3.2s linear 1.8s infinite,
+      oa-pulse 6s ease-in-out 2.6s infinite;
+    will-change: transform;
+  }
+  @keyframes oa-boom {
+    0%   { opacity: 0; transform: scale(.25) rotate(-8deg); filter: blur(10px); }
+    55%  { opacity: 1; transform: scale(1.18) rotate(2deg); filter: blur(0); }
+    75%  { transform: scale(.95) rotate(-1deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+  }
+  @keyframes oa-shimmer { to { background-position: -250% 0; } }
+  @keyframes oa-pulse {
+    0%, 86%, 100% { transform: scale(1); }
+    90% { transform: scale(1.07); }
+    94% { transform: scale(.98); }
+  }
+  /* shockwave ring */
+  .one-app::before {
+    content: ''; position: absolute; left: 50%; top: 50%;
+    width: 120%; aspect-ratio: 1; border-radius: 50%;
+    border: 4px solid rgba(9,188,204,.8); box-shadow: 0 0 24px rgba(22,121,215,.35);
+    transform: translate(-50%,-50%) scale(0); opacity: 0;
+    animation: oa-ring .9s cubic-bezier(.2,.7,.3,1) 1.05s both;
+    pointer-events: none;
+  }
+  @keyframes oa-ring {
+    0%   { transform: translate(-50%,-50%) scale(.2); opacity: .9; }
+    100% { transform: translate(-50%,-50%) scale(1.45); opacity: 0; }
+  }
+  /* swoosh underline */
+  .oa-swoosh {
+    position: absolute; left: 2%; right: 2%; bottom: -.06em; width: 96%; height: .26em;
+    overflow: visible; pointer-events: none;
+  }
+  [dir="rtl"] .oa-swoosh { transform: scaleX(-1); bottom: -.26em; }
+  .oa-swoosh path {
+    fill: none; stroke: url(#oa-grad); stroke-width: 7; stroke-linecap: round;
+    stroke-dasharray: 340; stroke-dashoffset: 340;
+    animation: oa-draw .7s cubic-bezier(.6,0,.2,1) 1.35s forwards;
+  }
+  @keyframes oa-draw { to { stroke-dashoffset: 0; } }
+  /* sparks */
+  .oa-spark {
+    position: absolute; width: .24em; height: .24em; border-radius: 50%; box-shadow: 0 0 .3em currentColor;
+    left: 50%; top: 50%; opacity: 0; pointer-events: none;
+    animation: oa-spark .8s cubic-bezier(.15,.8,.3,1) 1.05s both;
+  }
+  .oa-spark:nth-of-type(1) { background: #1679d7; --tx: -2.4em; --ty: -1.1em; }
+  .oa-spark:nth-of-type(2) { background: #09bccc; --tx:  2.5em; --ty: -1em;  animation-delay: 1.1s; }
+  .oa-spark:nth-of-type(3) { background: #f5b731; --tx: -2.1em; --ty:  .9em;  animation-delay: 1.12s; }
+  .oa-spark:nth-of-type(4) { background: #06bbae; --tx:  2.2em; --ty:  1em;  animation-delay: 1.08s; }
+  .oa-spark:nth-of-type(5) { background: #f5b731; --tx:  .3em;  --ty: -1.5em; animation-delay: 1.15s; width: .18em; height: .18em; }
+  .oa-spark:nth-of-type(6) { background: #1679d7; --tx: -.4em;  --ty:  1.4em; animation-delay: 1.18s; width: .18em; height: .18em; }
+  @keyframes oa-spark {
+    0%   { opacity: 0; transform: translate(-50%,-50%) scale(.2); }
+    20%  { opacity: 1; }
+    100% { opacity: 0; transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .one-app, .one-app::before, .oa-spark { animation: none !important; }
+    .one-app::before, .oa-spark { display: none; }
+    .oa-swoosh path { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
 </head>
 <body>
 <nav><div class="container nav-inner">
@@ -175,7 +250,7 @@
 <header class="hero"><div class="container hero-grid">
   <div>
     <span class="eyebrow">Free Excel / Google Sheets template</span>
-    <h1>Free employee<br /><span class="grad">leave tracker.</span></h1>
+    <h1>Free employee<br /><span class="grad"><span class="one-app">leave tracker.<svg class="oa-swoosh" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="oa-grad" x1="0" x2="1"><stop offset="0" stop-color="#1679d7"/><stop offset=".55" stop-color="#09bccc"/><stop offset="1" stop-color="#06bbae"/></linearGradient></defs><path d="M6 14 C 70 4, 170 2, 294 11"/></svg><i class="oa-spark" aria-hidden="true"></i><i class="oa-spark" aria-hidden="true"></i><i class="oa-spark" aria-hidden="true"></i><i class="oa-spark" aria-hidden="true"></i><i class="oa-spark" aria-hidden="true"></i><i class="oa-spark" aria-hidden="true"></i></span></span></h1>
     <p class="lede">A clean spreadsheet to track staff leave for small teams, with balances that calculate themselves, dropdowns to avoid typos, and a live team summary. Free to download, no strings.</p>
     <div class="getcard">
       <h3>Get your free copy</h3>
