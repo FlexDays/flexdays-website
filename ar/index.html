@@ -989,7 +989,7 @@
     a.hook-item { text-decoration: none; border-radius: 999px; transition: background-color .15s ease-out, color .15s ease-out; }
     a.hook-item:hover { background: #f0f7ff; color: var(--blue); }
     .feat-more {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; margin-left: 10px;
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
       font-family: var(--font-display); font-size: 13px; font-weight: 700;
       color: var(--blue); text-decoration: none; transition: gap .2s ease-out;
     }
@@ -999,7 +999,6 @@
     /* ── RTL fixes for the module pages ── */
     .cmp-table th { text-align: right; }
     .mod-here { right: auto; left: 16px; }
-    .feat-more { margin-left: 0; margin-right: 10px; }
     .flow-arrows { transform: scaleX(-1); }
     .flow-src:hover { transform: translateX(-4px); }
     .hook-item { padding: 7px 7px 7px 16px; }
@@ -1238,7 +1237,6 @@
       <a class="hook-item" href="/ar/announcements-and-events"><div class="hook-dot amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div> الإعلانات</a>
       <div class="hook-item"><div class="hook-dot green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div> جداول العمل</div>
       <div class="hook-item"><div class="hook-dot blue" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div> الموافقات</div>
-      <div class="hook-item"><div class="hook-dot teal" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div> تحليلات الموارد البشرية <span class="hook-soon">(قريبًا)</span></div>
     </div>
   </div>
 </div>
@@ -1305,101 +1303,62 @@
     <div class="text-center reveal">
       <span class="tag tag-blue">ما بداخله</span>
       <h2 class="section-title mt-sm">كل ما يحتاجه فريق الموارد البشرية،<br />ولا شيء زائد.</h2>
-      <p class="section-sub mt-sm">يأتي FlexDays بالمزايا الأساسية التي سيستخدمها فريقك فعلًا، وينمو معك بينما نبني تطبيق الموارد البشرية الشامل.</p>
+      <p class="section-sub mt-sm">يأتي FlexDays بالمزايا الأساسية التي سيستخدمها فريقك فعلًا.</p>
     </div>
     <div class="features-grid" data-stagger>
       <div class="feat-card span2 flagship">
         <div class="feat-icon bg-blue" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></div>
         <h3>إدارة الإجازات</h3>
         <p>يطلب الموظفون إجازاتهم في ثوانٍ. تتبّع ذكي للأرصدة للإجازات السنوية والمرضية والعمل من المنزل والأنواع المخصّصة، وكل ذلك تلقائيًا.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-teal" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></div>
         <h3>الجداول الزمنية</h3>
         <p>جداول زمنية مرتبطة مباشرة بالإجازات وبجدول العمل الذي ضبطته. بلا إدخال مزدوج، ولا عناء في المزامنة.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/timesheet-software">استكشف الجداول الزمنية <span aria-hidden="true">←</span></a>
+        <a class="feat-more" href="/ar/timesheet-software">استكشف الجداول الزمنية <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></div>
         <h3>متتبّع الوقت بلمسة واحدة</h3>
         <p>ابدأ المؤقت بلمسة واحدة وتتبّع وقتك أثناء العمل. كل دقيقة تنتقل مباشرة إلى جدولك الزمني، دون إدخال يدوي.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/time-tracking-software">استكشف تتبّع الوقت <span aria-hidden="true">←</span></a>
+        <a class="feat-more" href="/ar/time-tracking-software">استكشف تتبّع الوقت <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></div>
         <h3>ضبط جداول العمل</h3>
         <p>يحدد المسؤولون أيام العمل وعطلات نهاية الأسبوع وساعات العمل لكل موقع، مع جداول خاصة للموظفين بدوام جزئي. وتتبعها الجداول الزمنية وحسابات أرصدة الإجازات تلقائيًا.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
       </div>
       <div class="feat-card">
         <div class="feat-icon bg-amber" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></div>
         <h3>موافقات حسب الفريق</h3>
         <p>مسارات موافقة متعددة المستويات تُضبط لكل فريق. يستطيع مسؤولو الفرق والموارد البشرية إعداد سلاسل موافقة مخصّصة دون الحاجة إلى قسم تقنية المعلومات.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
       </div>
       <div class="feat-card">
         <div class="feat-icon bg-blue" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></div>
         <h3>العطلات في عدة دول</h3>
         <p>تُطبَّق العطلات الرسمية تلقائيًا حسب الدولة والموقع، فتحصل الفرق في البلدان المختلفة دائمًا على أيام الإجازة الصحيحة.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
       </div>
       <div class="feat-card">
         <div class="feat-icon bg-red" aria-hidden="true"><svg class="icon"><use href="#i-user-plus"/></svg></div>
         <h3>إضافة الموظفين دفعة واحدة</h3>
         <p>استورد جميع موظفيك من ملف Excel، ثم انقل أرصدة إجازاتهم الحالية في ملف واحد. بلا إدخال يدوي للبيانات، ويكون فريقك جاهزًا خلال دقائق.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
       </div>
       <div class="feat-card span2 flagship">
         <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
         <h3>المشاريع وتقارير الوقت</h3>
         <p>سجّل الوقت على المشاريع والمهام، وحدّد ما هو قابل للفوترة، واطّلع عليه في تقارير لوحة المعلومات والملخص والتفاصيل والعرض الأسبوعي والحضور. احفظ طرق العرض التي تستخدمها وصدّرها إلى Excel أو CSV.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/time-tracking-software">شاهد تقارير الوقت <span aria-hidden="true">←</span></a>
+        <a class="feat-more" href="/ar/time-tracking-software">شاهد تقارير الوقت <span aria-hidden="true">←</span></a>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-green" aria-hidden="true"><svg class="icon"><use href="#i-bell"/></svg></div>
         <h3>إشعارات ذكية</h3>
         <p>إشعارات فورية لموافقات الإجازات والجداول الزمنية والقرارات وإعلانات الشركة، ليبقى الجميع على اطلاع.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span>
       </div>
       <div class="feat-card flagship">
         <div class="feat-icon bg-amber" aria-hidden="true"><svg class="icon"><use href="#i-megaphone"/></svg></div>
         <h3>الفعاليات والإعلانات</h3>
         <p>شارك أخبار الشركة وفعالياتها مع الجميع، أو مع موقع أو قسم أو فريق أو أشخاص بعينهم. تُنشر فورًا مع إشعار وتظهر في تقويم الفريق.</p>
-        <span class="feat-badge phase1">✦ المرحلة 1</span><a class="feat-more" href="/ar/announcements-and-events">استكشف الإعلانات <span aria-hidden="true">←</span></a>
-      </div>
-      <div class="feat-card span2">
-        <div class="feat-icon bg-purple" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
-        <h3>تحليلات الموارد البشرية وتقاريرها</h3>
-        <p>خرائط حرارية، واتجاهات الإجازات، وتوفّر الفريق، وتقارير الأرصدة. اطّلع على جميع موظفيك بنظرة واحدة.</p>
-        <span class="feat-badge coming">⏳ قريبًا</span>
-      </div>
-      <div class="feat-card span2">
-        <div class="feat-icon bg-pink" aria-hidden="true"><svg class="icon"><use href="#i-card"/></svg></div>
-        <h3>التكامل مع الرواتب</h3>
-        <p>اربط أرصدة الإجازات والجداول الزمنية بالرواتب مباشرة، وتخلّص من المطابقة اليدوية نهائيًا.</p>
-        <span class="feat-badge coming">⏳ قريبًا</span>
-      </div>
-
-      <div class="feat-card ai-card">
-        <div class="ai-glow" aria-hidden="true"></div>
-        <div class="ai-row">
-          <div class="ai-emoji" aria-hidden="true"><svg class="icon" style="width:52px;height:52px;color:#7cd9e4"><use href="#i-bot"/></svg></div>
-          <div class="ai-body">
-            <div class="ai-head">
-              <h3>مساعد موارد بشرية بالذكاء الاصطناعي</h3>
-              <span class="ai-badge">✦ رؤيتنا</span>
-            </div>
-            <p class="ai-desc">
-              هذا هو الاتجاه الذي نسير فيه، ونريد أن نكون صريحين بشأنه. الهدف يوم تصف فيه ما تحتاجه بلغة بسيطة فينفّذه FlexDays فورًا. بلا نقرات، ولا قوائم، ولا تدريب.
-            </p>
-            <div class="ai-quotes">
-              <div class="ai-quote">"وافق على كل الطلبات المعلّقة من فريق الهندسة"</div>
-              <div class="ai-quote">"من في إجازة الأسبوع القادم؟"</div>
-              <div class="ai-quote">"امنح أحمد 3 أيام إجازة إضافية"</div>
-            </div>
-          </div>
-        </div>
+        <a class="feat-more" href="/ar/announcements-and-events">استكشف الإعلانات <span aria-hidden="true">←</span></a>
       </div>
     </div>
   </div>
@@ -1679,66 +1638,6 @@
   </div>
 </section>
 
-<!-- ── Roadmap / Super App ── -->
-<section class="roadmap">
-  <div class="container roadmap-inner">
-    <div class="text-center reveal">
-      <span class="tag tag-vision tag--lead">الرؤية</span>
-      <h2 class="section-title">هذه مجرد البداية.</h2>
-      <p class="section-sub mt-sm">يبدأ FlexDays بالإجازات والجداول الزمنية وتتبّع الوقت، وينمو ليصبح تطبيق الموارد البشرية الشامل الذي يحلّ محل كل أدواتك.</p>
-    </div>
-    <div class="phase-grid" data-stagger>
-      <div class="phase-card">
-        <div class="phase-label now">▶ المرحلة 1، متاحة الآن</div>
-        <h3>أساس الموارد البشرية</h3>
-        <ul class="phase-items">
-          <li>إدارة الإجازات والأرصدة</li>
-          <li>الجداول الزمنية</li>
-          <li>متتبّع الوقت بلمسة واحدة</li>
-          <li>المشاريع وتقارير الوقت</li>
-          <li>ضبط جداول العمل</li>
-          <li>موافقات متعددة المستويات حسب الفريق</li>
-          <li>إضافة الموظفين دفعة واحدة</li>
-          <li>استيراد أرصدة الإجازات</li>
-          <li>العطلات الرسمية في عدة دول</li>
-          <li>جداول الموظفين بدوام جزئي</li>
-          <li>قواعد ترحيل الأرصدة</li>
-          <li>تطبيقات الجوال (iOS وAndroid، تصل هذا الشهر)</li>
-        </ul>
-      </div>
-      <div class="phase-card">
-        <div class="phase-label next">◆ المرحلة 2، قريبًا</div>
-        <h3>التحليلات والتكاملات</h3>
-        <ul class="phase-items">
-          <li>تحليلات الموارد البشرية والخرائط الحرارية للإجازات</li>
-          <li>التكامل مع الرواتب</li>
-          <li>تسجيل الدخول الموحّد (SSO)</li>
-          <li>تصدير كشف الإجازات بصيغة PDF</li>
-          <li>تبادل الإجازات بين الموظفين</li>
-          <li>طلبات أيام العمل الإضافية</li>
-        </ul>
-      </div>
-      <div class="phase-card">
-        <div class="phase-label future">✦ التطبيق الشامل، الصورة الكبرى</div>
-        <h3>تطبيق الموارد البشرية الشامل</h3>
-        <ul class="phase-items">
-          <li>التوظيف ونظام تتبّع المتقدمين</li>
-          <li>تقييمات الأداء</li>
-          <li>الهيكل التنظيمي ودليل الموظفين</li>
-          <li>بوابة الخدمة الذاتية للموظفين</li>
-          <li>المزايا والتعويضات</li>
-          <li>مسارات تهيئة الموظفين الجدد</li>
-          <li>منصة موارد بشرية واحدة لكل شيء</li>
-          <li>مساعد موارد بشرية بالذكاء الاصطناعي: صِف ما تحتاجه بلغة بسيطة فينفّذه FlexDays. <em class="phase-quote">"وافق على كل الطلبات المعلّقة من فريق الهندسة"</em></li>
-        </ul>
-      </div>
-    </div>
-    <div class="super-app-banner reveal">
-      <h3><svg class="icon" style="display:inline-block;vertical-align:-3px;width:22px;height:22px;color:var(--teal)" aria-hidden="true"><use href="#i-rocket"/></svg> منصة واحدة لكل أدوات الموارد البشرية.</h3>
-      <p>نبني تطبيق الموارد البشرية الشامل الذي ينتظره السوق، بدءًا بالمزايا التي تستخدمها الفرق يوميًا، ولن نتوقف حتى نغطي كل شيء.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ── Get started ── -->
 <section class="waitlist" id="get-started">

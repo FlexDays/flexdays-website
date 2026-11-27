@@ -1,6 +1,6 @@
 # FlexDays
 
-> FlexDays is the HR super app: one simple, affordable app for leave management, timesheets, a one-tap time tracker, and company events and announcements, on iOS, Android and the web. Every company gets its first 30 days free at any size; after that, the first 10 employees are free, then $2 per employee per month. FlexDays is launching soon and taking early-access signups on its waitlist.
+> FlexDays is the HR super app: one simple, affordable app for leave management, timesheets, a one-tap time tracker, and company events and announcements, on iOS, Android and the web. Every company gets its first 30 days free at any size; after that, the first 10 employees are free, then $2 per employee per month. FlexDays is live: sign up free at https://portal.flexdays.app/register.
 
 FlexDays is built for companies that want to replace spreadsheets, email chains, messaging apps and expensive legacy HR systems with one modern app. It sets up in under 5 minutes, needs no IT team, and works for companies of any size, from small teams to 500+ employees. It supports teams in any country, with public holidays and working weeks set automatically by country and location. FlexDays is built by beanvoid, a product studio based in Egypt.
 
@@ -16,11 +16,12 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - Made by: beanvoid (https://www.beanvoid.com/)
 - Contact: hello@beanvoid.com (support and privacy: support@beanvoid.com)
 
-## Features in the first release (Phase 1)
+## Features
 
 - Leave management: employees request leave in seconds; balances for annual, sick, WFH and custom leave types update automatically; carry-over rules; part-time schedules
 - Timesheets: connected directly to leave and working schedules, so there is no double entry
 - Time tracker: a one-tap timer on projects and tasks, or clock in and out with breaks; every minute flows straight into the timesheet
+- Projects and time reports: log time against projects and tasks, mark billable time, and see dashboard, summary, detailed, weekly and attendance reports with Excel or CSV export
 - Working schedules: working days, weekends and shifts set per location
 - Team-based approvals: multi-level approval chains configured per team, without IT
 - Multi-country public holidays: applied automatically by country and location
@@ -29,14 +30,9 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - Smart notifications: real-time push notifications for approvals, balance reminders and team updates
 - Events and announcements: share company news and events with everyone, a location, a department, a team or specific people, with a push notification and a spot on the team calendar
 
-## Roadmap
-
-- Coming next: HR analytics and leave heatmaps, payroll integration, single sign-on (SSO), leave statement PDF export, leave swaps between employees, extra workday requests
-- Longer term: recruitment and applicant tracking, performance reviews, org chart and directories, benefits and compensation, onboarding workflows, and an AI HR assistant that handles requests in plain language (for example "Who's off next week?")
-
 ## Main pages
 
-- [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing, roadmap and sign-up
+- [Homepage](https://www.flexdays.app/): overview of FlexDays, features, pricing and sign-up
 - [Leave management software](https://www.flexdays.app/leave-management-software): how FlexDays handles leave requests, approvals and balances
 - [Timesheet software](https://www.flexdays.app/timesheet-software): timesheets pre-filled from work schedules, leave and tracked time, with weekly or monthly periods, multi-level approvals and Excel or CSV export
 - [Time tracking software](https://www.flexdays.app/time-tracking-software): a one-tap timer on projects and tasks, or clock in and out with breaks, plus five time reports
