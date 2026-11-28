@@ -23,7 +23,7 @@ FlexDays is built for companies that want to replace spreadsheets, email chains,
 - Time tracker: a one-tap timer on projects and tasks, or clock in and out with breaks; every minute flows straight into the timesheet
 - Projects and time reports: log time against projects and tasks, mark billable time, and see dashboard, summary, detailed, weekly and attendance reports with Excel or CSV export
 - Working schedules: working days, weekends and shifts set per location
-- Team-based approvals: multi-level approval chains configured per team, without IT
+- Multi-level approvals: approval chains with one or more levels (any one approver or all of them), assigned to employees and set up by HR or Admins without IT. Without a chain, requests go to the employee's department manager
 - Multi-country public holidays: applied automatically by country and location
 - Bulk employee onboarding: import a whole team from an Excel file
 - Leave balance import: bring existing balances over from a spreadsheet (one row per employee, one column per leave type), with a preview before anything changes
