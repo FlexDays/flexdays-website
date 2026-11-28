@@ -4,7 +4,7 @@
 // 2. Tells Meta (Lead) and Google Ads (conversion) when someone clicks a signup link.
 (function () {
   // Fill this in after creating the Google Ads conversion, e.g. 'AW-123456789/AbC-dEfGhIjK'.
-  var GOOGLE_ADS_SEND_TO = '';
+  var GOOGLE_ADS_SEND_TO = 'AW-18601177021/ZnJfCJecpsEdEL3f3aVF';
 
   var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
   var STORE_KEY = 'fd_src';
