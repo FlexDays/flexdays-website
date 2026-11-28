@@ -1252,11 +1252,16 @@
   .hero-v2 .proof-icon { color: #06a296; }
   .hero-v2 .proof-icon .icon { stroke-width: 2.6; }
   .hero-shot {
-    position: relative; width: 100%; max-width: 1080px; margin: 56px auto 28px;
+    /* portal and phone side by side, nothing covers anything; a little wider than the text column */
+    --shot-w: min(1200px, calc(100vw - 56px));
+    position: relative; width: var(--shot-w); max-width: none;
+    margin: 56px calc((100% - var(--shot-w)) / 2) 28px;
+    container-type: inline-size;
+    display: flex; align-items: center; gap: clamp(20px, 3.4cqw, 40px);
     animation: rise .6s cubic-bezier(.22,.61,.36,1) both; animation-delay: .6s;
   }
   .hero-shot .browser-win {
-    margin-inline-start: clamp(0px, 8%, 110px); background: #fff;
+    flex: 1 1 0; min-width: 0; background: #fff;
     border: 1px solid rgba(13,37,63,.08); border-radius: 16px; overflow: hidden;
     box-shadow: 0 30px 80px rgba(16,42,77,.16);
   }
@@ -1265,9 +1270,19 @@
   .hero-shot .browser-url { margin-inline-start: 14px; font-size: 12px; color: var(--mid); background: #f0f2f5; padding: 3px 12px; border-radius: 6px; direction: ltr; }
   .hero-shot .browser-win img { display: block; width: 100%; height: auto; }
   .hero-shot .phone {
-    position: absolute; inset-inline-start: 0; bottom: -28px;
-    width: clamp(120px, 22%, 236px);
-    box-shadow: 0 24px 60px rgba(16,42,77,.30);
+    --pw: clamp(120px, 20cqw, 236px);       /* bezel and corners scale with the phone */
+    flex: 0 0 var(--pw);
+    width: var(--pw); max-width: none;
+    padding: calc(var(--pw) * .028);
+    border-radius: calc(var(--pw) * .16);
+    box-shadow: 0 24px 60px rgba(16,42,77,.26);
+  }
+  .hero-shot .phone-screen { border-radius: calc(var(--pw) * .13); }
+  @media (max-width: 640px) {
+    /* phones: stack them, portal first, app below it, both fully visible */
+    .hero-shot { flex-direction: column; gap: 28px; }
+    .hero-shot .browser-win { flex: none; width: 100%; }
+    .hero-shot .phone { --pw: 54cqw; flex: none; }
   }
   @media (max-width: 600px) {
     .hero.hero-v2 { padding: 64px 0 48px; }
@@ -1873,12 +1888,12 @@
 <script>
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Hero clip: with reduced motion, hold one frame of the filled timesheet instead of looping.
+  // Hero clip: with reduced motion, hold one frame of the updated team calendar instead of looping.
   const heroClip = document.querySelector('.hero-clip');
   if (heroClip && prefersReducedMotion) {
     heroClip.removeAttribute('autoplay');
     heroClip.pause();
-    const hold = () => { heroClip.currentTime = 13; };
+    const hold = () => { heroClip.currentTime = 10; };
     if (heroClip.readyState >= 1) hold(); else heroClip.addEventListener('loadedmetadata', hold, { once: true });
   }
 
